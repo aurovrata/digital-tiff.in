@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Plugin Reviews Archives - Tiffin Consulting</title>
+	<atom:link href="/category/cms/wordpress-plugins/feed/" rel="self" type="application/rss+xml" />
+	<link>/category/cms/wordpress-plugins/</link>
+	<description>digital business transformation</description>
+	<lastBuildDate>Fri, 02 Feb 2024 12:22:27 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.7.1</generator>
+
+<image>
+	<url>/wp-content/uploads/2024/02/cropped-tiffin-icon-1-150x150.png</url>
+	<title>Plugin Reviews Archives - Tiffin Consulting</title>
+	<link>/category/cms/wordpress-plugins/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Totally Offline Local WordPress</title>
+		<link>/totally-offline-local-wordpress/</link>
+		
+		<dc:creator><![CDATA[Aurovrata V.]]></dc:creator>
+		<pubDate>Sun, 04 Oct 2015 06:15:04 +0000</pubDate>
+				<category><![CDATA[Plugin Reviews]]></category>
+		<guid isPermaLink="false">http://localhost/syllogic/wp/?p=314</guid>
+
+					<description><![CDATA[<p>I have been looking for this for a long time and finally found an interesting plugin, Airplane Mode for WordPress.  This plugin allows you to install WordPress on your local desktop/laptop and stop it from trying to load fonts, icons, gravatars, or javascript libraries of any sort. Without this you will notice that a local [&#8230;]</p>
+<p>The post <a href="/totally-offline-local-wordpress/">Totally Offline Local WordPress</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I have been looking for this for a long time and finally found an interesting plugin, <a href="http://tidyrepo.com/airplane-mode/" target="_blank" rel="noopener">Airplane Mode for WordPress</a>.  This plugin allows you to install WordPress on your local desktop/laptop and stop it from trying to load fonts, icons, gravatars, or javascript libraries of any sort.</p>
+<p>Without this you will notice that a local installation devoid of an internet connection will have page loading processes delayed by the browser attempting to load external resources.    This is a real waste of time when trying to develop a site and one is prone to reload a page several times a minute in order to test changes in the code.</p>
+<p>The post <a href="/totally-offline-local-wordpress/">Totally Offline Local WordPress</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Manage user profile and credentials</title>
+		<link>/manage-user-profile-and-credentials/</link>
+		
+		<dc:creator><![CDATA[Aurovrata V.]]></dc:creator>
+		<pubDate>Fri, 07 Nov 2014 10:37:40 +0000</pubDate>
+				<category><![CDATA[Plugin Reviews]]></category>
+		<guid isPermaLink="false">http://localhost/syllogic/wp/?p=274</guid>
+
+					<description><![CDATA[<p>We recently required to force our newly registered users on a project to change their password on their first login.&#160; This is handled by default in the WordPress core with the default password nag meta field, However, upon the first login the user is redirected to the wordpress default profile.php page which is not very [&#8230;]</p>
+<p>The post <a href="/manage-user-profile-and-credentials/">Manage user profile and credentials</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<p>We recently required to force our newly registered users on a project to change their password on their first login.&nbsp; This is handled by default in the WordPress core with the default password nag meta field,</p>
+
+
+
+<pre class="wp-block-code"><code class="">update_user_option( $user_id, 'default_password_nag', true, true );</code></pre>
+
+
+
+<p>However, upon the first login the user is redirected to the wordpress default <code>profile.php</code> page which is not very intuitive, does not allow for customisation and more importantly is outside the scope of the template theme.</p>
+
+
+
+<h3 class="wp-block-heading">Template My Login to the rescue.</h3>
+
+
+
+<p>This is where I found a lovely little plugin, <a href="https://wordpress.org/plugins/theme-my-login/" target="_blank" rel="noopener">Template My Login (TML)</a>, which creates a set of pages with a simple shortcode in each of them. It creates a page for Login, Logout, Profile, Register and so on, allowing for each page to be automatically themed but also customised with a template.</p>
+
+
+
+<h3 class="wp-block-heading">Putting it all together.</h3>
+
+
+
+<p>Automatic registration of new users with auto-generated passwords can make a call to update the default password nag meta field,</p>
+
+
+
+<pre class="wp-block-code"><code lang="php" class="language-php">update_user_option( $user_id, 'default_password_nag', true, true );</code></pre>
+
+
+
+<p>This can be called after a registration form, or within your code when you create a new user.<br>
+When a user logs-in for the first time they will be automatically redirected to their profile page.&nbsp; Upon resetting their password, WordPress will automatically reset the <code>default_password_nag</code> meta field to null.</p>
+
+
+
+<p>We can further modify the TML plugin default <code>profile_form.php</code> template to show a small message indicating that the user has been redirected to change their password if this is their first login,</p>
+
+
+
+<pre class="wp-block-code"><code lang="php" class="language-php line-numbers">&lt;?php
+/*
+If you would like to edit this file, copy it to your current theme's directory and edit it there.
+Theme My Login will always look in your theme's directory first, before using this default template.
+*/
+$nagPassword = null;
+if ( is_user_logged_in( ) ) {
+&nbsp;&nbsp; //$user_ID = get_current_user_id();
+&nbsp;&nbsp; $nagPassword = get_user_option('default_password_nag');
+}
+?&gt;
+&lt;div class="login profile" id="theme-my-login&lt;?php $template-&gt;the_instance(); ?&gt;"&gt;
+&lt;?php if($nagPassword) { ?&gt;
+&nbsp;&nbsp; &nbsp;&lt;p class="message"&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;If this is your first log-in, you have been re-directed to your profile setting page in order to reset your password.
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&amp;nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;Please choose a new password below
+&nbsp;&nbsp; &nbsp;&lt;/p&gt;
+&lt;?php } ?&gt;
+&nbsp;&nbsp; &nbsp;&lt;?php $template-&gt;the_action_template_message( 'profile' ); ?&gt;
+&nbsp;&nbsp; &nbsp;&lt;?php $template-&gt;the_errors(); ?&gt;
+&nbsp;&nbsp; &nbsp;&lt;form id="your-profile" ....</code></pre>
+
+
+
+<p>The TML templates sit in the plugin folder, <code>plugins/theme-my-login/templates </code>just copy the relevant template to your theme folder and TML will first look there for the template file.&nbsp; Easy as pie!</p>
+<p>The post <a href="/manage-user-profile-and-credentials/">Manage user profile and credentials</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

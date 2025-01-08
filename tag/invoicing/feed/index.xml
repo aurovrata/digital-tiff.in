@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>invoicing Archives - Tiffin Consulting</title>
+	<atom:link href="/tag/invoicing/feed/" rel="self" type="application/rss+xml" />
+	<link>/tag/invoicing/</link>
+	<description>digital business transformation</description>
+	<lastBuildDate>Fri, 02 Feb 2024 12:22:27 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.7.1</generator>
+
+<image>
+	<url>/wp-content/uploads/2024/02/cropped-tiffin-icon-1-150x150.png</url>
+	<title>invoicing Archives - Tiffin Consulting</title>
+	<link>/tag/invoicing/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Invoicing with WordPress</title>
+		<link>/invoicing-with-wordpress/</link>
+		
+		<dc:creator><![CDATA[Aurovrata V.]]></dc:creator>
+		<pubDate>Thu, 15 May 2014 13:35:12 +0000</pubDate>
+				<category><![CDATA[Theme Reviews]]></category>
+		<category><![CDATA[invoicing]]></category>
+		<guid isPermaLink="false">http://localhost/syllogic/wp/?p=113</guid>
+
+					<description><![CDATA[<p>We have been looking out for a neat Invoicing plugin for quite some time and found various reviews about the different plugin available out there. We were looking for something rather straightforward, manage clients, manage invoices, manage payments.&#160; We initially set out to test the WP-Invoice plugin, however, we soon run into difficultities with some [&#8230;]</p>
+<p>The post <a href="/invoicing-with-wordpress/">Invoicing with WordPress</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<p>We have been looking out for a neat Invoicing plugin for quite some time and found various reviews about the different plugin available out there.</p>
+
+
+
+<p>We were looking for something rather straightforward, manage clients, manage invoices, manage payments.&nbsp; We initially set out to test the <a href="https://wordpress.org/plugins/wp-invoice/" target="_blank" rel="noopener">WP-Invoice plugin</a>, however, we soon run into difficultities with some strange error which we found was quite recurrent among various users on the <a href="http://wordpress.org/support/topic/intial-setup-saved-cannot-make-changes-after?replies=6" target="_blank" rel="noopener">support forum</a>.&nbsp; In a parallel we also found <a href="http://shakenandstirredweb.com/theme/shaken-invoice-lite" target="_blank" rel="noopener">Shaken&#8217;s Invoice Lite theme</a>, a GPL distributed free theme which converts a site into an Invoice management tool.&nbsp; A pro version of the theme also exists which allows you to do more customisation and functionality.</p>
+
+
+
+<p>The theme does exactly what we need, however, being an Indian based company we needed a little bit functionality, namely the ability to configure Domestic and International clients.&nbsp; We need to be able to configure the Currencies, Tax and payment gateway for each set type of client.&nbsp; We have released our modifications under the same GPL license, and you can download the modified Shaken theme from our <a href="https://github.com/syllogic-consultants/shaken-invoice-lite" target="_blank" rel="noopener">GitHub repository</a> below.</p>
+<p>The post <a href="/invoicing-with-wordpress/">Invoicing with WordPress</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

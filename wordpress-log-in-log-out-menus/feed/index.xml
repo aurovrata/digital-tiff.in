@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: WordPress log in / log out menus	</title>
+	<atom:link href="/wordpress-log-in-log-out-menus/feed/" rel="self" type="application/rss+xml" />
+	<link>/wordpress-log-in-log-out-menus/</link>
+	<description>digital business transformation</description>
+	<lastBuildDate>Fri, 02 Feb 2024 12:22:27 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.7.1</generator>
+	<item>
+		<title>
+		By: Webguruji		</title>
+		<link>/wordpress-log-in-log-out-menus/#comment-6</link>
+
+		<dc:creator><![CDATA[Webguruji]]></dc:creator>
+		<pubDate>Wed, 15 Oct 2014 14:18:40 +0000</pubDate>
+		<guid isPermaLink="false">http://localhost/syllogic/wp/?p=90#comment-6</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/wordpress-log-in-log-out-menus/#comment-5&quot;&gt;esl activities&lt;/a&gt;.
+
+We use GreenGeeks.com, a link is provided in our footer...]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/wordpress-log-in-log-out-menus/#comment-5">esl activities</a>.</p>
+<p>We use GreenGeeks.com, a link is provided in our footer&#8230;</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: esl activities		</title>
+		<link>/wordpress-log-in-log-out-menus/#comment-5</link>
+
+		<dc:creator><![CDATA[esl activities]]></dc:creator>
+		<pubDate>Sun, 28 Sep 2014 16:57:52 +0000</pubDate>
+		<guid isPermaLink="false">http://localhost/syllogic/wp/?p=90#comment-5</guid>
+
+					<description><![CDATA[Great blog here! Also your website loads up fast! What web 
+host are you using? Can I get your affiliate link to your host?
+I wish my site loaded up as fast as ypurs lol]]></description>
+			<content:encoded><![CDATA[<p>Great blog here! Also your website loads up fast! What web<br />
+host are you using? Can I get your affiliate link to your host?<br />
+I wish my site loaded up as fast as ypurs lol</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Dynamic Menus &#124; Syllogic WordPress Development		</title>
+		<link>/wordpress-log-in-log-out-menus/#comment-4</link>
+
+		<dc:creator><![CDATA[Dynamic Menus &#124; Syllogic WordPress Development]]></dc:creator>
+		<pubDate>Fri, 26 Sep 2014 08:16:36 +0000</pubDate>
+		<guid isPermaLink="false">http://localhost/syllogic/wp/?p=90#comment-4</guid>
+
+					<description><![CDATA[[&#8230;] good tutorials to build custom menus for logged in/logged out users, see also our own post on the ajax login menu.  There are more complex approaches in order to customise the individual menu items using a the [&#8230;]]]></description>
+			<content:encoded><![CDATA[<p>[&#8230;] good tutorials to build custom menus for logged in/logged out users, see also our own post on the ajax login menu.  There are more complex approaches in order to customise the individual menu items using a the [&#8230;]</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

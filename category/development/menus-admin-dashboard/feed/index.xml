@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Admin Menus Archives - Tiffin Consulting</title>
+	<atom:link href="/category/development/menus-admin-dashboard/feed/" rel="self" type="application/rss+xml" />
+	<link>/category/development/menus-admin-dashboard/</link>
+	<description>digital business transformation</description>
+	<lastBuildDate>Fri, 02 Feb 2024 12:22:27 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.7.1</generator>
+
+<image>
+	<url>/wp-content/uploads/2024/02/cropped-tiffin-icon-1-150x150.png</url>
+	<title>Admin Menus Archives - Tiffin Consulting</title>
+	<link>/category/development/menus-admin-dashboard/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Managing Dashboard Menus, Sub-menus and Labels</title>
+		<link>/managing-dashboard-menus-sybmenus-and-labels/</link>
+		
+		<dc:creator><![CDATA[Aurovrata V.]]></dc:creator>
+		<pubDate>Wed, 14 May 2014 16:35:22 +0000</pubDate>
+				<category><![CDATA[Admin Dashboard]]></category>
+		<category><![CDATA[Admin Menus]]></category>
+		<guid isPermaLink="false">http://localhost/syllogic/wp/?p=107</guid>
+
+					<description><![CDATA[<p>A recent project saw adopt the Vertex Elegant Theme which comes with a pre-built set of custom posts to create diverse content.&#160; The theme has 3 built-in custom posts: The requirement from the client is to use the theme for an online magazine.&#160; They have a group of editors and authors working on the current [&#8230;]</p>
+<p>The post <a href="/managing-dashboard-menus-sybmenus-and-labels/">Managing Dashboard Menus, Sub-menus and Labels</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<p>A recent project saw adopt the <a href="http://elegantthemes.com/preview/Vertex/" target="_blank" rel="noopener">Vertex Elegant Theme</a> which comes with a pre-built set of custom posts to create diverse content.&nbsp; The theme has 3 built-in custom posts:</p>
+
+
+
+<ul class="wp-block-list">
+<li>Team Member</li>
+
+
+
+<li>Project</li>
+
+
+
+<li>Testimonials</li>
+</ul>
+
+
+
+<p>The requirement from the client is to use the theme for an online magazine.&nbsp; They have a group of editors and authors working on the current issue, with various sections to the magazine.</p>
+
+
+
+<p>So the challenge was 2-fold:</p>
+
+
+
+<ol class="wp-block-list">
+<li>Integrate the theme with as little modification as possible in order to keep the cost down</li>
+
+
+
+<li>build a back-end dashboard which brings clarity to the complex work of putting together an issue with several articles, several sections and various authors contributing to it.</li>
+</ol>
+
+
+
+<p>So working around the idea of each article being a post, each being in a given section of the magazine (a post category) and at the same time being able to connect to past issues with keywords (or post tags), we wanted to dissociate the current issue from past issues so as to confuse the editors and authors when editing posts.</p>
+
+
+
+<p>We also wanted to reuse a common set of keywords to connect old articles new ones.</p>
+
+
+
+<p>We achieved this by by reusing the main Posts that comes with the default installation of WordPress as the Past Issues of the magazine.</p>
+
+
+
+<p>We then changed the Project custom post of the Vertex theme to manage the current issue.</p>
+
+
+
+<p>And since we were using the registered users to display the editorial team details, we decided that we did not need the Team Member custom post that was automatically installed with the Vertex theme.</p>
+
+
+
+<p>All in all we need to do the following custom coding:</p>
+
+
+
+<ul class="wp-block-list">
+<li>rename default Posts to Past Issues,</li>
+
+
+
+<li>change the Category labels to Sections</li>
+
+
+
+<li>rename the custom post Project to Current Issue</li>
+
+
+
+<li>share the default Tags taxonomy between the Past Issues and the Current Issue</li>
+
+
+
+<li>rename the Tags label to Keywords</li>
+
+
+
+<li>and finally add a Keywords sub-menu to the Current Issue Menu.</li>
+</ul>
+
+
+
+<p>Here is how we went about it&#8230;</p>
+
+
+
+<h3 class="wp-block-heading">The WordPress challenge&#8230;.</h3>
+
+
+
+<p>The challenge above is relatively straightforward when one knows what to change, the real challenge is to actually to find <em>what to change</em>.</p>
+
+
+
+<p>This is what this post is all about as I try to drop little white stones on my exploration of the WordPress jungle so-to-speak.</p>
+
+
+
+<h4 class="wp-block-heading">Changing menus</h4>
+
+
+
+<p>My <a href="https://wordpress.stackexchange.com/questions/9211/changing-admin-menu-labels" target="_blank" rel="noopener">first clue</a> came from the answer provided to someone&#8217;s question along similar lines about changing menus in the dashboard.&nbsp; However, it wasn&#8217;t sufficient to give me an overview of the logic behind the answer.&nbsp; So I went about digging further, but the only things I could find where wordpress codex functions on <a href="http://codex.wordpress.org/Administration_Menus" target="_blank" rel="noopener">adding/removing menus</a> and nothing on changing the name.</p>
+
+
+
+<h4 class="wp-block-heading">Modifying the functions.php</h4>
+
+
+
+<pre class="wp-block-code"><code lang="php" class="language-php line-numbers">add_action( 'admin_menu', 'sy_change_admin_menu' );
+function sy_change_admin_menu() {
+    global $menu;
+    global $submenu;
+    //let-s remove the team-member post_type menu
+    remove_menu_page( 'edit.php?post_type=team-member' );
+    //let's add the tags sub-menu to the post_type projects
+    register_taxonomy_for_object_type( 'post_tag', 'project' );
+    add_submenu_page( 'edit.php?post_type=project', 'Keywords', 'Keywords', 'manage_categories', 'edit-tags.php?taxonomy=post_tag', '' );
+    //project post_type renamed to Current Issue
+    $menu[26][0] = 'Current Issue';
+       $submenu['edit.php?post_type=project'][5][0] = 'All Articles';
+    $submenu['edit.php?post_type=project'][15][0] = 'Sections'; // Change name for categories
+    //post post_type renamed to Past Issues
+    $menu[5][0] = 'Past Issues';
+       $submenu['edit.php'][5][0] = 'All Articles';
+    $submenu['edit.php'][15][0] = 'Sections'; // Change name for categories
+    $submenu['edit.php'][16][0] = 'Keywords'; // Change name for tags
+    echo '';
+}</code></pre>
+
+
+
+<p>The codex has a section the admin menus hooks which is what the above answer is using, but I was intrigued about the reference to the the <code>global $menu</code> and <code>$submenu</code> objects.&nbsp; So I devised a small function to explore the structure of these objects as an empirical guide to modifying the dashboard menu.</p>
+<p>The post <a href="/managing-dashboard-menus-sybmenus-and-labels/">Managing Dashboard Menus, Sub-menus and Labels</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

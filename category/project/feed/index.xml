@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Project Management Archives - Tiffin Consulting</title>
+	<atom:link href="/category/project/feed/" rel="self" type="application/rss+xml" />
+	<link>/category/project/</link>
+	<description>digital business transformation</description>
+	<lastBuildDate>Sat, 10 Feb 2024 08:42:23 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.7.1</generator>
+
+<image>
+	<url>/wp-content/uploads/2024/02/cropped-tiffin-icon-1-150x150.png</url>
+	<title>Project Management Archives - Tiffin Consulting</title>
+	<link>/category/project/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Integrating WP Project Management plugin with Gmail Tasks</title>
+		<link>/integrating-wp-project-management-plugin-with-gmail-tasks/</link>
+					<comments>/integrating-wp-project-management-plugin-with-gmail-tasks/#comments</comments>
+		
+		<dc:creator><![CDATA[Aurovrata V.]]></dc:creator>
+		<pubDate>Sat, 03 May 2014 15:22:10 +0000</pubDate>
+				<category><![CDATA[Content Management]]></category>
+		<category><![CDATA[Project Management]]></category>
+		<guid isPermaLink="false">http://localhost/syllogic/wp/?p=43</guid>
+
+					<description><![CDATA[<p>One of our favourite Project Management plugins for WordPress is the excellent WP Project Management by Tareq Hasan.&#160; The free version of the plugin gives the user a reasonable start and there are some neat commercial addons as well as a pro version of the plugin which offer more functionality. However, as a small developer [&#8230;]</p>
+<p>The post <a href="/integrating-wp-project-management-plugin-with-gmail-tasks/">Integrating WP Project Management plugin with Gmail Tasks</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<p>One of our favourite Project Management plugins for WordPress is the excellent <a href="http://wordpress.org/plugins/wedevs-project-manager/" target="_blank" rel="noopener">WP Project Management</a> by Tareq Hasan.&nbsp; The free version of the plugin gives the user a reasonable start and there are some neat commercial addons as well as a pro version of the plugin which offer more functionality.</p>
+
+
+
+<p>However, as a small developer team we have also been looking at improving its functionality within our working environment, and if, like us, you have a Google hosted email service for your domain, and rely on Google Drive for sharing documents then you will find our little integration with the <a href="https://www.gmail.com/mail/help/tasks/" target="_blank" rel="noopener">Google Tasks</a> quite handy.</p>
+
+
+
+<p>Our Google Apps Script integrates into your Drive account, scanning your Gmail to look out for mails sent by the WP Project plugin when a new task or comment has been assigned to you.&nbsp; The mail is scanned for the link to your worpress dashboard where you can view the details of the task or the comment.&nbsp; The link is embeded (as a goo.ly shortened URL) into your Task title, allowing you to quickly see your latest tasks and loading them up in your browser with a single click.</p>
+
+
+
+<p>Here is what you need to do to get it to work&#8230;</p>
+
+
+
+<details class="wp-block-details is-layout-flow wp-block-details-is-layout-flow"><summary>Get the Google Script</summary>
+<figure class="wp-block-image alignleft size-full is-resized"><a href="https://docs.google.com/spreadsheets/d/177tYW11jktlD9EaL3Cbea-4VRpUH_ush5BzTUNF3Jyk/edit?usp=sharing"><img fetchpriority="high" decoding="async" width="360" height="329" src="/wp-content/uploads/2024/02/google-docs-trans.png" alt="" class="wp-image-371" style="width:105px;height:auto" srcset="/wp-content/uploads/2024/02/google-docs-trans.png 360w, /wp-content/uploads/2024/02/google-docs-trans-300x274.png 300w" sizes="(max-width: 360px) 100vw, 360px" /></a></figure>
+
+
+
+<p>Copy the following spreadsheet (Open the linked Google Spreadsheet, and go to the menu File->Make Copy in Google Drive). Once you have copy, you can save it (menu File->Move to Folder) under a specific folder in your Google Drive (Some place safe where it unlikely to get deleted by mistake). You can also rename it if you want.</p>
+</details>
+
+
+
+<details class="wp-block-details is-layout-flow wp-block-details-is-layout-flow"><summary>Open the Script Editor</summary>
+<p>Open the new copy and select the menu Tools->Script Editor, “Copy of Gmail Task Integration” and note the following lines at the top of the Code.gs script file:</p>
+
+
+
+<pre class="wp-block-code"><code lang="typescript" class="language-typescript">TASKLIST = “Projects”;
+TASKPROJECT = “Others”;
+LABEL_PENDING = “Projects/Tasks”;
+LABEL_DONE = “Projects/Tasks/Done”;</code></pre>
+
+
+
+<p>The first line is the name to the task list under which your Google tasks links will be filed.</p>
+
+
+
+<p>The send line is the Project name in case it it not defined in the email (this is rarely the case…).</p>
+
+
+
+<p>The third line is the gmail label under which the email will archived when they reach your inbox, and finally the fourth line is the gmail label to which the script will move the mails that have been converted into tasks.</p>
+
+
+
+<p>Feel free to change any of the above.</p>
+</details>
+
+
+
+<details class="wp-block-details is-layout-flow wp-block-details-is-layout-flow"><summary>Accept Google API terms</summary>
+<p>There is a lot of freebies given by Google to use their services, but usually restrained with some quotas.&nbsp; You need to accept these for the services uses in this script, namely the Tasks service and the URL Shortener service.</p>
+
+
+
+<p>In the Script Editor that you opened in the previous step, select the menu Resources -&gt; Advance Google Services Switch and verify that the Tasks &amp; URL Shortener serivces are ‘ON’ in the table that opens.</p>
+
+
+
+<p>At the bottom of the table open the link “Google Developer Console”, (you may be required to accept the terms of use of Google Apps Script in general if this is the first time you use it).  Then find the Tasks API in the list make sure it is ‘ON’, if it ‘OFF’, click on the ‘OFF’ button to enable it, agree to all the terms. Repeat this for the URL Shortener API.</p>
+
+
+
+<div class="wp-block-group has-base-color has-contrast-background-color has-text-color has-background has-link-color wp-elements-a697cc9a72dd346736c2fe3f2f05bcd9 has-global-padding is-layout-constrained wp-container-core-group-is-layout-1 wp-block-group-is-layout-constrained" style="border-radius:5px;padding-top:var(--wp--preset--spacing--10);padding-right:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--10);padding-left:var(--wp--preset--spacing--20)">
+<p>Note: you will now required to register a project with Google and setup a credit ard payment to access the APIs.  Google still gives free access to a limited API calls each  month, but requires you to setup a payment facility.</p>
+</div>
+</details>
+
+
+
+<details class="wp-block-details is-layout-flow wp-block-details-is-layout-flow"><summary>Create a new version</summary>
+<p>Back to Script Editor screen, slect Menu File->Manage Versions and save a new version called “Mail Task Filter”</p>
+</details>
+
+
+
+<details class="wp-block-details is-layout-flow wp-block-details-is-layout-flow"><summary>Set Triggers for the script</summary>
+<p>Set up the triggers which will fire the script at regular intervals to check for new mails. In the Script Editor menu select Resources->Current Triggers</p>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" width="829" height="325" src="/wp-content/uploads/2024/02/Screen-Shot-2014-05-03-at-12.49.56-PM.png" alt="" class="wp-image-372" srcset="/wp-content/uploads/2024/02/Screen-Shot-2014-05-03-at-12.49.56-PM.png 829w, /wp-content/uploads/2024/02/Screen-Shot-2014-05-03-at-12.49.56-PM-300x118.png 300w" sizes="(max-width: 829px) 100vw, 829px" /></figure>
+
+
+
+<p>We set it up to run thrice-a-day, early morning in case we’ve been working late into the night and want our office colleagues to see our new tasks when they get into office.</p>
+
+
+
+<p>Once at lunch time for morning session work, and finally one at the end of the day.&nbsp; Again, it’s quite self-explanatory so feel free to adjust it as per your needs.</p>
+</details>
+
+
+
+<details class="wp-block-details is-layout-flow wp-block-details-is-layout-flow"><summary>Create Gmail filters &amp; labels</summary>
+<p>Create filter &amp; labels in your Gmail account.  If you have changed the Script constants above in the script file Code.gs in the section “Open the Script Editor”, then make sure you use those values.</p>
+
+
+
+<p>Create a labels:</p>
+
+
+
+<ul class="wp-block-list">
+<li>“Projects”</li>
+
+
+
+<li>“Tasks” nested under Projects</li>
+
+
+
+<li>“Done” nested under Tasks</li>
+</ul>
+
+
+
+<p>Create a new filter:</p>
+
+
+
+<pre class="wp-block-code"><code class="">from: &lt;the email address from which your wordpress servers notifies you of new tasks and comments>
+
+Subject: [&lt;title of your wordpress site>]
+
+Check box: Skip Inbox (archive it)
+
+Check box: Apply label “Projects/Tasks”</code></pre>
+
+
+
+<p>save the new filter.</p>
+</details>
+
+
+
+<details class="wp-block-details is-layout-flow wp-block-details-is-layout-flow"><summary>Test it!</summary>
+<p>Send yourself a task from the WP Project Manager plugin… In the Script Editor, Run the project, if you have any errors, leave a comment below.</p>
+</details>
+
+
+
+<details class="wp-block-details is-layout-flow wp-block-details-is-layout-flow"><summary>Further reading</summary>
+<p><div id="page" class="hfeed site"><div id="main" class="site-main"><div id="primary" class="content-area"><div id="content" class="site-content" role="main"><article id="post-43" class="post-43 post type-post status-publish format-standard has-post-thumbnail hentry category-cms category-project"><div class="entry-content"><div class="creativ-shortcode creativ-shortcode-accordion"><div class="creativ-shortcode creativ-shortcode-toggle creativ-shortcode-toggle-active"><div class="creativ-shortcode creativ-shortcode-toggle-content"><ul><li>This work was initially inspired from an <a href="http://pipetree.com/qmacro/blog/2011/10/automated-email-to-task-mechanism-with-google-apps-script/" target="_blank" rel="noopener">online tutorial</a> on DJ Adam’s blog.</li><li><del>I initially wanted to create parent task for each Projects, and  each time a new task or comment is filed under that Project, a child  tasks would be created using the indent functionality of <a href="https://developers.google.com/google-apps/tasks/v1/reference/tasks" target="_blank" rel="noopener">Google Tasks</a>,  but unfortunately I didn’t manage to get it to work, the Google Script  API is still in beta mode.  If you have an idea how to do this, maybe  you can respond to my question on <a href="https://stackoverflow.com/questions/23431545/how-to-create-a-child-task-in-google-apps-script-tasks-api" target="_blank" rel="noopener">Stack Overflow</a>.</del> I have actually managed to figure this one out and the code has been updated in the above links.</li><li>Google Tasks allows tasks to be created from an email, and the email  then appears as an attachment and link in the newly created tasks.   This was a neat functionality that I tried to reproduce without any  success until I realised that the API only exposes the <em>read only</em>  part of this functionality.  So this may change in the future and that  would a nice update to this script.  You will find commented out blocks  of code in the script where I attempted this.  As a <a href="https://stackoverflow.com/questions/16932217/link-email-to-google-task/23433219#23433219" target="_blank" rel="noopener">work around</a> I inserted the shortened url to the task in the Worpress dashboard within the title of the tasks.</li><li>I found a bug in the Google Script API.  Email messages are  encapsulated by the GmailMessage class.  A method getBody() allows to  retrieve the html version of the mail body.  However, the method  corrupts URL embedded within the body text by replacing ‘&amp;’ signs  with ‘&amp;amp;’.  I filed the <a href="https://code.google.com/p/google-apps-script-issues/issues/detail?id=3975&amp;thanks=3975&amp;ts=1399095234" target="_blank" rel="noopener">bug in the issue tracker,</a> feel free to vote for it.</li></ul></div></div></div></div></article></div></div></div></div></p>
+</details>
+<p>The post <a href="/integrating-wp-project-management-plugin-with-gmail-tasks/">Integrating WP Project Management plugin with Gmail Tasks</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/integrating-wp-project-management-plugin-with-gmail-tasks/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

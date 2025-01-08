@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>fight spam Archives - Tiffin Consulting</title>
+	<atom:link href="/tag/fight-spam/feed/" rel="self" type="application/rss+xml" />
+	<link>/tag/fight-spam/</link>
+	<description>digital business transformation</description>
+	<lastBuildDate>Fri, 02 Feb 2024 12:22:27 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.7.1</generator>
+
+<image>
+	<url>/wp-content/uploads/2024/02/cropped-tiffin-icon-1-150x150.png</url>
+	<title>fight spam Archives - Tiffin Consulting</title>
+	<link>/tag/fight-spam/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>How to Disable Comments on WordPress Media Attachments</title>
+		<link>/how-to-disable-comments-on-wordpress-media-attachments/</link>
+		
+		<dc:creator><![CDATA[Aurovrata V.]]></dc:creator>
+		<pubDate>Thu, 22 Jan 2015 13:34:21 +0000</pubDate>
+				<category><![CDATA[Content Management]]></category>
+		<category><![CDATA[fight spam]]></category>
+		<guid isPermaLink="false">http://localhost/syllogic/wp/?p=295</guid>
+
+					<description><![CDATA[<p>A lovely little piece of code to disable comments on Media Attachment pages which is a source of irritating SPAM&#8230; Just paste the following in your functions.php file. How to Disable Comments on WordPress Media Attachments.</p>
+<p>The post <a href="/how-to-disable-comments-on-wordpress-media-attachments/">How to Disable Comments on WordPress Media Attachments</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<p>A lovely little piece of code to disable comments on Media Attachment pages which is a source of irritating SPAM&#8230;</p>
+
+
+
+<p>Just paste the following in your <code><mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-contrast-2-color">functions.php</mark></code> file.</p>
+
+
+
+<pre class="wp-block-code"><code lang="php" class="language-php line-numbers">function filter_media_comment_status( $open, $post_id ) {
+	$post = get_post( $post_id );
+	if( $post-&gt;post_type == 'attachment' ) {
+		return false;
+	}
+	return $open;
+}
+add_filter( 'comments_open', 'filter_media_comment_status', 10 , 2 );
+</code></pre>
+
+
+
+<p><a href="http://www.wpbeginner.com/wp-tutorials/how-to-disable-comments-on-wordpress-media-attachments/">How to Disable Comments on WordPress Media Attachments</a>.</p>
+<p>The post <a href="/how-to-disable-comments-on-wordpress-media-attachments/">How to Disable Comments on WordPress Media Attachments</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

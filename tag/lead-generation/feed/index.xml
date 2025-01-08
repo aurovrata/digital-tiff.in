@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Lead generation Archives - Tiffin Consulting</title>
+	<atom:link href="/tag/lead-generation/feed/" rel="self" type="application/rss+xml" />
+	<link>/tag/lead-generation/</link>
+	<description>digital business transformation</description>
+	<lastBuildDate>Tue, 07 Jan 2025 12:06:14 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.7.1</generator>
+
+<image>
+	<url>/wp-content/uploads/2024/02/cropped-tiffin-icon-1-150x150.png</url>
+	<title>Lead generation Archives - Tiffin Consulting</title>
+	<link>/tag/lead-generation/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Mitigating Performance Impact from Personalisation</title>
+		<link>/mitigating-performance-impact-from-personalisation/</link>
+		
+		<dc:creator><![CDATA[Aurovrata V.]]></dc:creator>
+		<pubDate>Fri, 02 Feb 2024 04:49:14 +0000</pubDate>
+				<category><![CDATA[Development]]></category>
+		<category><![CDATA[Lead generation]]></category>
+		<guid isPermaLink="false">/?p=421</guid>
+
+					<description><![CDATA[<p>Caching web pages, especially using a Content Development Network is an important step towards a robust and scalable solution.  It is possible to cache multiple versions of a page. </p>
+<p>The post <a href="/mitigating-performance-impact-from-personalisation/">Mitigating Performance Impact from Personalisation</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow">
+<p>There are only two hard things in Computer Science: cache invalidation and naming things.</p>
+<cite><a href="https://www.karlton.org/2017/12/naming-things-hard/">Phil Karlton</a></cite></blockquote>
+
+
+
+<div class="wp-block-group has-border-color has-base-background-color has-background has-global-padding is-content-justification-center is-layout-constrained wp-container-core-group-is-layout-2 wp-block-group-is-layout-constrained" style="border-color:#3c4142;border-width:1px;border-radius:5px;margin-top:var(--wp--preset--spacing--20);margin-bottom:0;padding-top:var(--wp--preset--spacing--10);padding-right:var(--wp--preset--spacing--10);padding-bottom:var(--wp--preset--spacing--10);padding-left:var(--wp--preset--spacing--10)">
+<div class="wp-block-group alignwide is-layout-flow wp-block-group-is-layout-flow">
+<p class="has-text-align-left"><em>This is the 4th post in a series I started while consulting at rtCamp back in 2022.  The <a href="https://rtcamp.com/blog/series/personalization/" data-type="link" data-id="https://rtcamp.com/blog/series/personalization/">series of posts</a> explored personalisation of page content in order to optimise the conversion rate of lead-generation on a business website</em></p>
+</div>
+</div>
+
+
+
+<p>A multi-brand, multi-site enterprise website may have hundreds of landing pages and possibly thousands of posts and other single content pages.  In order to ensure page response time performance is maintained when scaling-up with growing number of visitors, modern CMS frameworks like WordPress leverage page caching technology along with CDNs in order to reduce server-loads and ensure good response performance.  However, cached content is pre-rendered static HTML, so how can performance and personalisation coexist?</p>
+
+
+
+<h2 class="wp-block-heading">Performance impact of personalisation</h2>
+
+
+
+<p>As a general rule of thumb, the following hierarchy of content requests is followed in order to assess the performance impact. At the top, and least impactful on the performance, are requests that are served using cached content.  This can be either caching on the client-side in the browser itself, or on the server-side. Cookies play an important role in order to store session states and access credentials and therefore prevent the need to hit the server for such information.  At the next level is server rendered requests which requires accessing resources on the server such as the database.  Such requests are less performant than those served from cached content. Finally the least performant are requests that require API calls to third party services on external servers.</p>
+
+
+
+<figure class="wp-block-image alignleft size-full is-resized"><img fetchpriority="high" decoding="async" width="679" height="405" src="/wp-content/uploads/2024/02/cache-pyramid.png" alt="" class="wp-image-422" style="width:552px;height:auto" srcset="/wp-content/uploads/2024/02/cache-pyramid.png 679w, /wp-content/uploads/2024/02/cache-pyramid-300x179.png 300w" sizes="(max-width: 679px) 100vw, 679px" /><figcaption class="wp-element-caption">Rule of thumb for request performance as a function of resource access.</figcaption></figure>
+
+
+
+<p>Personalised content based on cookie preferences, such as the preferred theme for reading content on a site (some website offer a dark-mode theme), then the personalisation is already stored in cache and does not require accessing any server resources.</p>
+
+
+
+<p>Personalisation based on first-party data stored on the server will, in most cases, require the content to be rendered on the server and this will impact the performance of the page response time.&nbsp; In addition, if the conditional data is to be fetched from an external third-party service such as a CDP using an API call, this further impacts the performance and in such cases require additional expensive server resources in order to scale up with increased traffic.</p>
+
+
+
+<h2 class="wp-block-heading">Caching personalised page variants</h2>
+
+
+
+<p>One way to mitigate the impact on performance is to restrict personalisation variations on landing pages to less than a dozen or so and cache all the variants.  This would be feasible if the personalisation is based on segments.  A user’s personas/segments could then be stored/updated as a cookie and the required request served from the cached page variant for that segment.</p>
+
+
+
+<h3 class="wp-block-heading">How do cache page variants work?</h3>
+
+
+
+<p>A caching server or sometimes also known as a <em>caching engine</em>, is a set of data resources that are stored in RAM memory in order to speed up access to this data and lower the cost of accessing these resources at scale.&nbsp; Supporting the equivalent scaling with traditional server resources such as databases, hard disks and CPU would require considerably more resources at a higher cost without matching the latency periods of RAM access.</p>
+
+
+
+<p>These cached resources are generally transient, meaning that they may be deleted and replaced by more up-to-date versions of the data.&nbsp; The control of cached data is determined by <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control">Cache-Control header</a> directives.&nbsp;&nbsp;</p>
+
+
+
+<p>The HTTP Caching specification introduced the <a href="https://httpwg.org/specs/rfc7231.html#header.vary">Vary header</a> as a mechanism for <a href="https://httpwg.org/specs/rfc7231.html#content.negotiation">content negotiation</a> when making page requests to a server.  The Vary header can take as a value one or more header parameter names, for example,</p>
+
+
+
+<pre class="wp-block-code"><code class="">Vary: Accept-Encoding</code></pre>
+
+
+
+<p>and the Accept-Encoding header request made from a browser that can handle compressed responses might be,</p>
+
+
+
+<pre class="wp-block-code"><code class="">Accept-Encoding: compress, gzip</code></pre>
+
+
+
+<p>and the server may respond with gzip’ed compressed content as opposed to plain uncompressed HTML text.&nbsp; This is an example of content negotiation for which the Vary header was initially specified for.</p>
+
+
+
+<p>This is now being leveraged to distinguish requests with content variation such as personalised pages.&nbsp; Let’s look at how the Vary header is handled by various hosting providers in order to handle multiple variations of a personalised page.</p>
+
+
+
+<h3 class="wp-block-heading">WordPress VIP cache</h3>
+
+
+
+<p>The WordPress VIP hosting network provides an interface <a href="https://docs.wpvip.com/technical-references/caching/the-vip-cache-personalization-api/">API</a> for developers to flag page variations which are then stored on the VIP CDN caching network with a Vary header.  The <a href="https://github.com/Automattic/vip-go-mu-plugins/tree/develop/cache">interface</a> provides a Vary_Cache class,</p>
+
+
+
+<pre class="wp-block-code"><code lang="php" class="language-php">use Automattic\VIP\Cache\Vary_Cache;</code></pre>
+
+
+
+<p>which provides functionality to register different segments of users.  For example, if a business has two types of customers, say dealers (B2B) and retail (B2C), and want to personalise a landing page depending on the segment to which a user belongs to.  The first step would be to register a customer group,</p>
+
+
+
+<pre class="wp-block-code"><code lang="php" class="language-php">Vary_Cache::register_group( 'customer' );</code></pre>
+
+
+
+<p>The API handles these variations with a custom header and a cookie on the client browser which will store the value ‘b2b’ for dealer clients and ‘b2c’ for retail clients.&nbsp; In addition, instruction to the caching engine is handled automatically with a Vary header.</p>
+
+
+
+<p>Once a visitor is identified as a client, the API can be used to set that user’s appropriate segment,</p>
+
+
+
+<pre class="wp-block-code"><code lang="php" class="language-php">//user identified as a dealer.
+Vary_Cache::set_group_for_user( 'customer', 'b2b' );</code></pre>
+
+
+
+<p>Finally, when a previously identified client makes a request to a page, the API exposes the client’s segment for conditional content personalization, which can send a response with the appropriate content variation for that segment,</p>
+
+
+
+<pre class="wp-block-code"><code lang="php" class="language-php">if(Vary_Cache::is_user_in_group_segment( 'customer', 'b2b' )){
+  //display content for dealer clients
+}else if(Vary_Cache::is_user_in_group_segment( 'customer', 'b2c' )){
+  //display content for retail clients
+}else{ 
+  //display content for other visitors
+}</code></pre>
+
+
+
+<p>As the API handles the cache Vary header automatically, the VIP CDN will store the response such that subsequent requests made by users will be served the correct page version from the cache.The segment personalisation is handled with a cookie stored on the client browser, however, for sensitive conditional data that should not be shown to other segment groups, the API has <a href="https://docs.wpvip.com/technical-references/caching/the-vip-cache-personalization-api/#h-encrypted-audience-segmentation">functionality to encrypt</a> the identification string.</p>
+
+
+
+<h3 class="wp-block-heading">WP Engine cache</h3>
+
+
+
+<p><a href="https://wpengine.com/">WPEngine</a> makes use of the Vary header with its own custom X-WPENGINE-SEGMENT header which gets populated with the wpe-us segment cookie on the client browser.  Therefore, when a user is identified as belonging to a specific segment, the cookie is set,</p>
+
+
+
+<pre class="wp-block-code"><code lang="php" class="language-php">setcookie('wpe-us', 'customer-b2b'); //customer is a dealer</code></pre>
+
+
+
+<p>The cookie value is passed in a request to the server as the X-WPENGINE-SEGMENT header, therefore pages that are personalised can set conditional personalised content</p>
+
+
+
+<pre class="wp-block-code"><code lang="php" class="language-php">//flag this page as having multiple versions to the caching engine.
+header('Vary: X-WPENGINE-SEGMENT'); 
+$cookie_value = $_SERVER["HTTP_X_WPENGINE_SEGMENT"];
+if ($cookie_value == 'customer-b2b') {
+    //dealer content
+} else if ($cookie_value == 'customer-b2c') {
+    //retail content
+} else {
+    //default content
+}</code></pre>
+
+
+
+<p>Setting the Vary: X-WPENGINE-SEGMENT header at the start of the page will ensure the caching engine stores this page as a variation based on the value of the cookie in the browser, and subsequent requests will be served from the cache.  A plugin is <a href="https://github.com/nateinaction/segment-cache-for-wp-engine">available</a> to leverage WPEngine segment caching with the help of shortcodes.</p>
+
+
+
+<h3 class="wp-block-heading">Pantheon cache</h3>
+
+
+
+<p><a href="https://pantheon.io/">Pantheon</a> hosting service uses a special cookie template to distinguish between different versions of a page.  Any pages that setup a cookie named with the prefix <a href="https://pantheon.io/docs/caching-advanced-topics#using-styxkey">STYXKEY</a> is flagged by Pantheon’s global CDN caching engine with a Vary header,</p>
+
+
+
+<pre class="wp-block-code"><code class="">Vary: Cookie</code></pre>
+
+
+
+<p>Following our previous example setting a cookie,</p>
+
+
+
+<pre class="wp-block-code"><code class="">set_cookie('STYXKEY_customer', 'b2b');&nbsp;</code></pre>
+
+
+
+<p>for a personalised page will <a href="https://pantheon.io/docs/cookies#cache-varying-cookies">cache</a> the page as content for dealer customers.&nbsp;</p>
+
+
+
+<h2 class="wp-block-heading">A note of caution</h2>
+
+
+
+<p>Content caching is an important tool in optimising the performance of a website in order to ensure it can scale up with higher traffic and page requests.&nbsp; However, a page cache is still a limited resource, it is therefore important to limit the amount of cache memory used by reducing the number of pages cached, and hence the number of variations of pages by limiting the number of user segments as well as reducing the number of pages that are personalised.</p>
+
+
+
+<h2 class="wp-block-heading">Conclusion</h2>
+
+
+
+<p>Personalising page content on WordPress is easy, but requires some precautions in order to make sure these pages scale up.&nbsp; Caching this personalised content as different versions of the same page is readily feasible&nbsp; with hosting services such as WordPress VIP, WPEngine and Patheon as well as others but requires planning in order to ensure the cache server is not overloaded with too many page versions.</p>
+<p>The post <a href="/mitigating-performance-impact-from-personalisation/">Mitigating Performance Impact from Personalisation</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Content Creation Tools For Lead Generation Business.</title>
+		<link>/content-creation-tools-for-lead-generation-business/</link>
+		
+		<dc:creator><![CDATA[Aurovrata V.]]></dc:creator>
+		<pubDate>Fri, 02 Feb 2024 03:31:18 +0000</pubDate>
+				<category><![CDATA[Digital Business]]></category>
+		<category><![CDATA[Lead generation]]></category>
+		<guid isPermaLink="false">/?p=414</guid>
+
+					<description><![CDATA[<p>A brief review of some available tools for collaborative content creation and management.</p>
+<p>The post <a href="/content-creation-tools-for-lead-generation-business/">Content Creation Tools For Lead Generation Business.</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow">
+<p>Alone we can do so little, together we can do so much!</p>
+<cite><a href="https://en.wikipedia.org/wiki/Helen_Keller">Helen Keller</a></cite></blockquote>
+
+
+
+<div class="wp-block-group has-border-color has-base-background-color has-background has-global-padding is-content-justification-center is-layout-constrained wp-container-core-group-is-layout-4 wp-block-group-is-layout-constrained" style="border-color:#3c4142;border-width:1px;border-radius:5px;margin-top:var(--wp--preset--spacing--20);margin-bottom:0;padding-top:var(--wp--preset--spacing--10);padding-right:var(--wp--preset--spacing--10);padding-bottom:var(--wp--preset--spacing--10);padding-left:var(--wp--preset--spacing--10)">
+<div class="wp-block-group alignwide is-layout-flow wp-block-group-is-layout-flow">
+<p class="has-text-align-left"><em><em>This is a post in a </em><a href="/tag/lead-generation/"><em>series of posts</em></a><em> that explore digital technologies that can be leveraged to amplify a business website&#8217;s capacity to generate leads.  This series builds up the rationale for a business website to undergo its digital transformation in order to provide a user experience more conducive to generate a lead.</em></em></p>
+</div>
+</div>
+
+
+
+<p>Content Management (CMS) platforms such as WordPress have evolved to allow marketing teams to collaborate efficiently with their content writers, media designers and business data analysts, ensuring each team can contribute their expertise in a concerted effort.  The WordPress ecosystem is today the leading CMS platform because it has allowed widely different companies to design and publish their content as per their business specificities. At the core, WordPress content creation has been streamlined to give you access to a single content editor dashboard integrated with a variety of services to allow you to focus on the creation of your message, combining text and media in a well-organised process.</p>
+
+
+
+<h2 class="wp-block-heading">The Gutenberg Block Editor</h2>
+
+
+
+<p>For example, the creation of a landing page for your online campaign can leverage the Gutenberg block editor, which allows you to compose a page made of a grid of block content.  Each block can be a variety of content running from simple text to headings, images, button, or various other content listings from your own website.</p>
+
+
+
+<h3 class="wp-block-heading">Conditional Block Content</h3>
+
+
+
+<p>In addition, each block’s content can be personalised, and although there is a multitude of plugins in the WordPress ecosystem that offers various functionality and out-of-the-box integration with related services, such as <a href="https://logichop.com/get-started/">LogicHop</a> with lead-generating business sites as it is particularly well-suited to personalising content along with out-of-the-box lead scoring functionality.  In addition it has been designed to be easily extensible for custom data integration.  For more suitable conditional content plugins, see this <a href="https://rtcamp.com/blog/personalizing-pages-on-wordpress/" data-type="link" data-id="https://rtcamp.com/blog/personalizing-pages-on-wordpress/">review</a>  by rtCamp WordPress agency.</p>
+
+
+
+<h2 class="wp-block-heading">Digital Asset Management</h2>
+
+
+
+<p>Digital media content is an important part of content creation and as such its organisation is important in the context of creating structured content.  A Digital Asset Manager (DAM) is a tool that allows your creative team to organise media content along the same structure as your pages and articles.  This allows your page creators to easily find media that is related to the topic at hand.  DAMs vary in their functionality, from integrating with existing design tools to tracking and analysing media content usage such as <a href="https://www.aprimo.com/">Aprimo</a>, a <a href="https://www.prnewswire.com/news-releases/aprimo-named-a-leader-in-dam-for-customer-experience-by-independent-research-firm-301483832.html">leader</a> in this segment.  However, there are multiple plugins that can fulfil initial requirements for media content management such the simple but excellent <a href="https://wordpress.org/plugins/media-library-assistant/">Media Library Assistant</a>.</p>
+
+
+
+<h2 class="wp-block-heading">Collaborative Content Creation</h2>
+
+
+
+<p>Finally, it is important for content creation teams to effectively collaborate on, especially on a landing page where content writers, creative media teams, and marketing conditions need to be orchestrated in order to fulfil a cohesive business communication strategy.  Collaborative editing is complex, and although the Gutenberg editor is yet to offer such functionality (the editor currently locks a page when being edited by a user), there are existing solutions that allow for sequential collaboration on a page.  <a href="https://www.multicollab.com/">Multicolab</a> is a plugin that enables collaborative content creation by enabling annotative functionality within the WordPress dashboard, allowing authors to add comments to specific posts and pages in the editor and tasked to specific users who in turn can resolve them to mark progress.</p>
+<p>The post <a href="/content-creation-tools-for-lead-generation-business/">Content Creation Tools For Lead Generation Business.</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Personalising Visitors Journeys On Your Website.</title>
+		<link>/personalising-visitors-journeys-on-your-website/</link>
+		
+		<dc:creator><![CDATA[Aurovrata V.]]></dc:creator>
+		<pubDate>Fri, 02 Feb 2024 03:20:01 +0000</pubDate>
+				<category><![CDATA[Digital Business]]></category>
+		<category><![CDATA[Lead generation]]></category>
+		<guid isPermaLink="false">/?p=403</guid>
+
+					<description><![CDATA[<p>How to enable dynamic  page content that adapts to your returning users.</p>
+<p>The post <a href="/personalising-visitors-journeys-on-your-website/">Personalising Visitors Journeys On Your Website.</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow">
+<p>[&#8230;] you go into a bar and sit down, and the bartender puts a whiskey in front of you without having to ask what you want.</p>
+<cite><a href="https://en.wikipedia.org/wiki/Jeff_Bezos">Jeff Bezos</a>, Amazon.com CEO</cite></blockquote>
+
+
+
+<div class="wp-block-group has-border-color has-base-background-color has-background has-global-padding is-content-justification-center is-layout-constrained wp-container-core-group-is-layout-6 wp-block-group-is-layout-constrained" style="border-color:#3c4142;border-width:1px;border-radius:5px;margin-top:var(--wp--preset--spacing--20);margin-bottom:0;padding-top:var(--wp--preset--spacing--10);padding-right:var(--wp--preset--spacing--10);padding-bottom:var(--wp--preset--spacing--10);padding-left:var(--wp--preset--spacing--10)">
+<div class="wp-block-group alignwide is-layout-flow wp-block-group-is-layout-flow">
+<p class="has-text-align-left"><em><em>This is a post in a </em><a href="/tag/lead-generation/"><em>series of posts</em></a><em> that explore digital technologies that can be leveraged to amplify a business website&#8217;s capacity to generate leads.  This series builds up the rationale for a business website to undergo its digital transformation in order to provide a user experience more conducive to generate a lead.</em>y.</em></p>
+</div>
+</div>
+
+
+
+<p>A business website can be digitally transformed to provide a unique experience for each visitor, not only for each visit, but also for visits by the same user under different circumstances.&nbsp; To achieve this level of personalisation it is crucial to collect a lot of data about users.&nbsp; It does not need to be data that can personally identify the user.&nbsp; A lot can be achieved with robust anonymous data that can reveal trends in behaviour and preferences that correlate directly with your target audience.&nbsp; Robust quality data is only available through robust data collection pipelines that are transparent to your business and not dependent on data aggregators.</p>
+
+
+
+<p>Data from online tracking is categorised according to the data collecting party: 1st party data is collected by your own server and its connected services, it is a consequence of the users direct interaction with your online business or other customer touchpoints; 2nd party data is collected by your partner services, it is their 1st party data that you have agreed to share; 3rd party data is collected by data aggregators that collect datasets across a much wider audience, one which your users are only a subset, revealing broader trends which may be less relevant.&nbsp; There is an additional <a href="https://www.forrester.com/blogs/straight-from-the-source-collecting-zero-party-data-from-customers/">zero-party dataset</a>, made of information that is generated by and belongs to the user, and is willingly shared to identify with your brand.</p>
+
+
+
+<p>For a long time, many businesses have relied on 3rd party data to market their services and products to their target audience through the use of 3rd party cookies.&nbsp; However, with the <a href="https://www.forbes.com/sites/danielnewman/2021/12/08/the-move-away-from-third-party-data-is-imminent-are-you-ready/?sh=615304c82093">phasing out</a> of these cookies under increasing privacy concerns and user data-sharing fatigue, it is becoming increasingly important for businesses to <a href="https://www.gartner.com/en/marketing/insights/articles/marketers-are-under-a-digital-ad-siege-and-must-now-convince-customers-to-share-data">collect and manage their own data</a> each time a user visits and interacts with their website.&nbsp; Much of this data remains anonymous, but if it is systematically collected and organised such as in a Customer Data Platform (CDP) and analysed using smart algorithms, which increasingly makes use of Machine Learning Artificial Intelligence (AI), fine-grained segmentation of users can be leveraged to personalise the content a user sees on your website.&nbsp;</p>
+
+
+
+<p>In addition, if your business site identifies customers and collects additional data in a Customer Relation Manager (CRM), returning customers (if they sign in or have accepted a tracking cookie), can have their digital experience enhanced by leveraging their historical interaction with your business.&nbsp; Although this applies more often to online retail businesses, it can also apply to lead-generating websites that may have several brands or services for customers to discover and experience.&nbsp; Furthermore, a customer&#8217;s journey recorded in your CDP can link to the CRM and their custom journey represented in your CRM dashboard.&nbsp; This can be extremely powerful if you have multiple touch-points for your customers.&nbsp; For example, a customer help-line, or interactive chat-bot may use this integrated information to seamlessly suggest a continuation of the customer’s journey as they interact with your business ecosystem.</p>
+
+
+
+<h2 class="wp-block-heading">Goals and lead scoring</h2>
+
+
+
+<p>Another powerful tool for grading your leads on your website is to define user behaviour goals.&nbsp; These can be as simple as viewing a page, clicking on a Call-To-Action button, registering their email address and so on or possibly based on a 1st party data point such as being referred to your site from an online campaign.&nbsp;&nbsp;</p>
+
+
+
+<p>Each goal can be assigned a score such that users accumulated points becomes their lead-score.&nbsp; The lead score can then be updated into your CRM for that user’s profile making it an efficient way to prioritise leads for follow-on actions by your marketing team.</p>
+<p>The post <a href="/personalising-visitors-journeys-on-your-website/">Personalising Visitors Journeys On Your Website.</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Tracking And Analysing Marketing Campaigns.</title>
+		<link>/tracking-and-analysing-marketing-campaigns/</link>
+		
+		<dc:creator><![CDATA[Aurovrata V.]]></dc:creator>
+		<pubDate>Fri, 02 Feb 2024 03:07:59 +0000</pubDate>
+				<category><![CDATA[Digital Business]]></category>
+		<category><![CDATA[Lead generation]]></category>
+		<guid isPermaLink="false">/?p=387</guid>
+
+					<description><![CDATA[<p>Tracking your returning users in order to understand what they are seeking from your business website.</p>
+<p>The post <a href="/tracking-and-analysing-marketing-campaigns/">Tracking And Analysing Marketing Campaigns.</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow">
+<p>The best marketing strategy: care</p>
+<cite><a href="https://en.wikipedia.org/wiki/Gary_Vaynerchuk">Gary Vaynerchuk</a>, CEO &amp; Entrepreneur</cite></blockquote>
+
+
+
+<div class="wp-block-group has-global-padding is-layout-constrained wp-container-core-group-is-layout-7 wp-block-group-is-layout-constrained" style="border-width:1px;border-radius:5px;padding-top:var(--wp--preset--spacing--10);padding-right:var(--wp--preset--spacing--10);padding-bottom:var(--wp--preset--spacing--10);padding-left:var(--wp--preset--spacing--10)">
+<p><em>This is a post in a </em><a href="/tag/lead-generation/"><em>series of posts</em></a><em> that explore digital technologies that can be leveraged to amplify a business website capacity to generate leads.&nbsp; This series builds up the rationale for a business website to undergo its digital transformation in order to provide a user experience more conducive to generate a lead.</em></p>
+</div>
+
+
+
+<p>Have you ever noticed human billboards in high-street shopping areas advertising smaller businesses in side lanes? They are often funny and extremely visible, hard to miss, and they do a great marketing job at getting your attention to a business you would otherwise have never noticed. Online social marketing is akin to human billboards on the high-street, you need to get your business noticed where the crowds hang out. The vast majority of business websites are like these businesses in a slide lane hidden away from the high-street. However, unlike the local high-street, you can advertise your business to all the digital high-streets in the world should you so wish. In reality you want to focus your time and money on those portals where your target client spends their time.</p>
+
+
+
+<p>Advertising online with Google or Facebook ads has its merit, there are many more marketing strategies that can lead to better customer experience, which in turn will develop into trust and better engagement. More and more users shy away from online advertising, and 90% of them will research a brand online before making a purchase. Videos are increasingly effective and favoured media for advertising.</p>
+
+
+
+<h2 class="wp-block-heading">Refining Your Marketing Strategy</h2>
+
+
+
+<p>A HubSpot <a href="https://www.hubspot.com/state-of-marketing">survey</a> reveals that the use of blogging as a marketing tool increases up to 13x the ROI.&nbsp; It increases the chances of your business being discovered online by users who seek information on this, and therefore are more likely to be converted into a lead.</p>
+
+
+
+<p>Given the large number of marketing channels available to a business, how can one go about developing a strategy customised to one’s business?&nbsp; Technology can play a decisive role, allowing marketeers to track and analyse the best performing marketing campaigns.</p>
+
+
+
+<p>A marketing content medium can be traced on a given channel by using UTM parameters in the URL of the landing page on the business website.&nbsp; Each campaign will have an associated landing page.&nbsp; Two or more campaigns can link back to the same landing page.&nbsp; Targeted users follow the link to find out more.&nbsp; The URL will include a set of UTM parameters to trace the campaign details such as the source, channel, content, campaign name and even custom keywords.&nbsp; When a user visits the landing page, these UTM parameters can be scanned and stored in a Customer Data Platform to keep a trace of the visit.&nbsp; The UTM values determine the content viewed by the user on the landing page, but more importantly, this accumulated data, from multiple users over multiple campaigns, can be analysed and compared to understand which ones are successful, identify potential trends across time and channels and therefore contribute to the development of a marketing strategy for your business.&nbsp;</p>
+
+
+
+<p>Campaign data can be cross-related to data users (see the previous post) to identify the ideal target audience for a given campaign.&nbsp; This systematic and empirical approach to online marketing will ensure a steady and predictable stream of potential leads, both as new and returning customers.</p>
+<p>The post <a href="/tracking-and-analysing-marketing-campaigns/">Tracking And Analysing Marketing Campaigns.</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Recipe For Optimising A Lead-generating Website.</title>
+		<link>/recipe-for-optimising-a-lead-generating-website/</link>
+		
+		<dc:creator><![CDATA[Aurovrata V.]]></dc:creator>
+		<pubDate>Fri, 02 Feb 2024 02:39:55 +0000</pubDate>
+				<category><![CDATA[Digital Business]]></category>
+		<category><![CDATA[Lead generation]]></category>
+		<guid isPermaLink="false">/?p=381</guid>
+
+					<description><![CDATA[<p>How to tune your business website in order to boost Conversion Rate Optimisation</p>
+<p>The post <a href="/recipe-for-optimising-a-lead-generating-website/">Recipe For Optimising A Lead-generating Website.</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow">
+<p>Without data you’re just another person with an opinion.</p>
+<cite><a href="https://en.wikipedia.org/wiki/W._Edwards_Deming">Edwards Deming</a></cite></blockquote>
+
+
+
+<p><em>This is a post in a <a href="/tag/lead-generation/" data-type="link" data-id="/tag/lead-generation/">series of posts</a> that explore digital technologies that can be leveraged to amplify a business website capacity to generate leads.  This series builds up the rationale for a business website to undergo its digital transformation in order to provide a user experience more conducive to generate a lead.</em></p>
+
+
+
+<p>A customer journey on a website starts with a landing page and hopefully ends with a form submission for more information resulting in a lead score.&nbsp; In order to optimise that journey for each visitor we need to measure and analyse the journey in order to better understand it and therefore have the decision-making tools to optimise that path.&nbsp; We cannot assume that one path fits all, as different visitors will be seeking different experiences and information.</p>
+
+
+
+<p>The first step is to track our anonymous visitor and store the data.  Where is the visitor coming from on the internet, what is their referral site?  Most of the time these may be a search engine, but maybe they came from a shared social link, or they followed an online campaign. Sometimes, understanding where they are from in the world can play a role in the way they journey/search for information on your website.  What page have they landed on first, which page are they opening next? Are they visiting with a mobile phone, tablet or desktop?  What time of day is it in their locality? Are they bookmarking the page for further reference, or maybe sharing it online?  Have they visited the site before, if so when, what page did they see on that visit?  Have they registered for more information?  Have you stored their details in a Customer Relationship Management (CRM) tool?</p>
+
+
+
+<h2 class="wp-block-heading">From Website Visitor to Customer: Understanding the Journey</h2>
+
+
+
+<p>So many relevant pieces of data that can help to piece together a journey trend with a Customer Data Platform (CDP) analysis tool.&nbsp; Such a tool provides data analysis reports to understand your visitors and to segment them into similar groups in order to predict what a visitor will likely do.&nbsp;&nbsp;</p>
+
+
+
+<p>For example, visitors who are coming to the website in their evening local time may be more inclined to spend time reading various pages on the site, and therefore presenting them with additional recommended pages related to the current landing page may be a better strategy to convince them to sign up for more information.&nbsp; On the other hand, someone visiting on a mobile phone during lunch hour may more likely be wanting to sign up for a demo or an offer on the first page they visit.</p>
+
+
+
+<p>To test these different scenarios, a website can have multiple landing pages, or multiple recommended dynamic content on a given page, and the best content/page determined with A/B testing procedures, the result of which are stored in the CDP for analysis. &nbsp; A recent <a href="https://blog.hubspot.com/marketing/personalized-calls-to-action-convert-better-data">survey by HubSpot</a>, a leading CRM service provider, shows up to 200% increase in lead generation when using dynamic content personalised to the visitor’s current interest.&nbsp;&nbsp;</p>
+
+
+
+<p>Thus, a business website can be optimised for lead generation for a specific set of target visitors by collecting data and analysing the behaviour of these visitors in order to empirically determine the best design and content that will maximise lead conversions.</p>
+
+
+
+<p>As the famous statistician Edward Deming once said, “Without data you’re just another person with an opinion”, measuring and understanding how visitors interact with your site is the objective key to unlocking its potential as a business tool.</p>
+
+
+
+<p>Once you have a lead recorded in your CRM, your website can still play a leading role in converting that lead into a sale with intelligent automated marketing tools.</p>
+<p>The post <a href="/recipe-for-optimising-a-lead-generating-website/">Recipe For Optimising A Lead-generating Website.</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>How to generate leads on your business website.</title>
+		<link>/how-to-generate-leads-on-your-business-website/</link>
+		
+		<dc:creator><![CDATA[Aurovrata V.]]></dc:creator>
+		<pubDate>Fri, 02 Feb 2024 02:31:24 +0000</pubDate>
+				<category><![CDATA[Digital Business]]></category>
+		<category><![CDATA[Lead generation]]></category>
+		<guid isPermaLink="false">/?p=378</guid>
+
+					<description><![CDATA[<p>Getting your website to work for your business bottom line by fine-tuning it for lead-generation.</p>
+<p>The post <a href="/how-to-generate-leads-on-your-business-website/">How to generate leads on your business website.</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow">
+<p>You never get a second chance to make a first impression.</p>
+<cite><a href="https://en.wikiquote.org/wiki/Will_Rogers">Will Rogers</a></cite></blockquote>
+
+
+
+<p><em>This is a post in a <a href="/tag/lead-generation/">series of posts</a> that explore digital technologies that can be leveraged to amplify a business website capacity to generate leads.  This series builds up the rationale for a business website to undergo its digital transformation in order to provide a user experience more conducive to generate a lead.</em></p>
+
+
+
+<p>Lead generation on a website is as much about reputation and branding as first impressions.&nbsp; A business with a poorly designed website will still get enquiry leads if they have a solid reputation for quality service/product.&nbsp; Similarly, a startup with a well-designed website or mobile app have better chances of scoring leads.</p>
+
+
+
+<p>However, even the best designs will fail to attract interest if the business reputation is damaged.&nbsp; A lead today may be a customer tomorrow and therefore a relationship needs to be established from the start and nurtured to build trust, therefore the first impressions matter and chances are new leads will encounter your website first.&nbsp; As <a href="https://en.wikiquote.org/wiki/Will_Rogers">Will Rogers</a> once famously said, “You never get a second chance to make a first impression!”.</p>
+
+
+
+<h2 class="wp-block-heading">Seek to Improve Your Website</h2>
+
+
+
+<p>So what does it take to make a good impression on your business website?&nbsp; This is not an easy riddle to solve, and depends very much on the kind of business you’re in.&nbsp; Some services or products that require a lot of investment (capital and/or time) will require careful and considerable research from the customer before confirming their decision.&nbsp; In such cases, showing a mastery of your craft and being able to communicate the essence of your expertise in a succinct manner, case-studies in hand,&nbsp; will go a long way to establish a good impression.</p>
+
+
+
+<p>On the other hand, a business that trades in services/products that have a lot of competition and are fast evolving, needs to distinguish itself from the crowd, and as such be creative in its marketing and design to shine on the first impression, and yet without being intrusive and pushy.</p>
+
+
+
+<p>First impressions are not about fancy bells and whistles, and more about functionality and purpose.&nbsp; Do you have the right content, is it relevant to the landing page your visitor found?&nbsp; Does your site load fast as no one likes to wait for pages to load?&nbsp; Is your site navigation intuitive, is it easy for visitors to find the information they need?&nbsp;&nbsp;</p>
+
+
+
+<p>Either way, a visitor will eventually need to register for more information and submit their contact information to convert as a lead. However, there is no magic recipe to ensure your website design and content will resonate with your visitors and generate leads, but it is possible to optimise your site through analysis and testing.</p>
+<p>The post <a href="/how-to-generate-leads-on-your-business-website/">How to generate leads on your business website.</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Rationale for investing in a business website</title>
+		<link>/rationale-for-investing-in-a-business-website/</link>
+		
+		<dc:creator><![CDATA[Aurovrata V.]]></dc:creator>
+		<pubDate>Fri, 02 Feb 2024 02:17:16 +0000</pubDate>
+				<category><![CDATA[Digital Business]]></category>
+		<category><![CDATA[Lead generation]]></category>
+		<guid isPermaLink="false">/?p=374</guid>
+
+					<description><![CDATA[<p>Businesses often see a website as a cost rather than an investment, this needs to change to leverage its full potential.</p>
+<p>The post <a href="/rationale-for-investing-in-a-business-website/">Rationale for investing in a business website</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow">
+<p>“What helps people, helps business.”</p>
+<cite><a href="https://en.wikipedia.org/wiki/Leo_Burnett">Leo Burnett</a></cite></blockquote>
+
+
+
+<p>A website can be much more than a digital window-front for your business.&nbsp; This series of articles explores the rationales for investing into the transformation of a website into a potent business tool.</p>
+
+
+
+<p>There are different rationales for business to have a website, and although <a href="https://w3techs.com/technologies/overview/content_management">a 3rd of the Internet</a> , for all practical purposes, is still made up of sites with static content, there has been <a href="https://w3techs.com/technologies/history_overview/content_management/all/y">steady progress</a> towards website platforms with content management systems (<a href="https://en.wikipedia.org/wiki/Content_management_system">CMS</a>), enabling easier content creation and updates as web standards evolved. &nbsp; Whereas static HTML pages needed coding skills to create and maintain pages, the rise of CMS platforms enabled businesses to create and update their website content with little to no coding skills required.&nbsp; On the other hand, this has led to a steady increase in the price of maintaining a website, requiring regular updates, functional customisation as when business demand it.&nbsp; More and more businesses understand that their website is no longer a necessary cost, but rather an investment into their growth.<br>For many traditional brick and mortar retail businesses, CMS platforms have enabled them to transition to online retailing with ecommerce websites, where <a href="https://www.digitalcommerce360.com/article/e-commerce-sales-retail-sales-ten-year-review/">more and more customers</a> prefer the comfort of their home to place their orders online and get their goods delivered, a strong rationale for any retail business to ensure they have a presence online maintained up to date with their latest products and offers.</p>
+
+
+
+<h2 class="wp-block-heading">A business site is a gateway to meet new customers.</h2>
+
+
+
+<p>However, even businesses in other industries, may it be service or manufacturing, have an ever-growing rationale to invest into their online presence, as this <a href="https://www.smartinsights.com/content-management/content-marketing-strategy/three-reasons-you-need-to-use-blogging-for-lead-generation/">report</a> points out, business leads increase when a site is updated with regular blogging content.&nbsp; An estimated <a href="https://saleslion.io/ecommerce-statistics/81-of-shoppers-research-their-product-online-before-purchasing/">81% of consumers</a> will research a product or service online before deciding to make a purchase, it is an opportunity for businesses to get leads and build a relationship.&nbsp; As marketing genius, <a href="https://en.wikipedia.org/wiki/Leo_Burnett">Leo Burnett</a> discovered: “What helps people, helps business”.&nbsp; The more useful the information available to visitors, the more likely they are to sign up for more.&nbsp;</p>
+
+
+
+<p>Businesses, regardless of their industry, have a strong rationale to leverage their website’s lead-generating potential by investing into the digital transformation opportunities presented by the evolution of technology.&nbsp; So what does it take for a website to become a well tuned lead-generation machine?</p>
+<p>The post <a href="/rationale-for-investing-in-a-business-website/">Rationale for investing in a business website</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

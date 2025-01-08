@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>News &amp; Updates Archives - Tiffin Consulting</title>
+	<atom:link href="/category/news/feed/" rel="self" type="application/rss+xml" />
+	<link>/category/news/</link>
+	<description>digital business transformation</description>
+	<lastBuildDate>Fri, 02 Feb 2024 12:22:27 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.7.1</generator>
+
+<image>
+	<url>/wp-content/uploads/2024/02/cropped-tiffin-icon-1-150x150.png</url>
+	<title>News &amp; Updates Archives - Tiffin Consulting</title>
+	<link>/category/news/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Suppress Deprecated Notices</title>
+		<link>/suppress-error-notices-using-wordpresss-wp_debug/</link>
+		
+		<dc:creator><![CDATA[Aurovrata V.]]></dc:creator>
+		<pubDate>Thu, 09 Jul 2015 13:39:38 +0000</pubDate>
+				<category><![CDATA[News & Updates]]></category>
+		<guid isPermaLink="false">http://localhost/syllogic/wp/?p=312</guid>
+
+					<description><![CDATA[<p>In your wp-content folder create a new folder called mu-plugins and in that folder create a php file with the error level you want, for example: If you are using PHP 5.5 +, you will get deprecated noticed for WordPress’s&#160;mysql_* functions, you can turn them off using: Or for something really robust, which happens to [&#8230;]</p>
+<p>The post <a href="/suppress-error-notices-using-wordpresss-wp_debug/">Suppress Deprecated Notices</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<p>In your <code><mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-contrast-2-color">wp-content</mark></code> folder create a new folder called <mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-contrast-2-color"><code>mu-plugins</code></mark> and in that folder create a <em>php</em> file with the error level you want, for example:</p>
+
+
+
+<pre class="wp-block-code"><code>//Turns off notices
+error_reporting(E_ALL ^ E_NOTICE)</code></pre>
+
+
+
+<p>If you are using PHP 5.5 +, you will get deprecated noticed for WordPress’s&nbsp;mysql_* functions, you can turn them off using:</p>
+
+
+
+<pre class="wp-block-code"><code>error_reporting(E_ALL &amp; ~E_DEPRECATED &amp; ~E_STRICT);</code></pre>
+
+
+
+<p>Or for something really robust, which happens to be the case a lot.</p>
+
+
+
+<pre class="wp-block-code"><code>error_reporting(E_ALL &amp;&nbsp; ~( E_DEPRECATED | E_USER_DEPRECATED | E_USER_NOTICE | E_STRICT ));</code></pre>
+
+
+
+<p>Source: <em><a href="https://wycks.wordpress.com/2013/12/05/how-to-remove-error-notices-using-wordpresss-wp_debug/">How to remove error notices using WordPress’s WP_DEBUG | ../ wycks</a></em></p>
+<p>The post <a href="/suppress-error-notices-using-wordpresss-wp_debug/">Suppress Deprecated Notices</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>What is a good website?</title>
+		<link>/wp-banner0/</link>
+		
+		<dc:creator><![CDATA[Aurovrata V.]]></dc:creator>
+		<pubDate>Fri, 17 Oct 2014 10:15:02 +0000</pubDate>
+				<category><![CDATA[Content Management]]></category>
+		<category><![CDATA[News & Updates]]></category>
+		<category><![CDATA[featured]]></category>
+		<guid isPermaLink="false">http://localhost/syllogic/wp/?p=248</guid>
+
+					<description><![CDATA[<p>A good website is one that goes beyond the need to serve information, but rather plays an integral role in the enterprise's development and growth. </p>
+<p>The post <a href="/wp-banner0/">What is a good website?</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<p>This is a question that has many anwers, for it very much depends on the definition of the question.  So I will start by defining the question itself.  <em>What is a good website?  </em>One&#8217;s expectations of a good website is really determined by one&#8217;s appreciation of what a <a href="https://en.wikipedia.org/wiki/Distributed_computing" target="_blank" rel="noopener">distributed networked software</a> can do to help one&#8217;s enterprise.  I believe that the vast majority of business owners have a very limited idea of this concept.  At its most basic <em>avatar</em>, a website is a virtual window to an enterprise, investing on the content and beautification of the website improves its quality, but nonetheless doesn&#8217;t change  its function as a basic window.</p>
+
+
+
+<h3 class="wp-block-heading">Communicating</h3>
+
+
+
+<p>Websites can be much more than windows.&nbsp; Their next level <em>avatar</em> is in essence about communication, how well does it communicate the&nbsp; message of the enterprise, its products, its services, its vision and <a href="https://en.wiktionary.org/wiki/modus_operandi" target="_blank" rel="noopener"><em>modus operandi</em></a>.&nbsp; A good website should be able to do this with clarity and simplicity.&nbsp; The home page being a crucial component of a successful online communication strategy.&nbsp; The menu and navigational aid are important building blocks and the content of pages need to be simple, fluid and abundantly illustrated with images so as to reduce the need to read extensive passages.</p>
+
+
+
+<p>Images should be of good quality, of generous dimensions, its no use to put small images where details cannot be seen, it frustrates the reader and generally leaves visitors with a negative impression.</p>
+
+
+
+<p>The home page is simple and clear: most visitors to a new site have a very short attention span and if they don&#8217;t understand what this site is about and how to quickly find key aspects of the site, they will simply browse on.&nbsp; A large slider often does a good job at solving this, but short and thoughtful headings, titles and menus make the whole experience much more inviting.</p>
+
+
+
+<figure class="wp-block-image alignleft is-resized wp-duotone-unset-1"><a href="http://localhost/syllogic/wp/wp-content/uploads/sites/2/2014/10/descarga.jpg"><img decoding="async" src="http://localhost/syllogic/wp/wp-content/uploads/sites/2/2014/10/descarga-300x199.jpg" alt="what is a good website - village kids using a computer" class="wp-image-255" style="width:324px;height:auto"/></a><figcaption class="wp-element-caption">A good website should a workflow simple enough for a child to navigate</figcaption></figure>
+
+
+
+<h3 class="wp-block-heading">Work flow Process</h3>
+
+
+
+<p>If a company website is used to sell products or services, then the question of how easy is it to process a sale needs to be addressed, right from the identification of the client (logging into the site) to the culmination of the actual payment.&nbsp; The process flow needs to be carefully planned and tested to ensure rapidity but also clarity of each step.&nbsp; Ease of access to the account-related information such as a client&#8217;s details, their past interaction with the site, their pending processes and such information that allows a client/visitor to the site to minimise time lost in trying to find and accomplish what they are trying to achieve on the site.</p>
+
+
+
+<h3 class="wp-block-heading">An integrated enterprise tool</h3>
+
+
+
+<p>More and more websites are being used by business owners and employees as a tool to centralise their work and data/information.  However, a good website needs to have a clear vision in order to accomplish this.  A vision is clarified when one has an understanding of how technology can be harnessed for the service of the enterprise.  In a number of scenarios with our customers, we regularly enlighten them with functionality that help resolve some pain points.  Take <a href="./#case">for example an architect studio</a> who recently approached us to built their website.</p>
+
+
+
+<details class="wp-block-details is-layout-flow wp-block-details-is-layout-flow"><summary>A case study&#8230;</summary>
+<p>An architecture studio&#8217;s initial perspective was for a communication site, but after further discussion we discovered that 90% of their work is inter-communication between the various stakeholders of a project.  Form the initial discussion with their client, design phase, finalisation, construction and handover of the project, it is apparent that many emails, and documents are written, exchanged, collaboratively worked on and the various processes documented as part of the internal work flow process. This means that a lot of documents and and messages are stored in various places, computers, and exchanged with a number of actors. </p>
+
+
+
+<p>Our proposal was to integrate a phased-approach design of their website so as to gradually transform their work flow as a website-centric process, thereby ensuring that all documents, updates and messages are retained within a central archive. The proposed website had 3 major levels of access with account credentials: internal stakeholders, clients and the public. The retained proposal manages the flow of information from internal to client to public. The major advantage being able to control the flow of information and ease of review of past documentation. The cherry on the cake? The ability to have ready-to-publish up-to-date information on their latest project to display on their public website.</p>
+</details>
+
+
+
+<h3 class="wp-block-heading">So what is a good website?</h3>
+
+
+
+<p>To answer my initial question, a good website is one that at its most basic need is elegant, simple, and clear in showcasing the enterprise and its <em>raison d&#8217;etre</em>.</p>
+
+
+
+<p>A good website is also a good communicating tool, an intuitive menu structure, and less written words more images that have been carefully picked to speak your 1000 words that you have omitted.</p>
+
+
+
+<p>A good website is one that transcends the need to serve information, but rather plays an integral role in the enterprise&#8217;s development and growth.&nbsp; The vast majority of SME websites are static, rarely updated and often out of sync with the evolution of the business.&nbsp; Integrating the website into daily work process flow of the enterprise ensures regular updates and dynamic content.</p>
+
+
+
+<p>A good website is about networking, integrating with social platforms, reaching out to its stakeholders, but this is a process that can only be achieved if the above 3 aspects are taken care of, and is usually achieved after months and possibly years of continuous updates and improvements.</p>
+
+
+
+<figure class="wp-block-image alignleft is-resized wp-duotone-unset-2"><a href="http://localhost/syllogic/wp/wp-content/uploads/sites/2/2014/10/good_web_site_should_be_child_play.jpg"><img decoding="async" src="http://localhost/syllogic/wp/wp-content/uploads/sites/2/2014/10/good_web_site_should_be_child_play-1024x682.jpg" alt="Kindergarten children learning how to use computers." class="wp-image-257" style="width:368px;height:auto"/></a><figcaption class="wp-element-caption"> a good website is labour of love</figcaption></figure>
+
+
+
+<p>Finally, a good website is labour of love, it needs to be fed with new content, updated, reviewed, polished, interacted with while being mindful of feedback from visitors who take the time to write some.</p>
+
+
+
+<h3 class="wp-block-heading">At the service of the Enterprise</h3>
+
+
+
+<p>This is what we do best, the application of an awakened mind at the service of the Indian small and medium enterprise.&nbsp; We consult, we educate, but most importantly we apply intelligence with the aspiration of the reawakening of this great nation.</p>
+
+
+
+<p>If you are in need of a website for your enterprise/project/business/organisation, <a href="http://localhost/syllogic/contact-us/" target="_blank" rel="noopener">get in touch</a>, let us at least give you a free proposal and if you share <a href="http://localhost/syllogic/about-syllogic/" target="_blank" rel="noopener">our vision</a>, we will consider working with your budget.</p>
+<p>The post <a href="/wp-banner0/">What is a good website?</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Fixing  Custom Post breadcrumbs</title>
+		<link>/fixing-custom-post-breadcrumbs/</link>
+		
+		<dc:creator><![CDATA[Aurovrata V.]]></dc:creator>
+		<pubDate>Wed, 18 Jun 2014 11:17:59 +0000</pubDate>
+				<category><![CDATA[News & Updates]]></category>
+		<guid isPermaLink="false">http://localhost/syllogic/wp/?p=151</guid>
+
+					<description><![CDATA[<p>When using a ready made theme such as one of the excellent Elegant Themes one is confronted to small issues of broken sections of the page templates when introducing custom post and getting them to display properly in the page templates One such issue is the breadcrumbs link not working properly as a result of [&#8230;]</p>
+<p>The post <a href="/fixing-custom-post-breadcrumbs/">Fixing  Custom Post breadcrumbs</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<p>When using a ready made theme such as one of the excellent Elegant Themes one is confronted to small issues of broken sections of the page templates when introducing custom post and getting them to display properly in the page templates</p>
+
+
+
+<p>One such issue is the breadcrumbs link not working properly as a result of the custom taxonomies not being picked up properly by the core functions.&nbsp; Here is some workaround for this.</p>
+
+
+
+<p>In the case of the Elegant themes, you will find the <code>breadcrumbs.php</code> file in the <code>includes/</code> directory.</p>
+
+
+
+<p>So for example in the single post page template, the breadcrumbs are displayed using the following code.</p>
+
+
+
+<pre class="wp-block-code"><code lang="php" class="language-php">...
+//some code to display the authors link followed by
+$category = get_the_category(); //returns the categories of this post
+$catlink = get_category_link( $category[0]-&gt;cat_ID ); //gets the links for the first category
+echo ('&lt;a href="'.esc_url($catlink).'"&gt;'.esc_html($category[0]-&gt;cat_name).'&lt;/a&gt; '.'&lt;span class="raquo"&gt;&amp;raquo;&lt;/span&gt; '.get_the_title()); 
+//displays the category in the breadcrumb
+</code></pre>
+
+
+
+<p>So we can include the following lines in order to ensure it works with our custom post</p>
+
+
+
+<pre class="wp-block-code"><code lang="php" class="language-php">global $post; //we need to ensure we have access to the post object breadcrumbs are handled in its own template
+...
+switch ( get_post_type($post) ){ //switch on the post_type
+  case 'my_custom_post_type': //
+    $category = get_the_terms($post-&gt;ID, 'my_custom_taxonomy');
+    $first_term = reset($category);
+    $catlink = get_term_link( $first_term );
+    echo ('<a href="'.esc_url($catlink).'">'.esc_html($first_term-&gt;name).'</a> '.'<span class="raquo">»</span> '.get_the_title());
+    break;
+  default: //default 'post'and below is the default code 
+    $category = get_the_category();
+    $catlink = get_category_link( $category[0]-&gt;cat_ID );
+    echo ('<a href="'.esc_url($catlink).'">'.esc_html($category[0]-&gt;cat_name).'</a> '.'<span class="raquo">»</span> '.get_the_title());
+    break;
+}
+</code></pre>
+<p>The post <a href="/fixing-custom-post-breadcrumbs/">Fixing  Custom Post breadcrumbs</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>WordPress log in / log out menus</title>
+		<link>/wordpress-log-in-log-out-menus/</link>
+					<comments>/wordpress-log-in-log-out-menus/#comments</comments>
+		
+		<dc:creator><![CDATA[Aurovrata V.]]></dc:creator>
+		<pubDate>Sat, 10 May 2014 14:46:01 +0000</pubDate>
+				<category><![CDATA[Menus]]></category>
+		<category><![CDATA[News & Updates]]></category>
+		<category><![CDATA[ajax]]></category>
+		<category><![CDATA[login]]></category>
+		<guid isPermaLink="false">http://localhost/syllogic/wp/?p=90</guid>
+
+					<description><![CDATA[<p>One of the downsides of WordPress menus is the inability to have a set of menus for logged-in users that may differ from the primary menu. Many sites tackle this in various ways, but a conventional approach is to have a separate menus to handle&#160; the logged-in and logged-out states of the visitor. A menu [&#8230;]</p>
+<p>The post <a href="/wordpress-log-in-log-out-menus/">WordPress log in / log out menus</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<p>One of the downsides of WordPress menus is the inability to have a set of menus for logged-in users that may differ from the primary menu.</p>
+
+
+
+<p>Many sites tackle this in various ways, but a conventional approach is to have a separate menus to handle&nbsp; the logged-in and logged-out states of the visitor.</p>
+
+
+
+<h3 class="wp-block-heading">A menu for logged-in users and one for logged-out</h3>
+
+
+
+<figure class="wp-block-image"><a href="http://localhost/syllogic/wp/wp-content/uploads/sites/2/2014/05/primary-menu.jpg"><img decoding="async" src="http://localhost/syllogic/wp/wp-content/uploads/sites/2/2014/05/primary-menu-1024x217.jpg" alt="primary menu" class="wp-image-95" title="The usual menu from a wordpress theme"/></a></figure>
+
+
+
+<p>Here is a screen shot of the secondary menu for the logged-out visitor (ie public view).</p>
+
+
+
+<figure class="wp-block-image"><a href="http://localhost/syllogic/wp/wp-content/uploads/sites/2/2014/05/logout-menu.jpg"><img decoding="async" src="http://localhost/syllogic/wp/wp-content/uploads/sites/2/2014/05/logout-menu-1024x178.jpg" alt="logout-menu" class="wp-image-94" title="The quick-out-menu refers to the menu registration below"/></a></figure>
+
+
+
+<p>As you can see the menu appears above the main menu and consist of a registration and login link.&nbsp; This menu needs to change when the user is actually logged in&#8230;</p>
+
+
+
+<figure class="wp-block-image"><a href="http://localhost/syllogic/wp/wp-content/uploads/sites/2/2014/05/log-in-menu.jpg"><img decoding="async" src="http://localhost/syllogic/wp/wp-content/uploads/sites/2/2014/05/log-in-menu-1024x181.jpg" alt="log in menu" class="wp-image-93"/></a></figure>
+
+
+
+<p>In the above case, the site is conference registration site and the menu changes to a Submission and logout menu.</p>
+
+
+
+<h3 class="wp-block-heading">Integration with the WordPress Menu Manager</h3>
+
+
+
+<p>Now here comes the beautiful part of this custom menu&#8230;.</p>
+
+
+
+<figure class="wp-block-image"><a href="http://localhost/syllogic/wp/wp-content/uploads/sites/2/2014/05/wp-menu-manager-logout.jpg"><img decoding="async" src="http://localhost/syllogic/wp/wp-content/uploads/sites/2/2014/05/wp-menu-manager-logout-1024x501.jpg" alt="wp menu manager - logout" class="wp-image-96" title="WP Menu Manager interface"/></a></figure>
+
+
+
+<p>As you can see from the above screenshot of the site Dashboard, the menu manager allows the webmaster to configure the logged-out menu by adding other pages, sub-menus, links, post, categories and what not.&nbsp; However, the only thing missing is the Login menu link.&nbsp; This is done dynamically with a function by simply adding a login menu item at the end of the menu structure.</p>
+
+
+
+<figure class="wp-block-image"><a href="http://localhost/syllogic/wp/wp-content/uploads/sites/2/2014/05/wp-menu-manager-login.jpg"><img decoding="async" src="http://localhost/syllogic/wp/wp-content/uploads/sites/2/2014/05/wp-menu-manager-login-1024x539.jpg" alt="wp menu manager-login" class="wp-image-97" title="WP Menu Manager"/></a></figure>
+
+
+
+<p>Same thing for the logged-in menu structure, no login menu item.</p>
+
+
+
+<h3 class="wp-block-heading">So what&#8217;s the big deal?</h3>
+
+
+
+<p>Why did we do this?&nbsp; Well for starters, adding logout/login urls has to be done manually using the custom Links items, which means that if the the site domain name changes (such going from a demo to a live site) one needs to remember to change it.&nbsp; However, we also wanted to add an Ajax-enabled login functionality as described in this neat <a title="Natko Hasik tutorial on WP ajax login" href="http://natko.com/wordpress-ajax-login-without-a-plugin-the-right-way/" target="_blank" rel="noopener">little tutorial</a> by Natko Hasik.&nbsp; And the result is this:</p>
+
+
+
+<figure class="wp-block-image"><a href="http://localhost/syllogic/wp/wp-content/uploads/sites/2/2014/05/ajax-login.jpg"><img decoding="async" src="http://localhost/syllogic/wp/wp-content/uploads/sites/2/2014/05/ajax-login.jpg" alt="ajax-login" class="wp-image-98" title="WP Ajax-enabled login"/></a></figure>
+
+
+
+<p>Neat no?</p>
+
+
+
+<p>So how does it work?&nbsp; Well here is the magic&#8230;.</p>
+
+
+
+<details class="wp-block-details is-style-default is-layout-flow wp-block-details-is-layout-flow"><summary>The functions.php file first</summary>
+<p>Here is the code to register the two menus that we will be using in the headers of our site…</p>
+
+
+
+<pre class="wp-block-code"><code lang="php" class="language-php line-numbers">function sy_conf_register_menu() {
+  register_nav_menu('quick-in-menu',__( 'Quick Loged-in Menu' ));
+  register_nav_menu('quick-out-menu',__( 'Quick Loged-out Menu' ));
+}
+add_action( 'init', 'sy_conf_register_menu' ); // register additional menu</code></pre>
+
+
+
+<p>Next is the function which will add the necessary login and logout menu links dynamically each time the menus are being called by the header…</p>
+
+
+
+<pre class="wp-block-code"><code lang="php" class="language-php line-numbers">function sy_quick_nav_items( $items, $args ) 
+{ //$items, $menu,
+    if( 'quick-in-menu' == $args-&gt;theme_location )
+        $items.= '&lt;li&gt;&lt;a href="'.wp_logout_url(get_permalink()).'" title="Logout"&gt;Logout&lt;/a&gt;&lt;/li&gt;';
+     if( 'quick-out-menu' == $args-&gt;theme_location ) {
+           $logInitem = '&lt;a id="show_login" href=""&gt;Login&lt;/a&gt;';
+        $logInitem.= '&lt;form id="login" action="login" method="post"&gt;';
+        $logInitem.= '    &lt;p&gt;&lt;/p&gt;';
+        $logInitem.= '    &lt;div id="loginFields"&gt;&lt;p&gt;&lt;label for="username"&gt;Username&lt;/label&gt;&lt;input id="username" type="text" name="username"&gt;&lt;/p&gt;';
+        $logInitem.= '    &lt;p&gt;&lt;label for="password"&gt;Password&lt;/label&gt;&lt;input id="password" type="password" name="password"&gt;&lt;/p&gt;';
+        $logInitem.= '    &lt;p id="lostPass"&gt;&lt;a href="&lt;?php echo wp_lostpassword_url(); ?&gt;"&gt;Lost your password?&lt;/a&gt;&lt;/p&gt;';
+        $logInitem.= '    &lt;p id="loginButton"&gt;&lt;a href="javascript:void(0)"&gt;Cancel&lt;/a&gt;&lt;input type="submit" value="Login" name="submit"&gt;&lt;/p&gt;&lt;/div&gt;';
+        $logInitem.= wp_nonce_field( 'ajax-login-nonce', 'security' );
+        $logInitem.= '&lt;/form&gt;';
+        $items.= $logInitem;
+    }
+    return $items;
+}
+add_filter( 'wp_nav_menu_items','sy_quick_nav_items', 10, 2 );</code></pre>
+
+
+
+<p>Finally the Ajax initialisation …</p>
+
+
+
+<pre class="wp-block-code"><code lang="php" class="language-php line-numbers">function ajax_login_init(){
+    wp_register_script('ajax-login-script', get_stylesheet_directory_uri() . '/js/ajax-login-script.js', array('jquery') ); 
+    wp_enqueue_script('ajax-login-script');
+    wp_localize_script( 'ajax-login-script', 'ajax_login_object', array( 
+        'ajaxurl' =&gt; admin_url( 'admin-ajax.php' ),
+        'redirecturl' =&gt; home_url(),
+        'loadingmessage' =&gt; __('Logging in, please wait...')
+    ));
+    // Enable the user with no privileges to run ajax_login() in AJAX
+    add_action( 'wp_ajax_nopriv_ajaxlogin', 'ajax_login' );
+}
+// Execute the action only if the user isn't logged in
+if (!is_user_logged_in()) {
+    add_action('init', 'ajax_login_init');
+}</code></pre>
+
+
+
+<p>…and call handlers…</p>
+
+
+
+<pre class="wp-block-code"><code lang="php" class="language-php line-numbers">function ajax_login(){
+    // First check the nonce, if it fails the function will break
+    check_ajax_referer( 'ajax-login-nonce', 'security' );
+    // Nonce is checked, get the POST data and sign user on
+    $info = array();
+    $info['user_login'] = $_POST['username'];
+    $info['user_password'] = $_POST['password'];
+    $info['remember'] = true;
+    $user_signon = wp_signon( $info, false );
+    if ( is_wp_error($user_signon) ){
+        echo json_encode(array('loggedin'=&gt;false, 'message'=&gt;__('Wrong username or password.')));
+    } else {
+        echo json_encode(array('loggedin'=&gt;true, 'message'=&gt;__('Login successful, redirecting...')));
+    }
+    die();
+}</code></pre>
+</details>
+
+
+
+<details class="wp-block-details is-layout-flow wp-block-details-is-layout-flow"><summary>Ajax Javascript file ajax-login-script.js</summary>
+<p>This is the javascript file that will be loaded, I place it in the js/ folder of my child-theme root folder…save the code into a new file called ajax-login-script.js</p>
+
+
+
+<pre class="wp-block-code"><code lang="javascript" class="language-javascript line-numbers">jQuery(document).ready(function($) {
+    // Show the login dialog box on click
+    $('a#show_login').on('click', function(e){
+        $('body').prepend('&lt;div&gt;&lt;/div&gt;');
+        $('form#login').fadeIn(500);
+        $('div.login_overlay, form#login a.close').on('click', function(){
+            $('div.login_overlay').remove();
+            $('form#login').hide();
+        });
+        e.preventDefault();
+    });
+    // Perform AJAX login on form submit
+    $('form#login').on('submit', function(e){
+        $('form#login div#loginFields').fadeOut(500);
+        $('form#login p.status').show().text(ajax_login_object.loadingmessage);
+        $.ajax({
+            type: 'POST',
+            dataType: 'json',
+            url: ajax_login_object.ajaxurl,
+            data: { 
+                'action': 'ajaxlogin', //calls wp_ajax_nopriv_ajaxlogin
+                'username': $('form#login #username').val(), 
+                'password': $('form#login #password').val(), 
+                'security': $('form#login #security').val() },
+            success: function(data){
+                $('form#login p.status').text(data.message);
+                if (data.loggedin == true){
+                    document.location.href = ajax_login_object.redirecturl;
+                }
+            }
+        });
+        e.preventDefault();
+    });
+});</code></pre>
+</details>
+
+
+
+<details class="wp-block-details is-layout-flow wp-block-details-is-layout-flow"><summary>CSS beautification&#8230;.</summary>
+<p>the css needed to make it all look good…</p>
+
+
+
+<pre class="wp-block-code"><code lang="css" class="language-css line-numbers">form#login {
+    background-color: #FFFFFF;
+    border-top: 3px solid #7B0099;
+    display: none;
+    padding: 5px;
+    position: fixed;
+    z-index: 999;
+}
+#login div#loginFields &gt; p {
+    line-height: 0.5em;
+    padding-bottom: 5px;
+    text-align: right;
+}
+#login div#loginFields &gt; p#lostPass {
+    text-align: center;
+}
+#login div#loginFields input {
+    border: 1px solid #D3D3D3;
+    padding: 1px 2px;
+    width: 100px;
+}
+#login div#loginFields label {
+    margin-right: 5px;
+}
+
+form#login p.status{
+    display: none;
+    line-height: 0.5em;
+    padding-bottom: 5px;
+    text-align: center;
+}
+form#login div#loginFields a.close {
+    background: none repeat scroll 0 0 #F0F0F0;
+    border: 1px solid #D3D3D3;
+    color: #00266A;
+    font-size: 11px;
+    margin-right: 4px;
+    padding: 1px 25px;
+}
+#login div#loginFields input.submit_button {
+    color: #00266A;
+    padding: 0 2px;
+    width: 86px;
+}
+.login_overlay{
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    opacity: 0.9;
+    position: fixed;
+    z-index: 998;
+}</code></pre>
+</details>
+
+
+
+<details class="wp-block-details is-layout-flow wp-block-details-is-layout-flow"><summary>Integration into the header&#8230;</summary>
+<p>This is the tricky part, because the header will differ from one theme to the next and you will need to see where best to fit in your additional menus…</p>
+
+
+
+<pre class="wp-block-code"><code lang="markup" class="language-markup line-numbers">&lt;body&gt;
+    &lt;header&gt;
+         &lt;div id="top-navigation"&gt;
+                &lt;nav id="quick-nav"&gt;
+                &lt;?php
+                    $menuClass = 'nav';
+            if ( is_user_logged_in() ) {
+                //get the logged-out menu 
+                $quickNav = wp_nav_menu( array( 'theme_location' =&gt; 'quick-in-menu', 'container' =&gt; '', 'fallback_cb' =&gt; '', 'menu_class' =&gt; $menuClass, 'menu_id' =&gt; 'quick-menu', 'echo' =&gt; false ) );
+                if ( '' == $quickNav ) : //in case the menus have not been setup
+                ?&gt;
+                    &lt;ul id="quick-menu"&gt;
+                        &lt;li&gt;&lt;a href="&lt;?php echo wp_logout_url(get_permalink()); ?&gt;" title="Logout"&gt;Logout&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;?php
+                else :
+                    echo ( $quickNav );
+                endif;
+            } else {
+                //get the logged-in menu
+                $quickNav = wp_nav_menu( array( 'theme_location' =&gt; 'quick-out-menu', 'container' =&gt; '', 'fallback_cb' =&gt; '', 'menu_class' =&gt; $menuClass, 'menu_id' =&gt; 'quick-menu', 'echo' =&gt; false ) );
+                if ( '' == $quickNav ) ://in case the menus have not been setup
+            ?&gt;
+                    &lt;ul id="quick-menu"&gt;
+                        &lt;li&gt;&lt;a href="&lt;?php echo wp_login_url(get_permalink()); ?&gt;" title="Login"&gt;Login&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+            &lt;?php
+                else :
+                    echo ( $quickNav );
+                endif;
+            }
+            ?&gt;
+                &lt;/nav&gt;
+                &lt;nav id="top-menu"&gt;
+                &lt;?php
+                    $menuClass = 'nav';
+                            $primaryNav = wp_nav_menu( array( 'theme_location' =&gt; 'primary-menu', 'container' =&gt; '', 'fallback_cb' =&gt; '', 'menu_class' =&gt; $menuClass, 'menu_id' =&gt; 'top-menu', 'echo' =&gt; false ) );
+                                 ?&gt;
+                                &lt;!-- ...your primary menu html code....--&gt;
+                &lt;/nav&gt;
+         &lt;/div&gt;
+    &lt;/header&gt;</code></pre>
+</details>
+<p>The post <a href="/wordpress-log-in-log-out-menus/">WordPress log in / log out menus</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/wordpress-log-in-log-out-menus/feed/</wfw:commentRss>
+			<slash:comments>3</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

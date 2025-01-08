@@ -1,0 +1,1155 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Development Archives - Tiffin Consulting</title>
+	<atom:link href="/category/development/feed/" rel="self" type="application/rss+xml" />
+	<link>/category/development/</link>
+	<description>digital business transformation</description>
+	<lastBuildDate>Sat, 10 Feb 2024 08:50:23 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.7.1</generator>
+
+<image>
+	<url>/wp-content/uploads/2024/02/cropped-tiffin-icon-1-150x150.png</url>
+	<title>Development Archives - Tiffin Consulting</title>
+	<link>/category/development/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Mitigating Performance Impact from Personalisation</title>
+		<link>/mitigating-performance-impact-from-personalisation/</link>
+		
+		<dc:creator><![CDATA[Aurovrata V.]]></dc:creator>
+		<pubDate>Fri, 02 Feb 2024 04:49:14 +0000</pubDate>
+				<category><![CDATA[Development]]></category>
+		<category><![CDATA[Lead generation]]></category>
+		<guid isPermaLink="false">/?p=421</guid>
+
+					<description><![CDATA[<p>Caching web pages, especially using a Content Development Network is an important step towards a robust and scalable solution.  It is possible to cache multiple versions of a page. </p>
+<p>The post <a href="/mitigating-performance-impact-from-personalisation/">Mitigating Performance Impact from Personalisation</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow">
+<p>There are only two hard things in Computer Science: cache invalidation and naming things.</p>
+<cite><a href="https://www.karlton.org/2017/12/naming-things-hard/">Phil Karlton</a></cite></blockquote>
+
+
+
+<div class="wp-block-group has-border-color has-base-background-color has-background has-global-padding is-content-justification-center is-layout-constrained wp-container-core-group-is-layout-2 wp-block-group-is-layout-constrained" style="border-color:#3c4142;border-width:1px;border-radius:5px;margin-top:var(--wp--preset--spacing--20);margin-bottom:0;padding-top:var(--wp--preset--spacing--10);padding-right:var(--wp--preset--spacing--10);padding-bottom:var(--wp--preset--spacing--10);padding-left:var(--wp--preset--spacing--10)">
+<div class="wp-block-group alignwide is-layout-flow wp-block-group-is-layout-flow">
+<p class="has-text-align-left"><em>This is the 4th post in a series I started while consulting at rtCamp back in 2022.  The <a href="https://rtcamp.com/blog/series/personalization/" data-type="link" data-id="https://rtcamp.com/blog/series/personalization/">series of posts</a> explored personalisation of page content in order to optimise the conversion rate of lead-generation on a business website</em></p>
+</div>
+</div>
+
+
+
+<p>A multi-brand, multi-site enterprise website may have hundreds of landing pages and possibly thousands of posts and other single content pages.  In order to ensure page response time performance is maintained when scaling-up with growing number of visitors, modern CMS frameworks like WordPress leverage page caching technology along with CDNs in order to reduce server-loads and ensure good response performance.  However, cached content is pre-rendered static HTML, so how can performance and personalisation coexist?</p>
+
+
+
+<h2 class="wp-block-heading">Performance impact of personalisation</h2>
+
+
+
+<p>As a general rule of thumb, the following hierarchy of content requests is followed in order to assess the performance impact. At the top, and least impactful on the performance, are requests that are served using cached content.  This can be either caching on the client-side in the browser itself, or on the server-side. Cookies play an important role in order to store session states and access credentials and therefore prevent the need to hit the server for such information.  At the next level is server rendered requests which requires accessing resources on the server such as the database.  Such requests are less performant than those served from cached content. Finally the least performant are requests that require API calls to third party services on external servers.</p>
+
+
+
+<figure class="wp-block-image alignleft size-full is-resized"><img fetchpriority="high" decoding="async" width="679" height="405" src="/wp-content/uploads/2024/02/cache-pyramid.png" alt="" class="wp-image-422" style="width:552px;height:auto" srcset="/wp-content/uploads/2024/02/cache-pyramid.png 679w, /wp-content/uploads/2024/02/cache-pyramid-300x179.png 300w" sizes="(max-width: 679px) 100vw, 679px" /><figcaption class="wp-element-caption">Rule of thumb for request performance as a function of resource access.</figcaption></figure>
+
+
+
+<p>Personalised content based on cookie preferences, such as the preferred theme for reading content on a site (some website offer a dark-mode theme), then the personalisation is already stored in cache and does not require accessing any server resources.</p>
+
+
+
+<p>Personalisation based on first-party data stored on the server will, in most cases, require the content to be rendered on the server and this will impact the performance of the page response time.&nbsp; In addition, if the conditional data is to be fetched from an external third-party service such as a CDP using an API call, this further impacts the performance and in such cases require additional expensive server resources in order to scale up with increased traffic.</p>
+
+
+
+<h2 class="wp-block-heading">Caching personalised page variants</h2>
+
+
+
+<p>One way to mitigate the impact on performance is to restrict personalisation variations on landing pages to less than a dozen or so and cache all the variants.  This would be feasible if the personalisation is based on segments.  A user’s personas/segments could then be stored/updated as a cookie and the required request served from the cached page variant for that segment.</p>
+
+
+
+<h3 class="wp-block-heading">How do cache page variants work?</h3>
+
+
+
+<p>A caching server or sometimes also known as a <em>caching engine</em>, is a set of data resources that are stored in RAM memory in order to speed up access to this data and lower the cost of accessing these resources at scale.&nbsp; Supporting the equivalent scaling with traditional server resources such as databases, hard disks and CPU would require considerably more resources at a higher cost without matching the latency periods of RAM access.</p>
+
+
+
+<p>These cached resources are generally transient, meaning that they may be deleted and replaced by more up-to-date versions of the data.&nbsp; The control of cached data is determined by <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control">Cache-Control header</a> directives.&nbsp;&nbsp;</p>
+
+
+
+<p>The HTTP Caching specification introduced the <a href="https://httpwg.org/specs/rfc7231.html#header.vary">Vary header</a> as a mechanism for <a href="https://httpwg.org/specs/rfc7231.html#content.negotiation">content negotiation</a> when making page requests to a server.  The Vary header can take as a value one or more header parameter names, for example,</p>
+
+
+
+<pre class="wp-block-code"><code class="">Vary: Accept-Encoding</code></pre>
+
+
+
+<p>and the Accept-Encoding header request made from a browser that can handle compressed responses might be,</p>
+
+
+
+<pre class="wp-block-code"><code class="">Accept-Encoding: compress, gzip</code></pre>
+
+
+
+<p>and the server may respond with gzip’ed compressed content as opposed to plain uncompressed HTML text.&nbsp; This is an example of content negotiation for which the Vary header was initially specified for.</p>
+
+
+
+<p>This is now being leveraged to distinguish requests with content variation such as personalised pages.&nbsp; Let’s look at how the Vary header is handled by various hosting providers in order to handle multiple variations of a personalised page.</p>
+
+
+
+<h3 class="wp-block-heading">WordPress VIP cache</h3>
+
+
+
+<p>The WordPress VIP hosting network provides an interface <a href="https://docs.wpvip.com/technical-references/caching/the-vip-cache-personalization-api/">API</a> for developers to flag page variations which are then stored on the VIP CDN caching network with a Vary header.  The <a href="https://github.com/Automattic/vip-go-mu-plugins/tree/develop/cache">interface</a> provides a Vary_Cache class,</p>
+
+
+
+<pre class="wp-block-code"><code lang="php" class="language-php">use Automattic\VIP\Cache\Vary_Cache;</code></pre>
+
+
+
+<p>which provides functionality to register different segments of users.  For example, if a business has two types of customers, say dealers (B2B) and retail (B2C), and want to personalise a landing page depending on the segment to which a user belongs to.  The first step would be to register a customer group,</p>
+
+
+
+<pre class="wp-block-code"><code lang="php" class="language-php">Vary_Cache::register_group( 'customer' );</code></pre>
+
+
+
+<p>The API handles these variations with a custom header and a cookie on the client browser which will store the value ‘b2b’ for dealer clients and ‘b2c’ for retail clients.&nbsp; In addition, instruction to the caching engine is handled automatically with a Vary header.</p>
+
+
+
+<p>Once a visitor is identified as a client, the API can be used to set that user’s appropriate segment,</p>
+
+
+
+<pre class="wp-block-code"><code lang="php" class="language-php">//user identified as a dealer.
+Vary_Cache::set_group_for_user( 'customer', 'b2b' );</code></pre>
+
+
+
+<p>Finally, when a previously identified client makes a request to a page, the API exposes the client’s segment for conditional content personalization, which can send a response with the appropriate content variation for that segment,</p>
+
+
+
+<pre class="wp-block-code"><code lang="php" class="language-php">if(Vary_Cache::is_user_in_group_segment( 'customer', 'b2b' )){
+  //display content for dealer clients
+}else if(Vary_Cache::is_user_in_group_segment( 'customer', 'b2c' )){
+  //display content for retail clients
+}else{ 
+  //display content for other visitors
+}</code></pre>
+
+
+
+<p>As the API handles the cache Vary header automatically, the VIP CDN will store the response such that subsequent requests made by users will be served the correct page version from the cache.The segment personalisation is handled with a cookie stored on the client browser, however, for sensitive conditional data that should not be shown to other segment groups, the API has <a href="https://docs.wpvip.com/technical-references/caching/the-vip-cache-personalization-api/#h-encrypted-audience-segmentation">functionality to encrypt</a> the identification string.</p>
+
+
+
+<h3 class="wp-block-heading">WP Engine cache</h3>
+
+
+
+<p><a href="https://wpengine.com/">WPEngine</a> makes use of the Vary header with its own custom X-WPENGINE-SEGMENT header which gets populated with the wpe-us segment cookie on the client browser.  Therefore, when a user is identified as belonging to a specific segment, the cookie is set,</p>
+
+
+
+<pre class="wp-block-code"><code lang="php" class="language-php">setcookie('wpe-us', 'customer-b2b'); //customer is a dealer</code></pre>
+
+
+
+<p>The cookie value is passed in a request to the server as the X-WPENGINE-SEGMENT header, therefore pages that are personalised can set conditional personalised content</p>
+
+
+
+<pre class="wp-block-code"><code lang="php" class="language-php">//flag this page as having multiple versions to the caching engine.
+header('Vary: X-WPENGINE-SEGMENT'); 
+$cookie_value = $_SERVER["HTTP_X_WPENGINE_SEGMENT"];
+if ($cookie_value == 'customer-b2b') {
+    //dealer content
+} else if ($cookie_value == 'customer-b2c') {
+    //retail content
+} else {
+    //default content
+}</code></pre>
+
+
+
+<p>Setting the Vary: X-WPENGINE-SEGMENT header at the start of the page will ensure the caching engine stores this page as a variation based on the value of the cookie in the browser, and subsequent requests will be served from the cache.  A plugin is <a href="https://github.com/nateinaction/segment-cache-for-wp-engine">available</a> to leverage WPEngine segment caching with the help of shortcodes.</p>
+
+
+
+<h3 class="wp-block-heading">Pantheon cache</h3>
+
+
+
+<p><a href="https://pantheon.io/">Pantheon</a> hosting service uses a special cookie template to distinguish between different versions of a page.  Any pages that setup a cookie named with the prefix <a href="https://pantheon.io/docs/caching-advanced-topics#using-styxkey">STYXKEY</a> is flagged by Pantheon’s global CDN caching engine with a Vary header,</p>
+
+
+
+<pre class="wp-block-code"><code class="">Vary: Cookie</code></pre>
+
+
+
+<p>Following our previous example setting a cookie,</p>
+
+
+
+<pre class="wp-block-code"><code class="">set_cookie('STYXKEY_customer', 'b2b');&nbsp;</code></pre>
+
+
+
+<p>for a personalised page will <a href="https://pantheon.io/docs/cookies#cache-varying-cookies">cache</a> the page as content for dealer customers.&nbsp;</p>
+
+
+
+<h2 class="wp-block-heading">A note of caution</h2>
+
+
+
+<p>Content caching is an important tool in optimising the performance of a website in order to ensure it can scale up with higher traffic and page requests.&nbsp; However, a page cache is still a limited resource, it is therefore important to limit the amount of cache memory used by reducing the number of pages cached, and hence the number of variations of pages by limiting the number of user segments as well as reducing the number of pages that are personalised.</p>
+
+
+
+<h2 class="wp-block-heading">Conclusion</h2>
+
+
+
+<p>Personalising page content on WordPress is easy, but requires some precautions in order to make sure these pages scale up.&nbsp; Caching this personalised content as different versions of the same page is readily feasible&nbsp; with hosting services such as WordPress VIP, WPEngine and Patheon as well as others but requires planning in order to ensure the cache server is not overloaded with too many page versions.</p>
+<p>The post <a href="/mitigating-performance-impact-from-personalisation/">Mitigating Performance Impact from Personalisation</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Modify a Custom Post Type Registration with the registered_post_type Hook</title>
+		<link>/modify-a-custom-post-type-registration-with-the-registered_post_type-hook/</link>
+		
+		<dc:creator><![CDATA[Aurovrata V.]]></dc:creator>
+		<pubDate>Thu, 01 Feb 2024 10:46:19 +0000</pubDate>
+				<category><![CDATA[Admin Dashboard]]></category>
+		<guid isPermaLink="false">http://localhost/syllogic/wp/?p=309</guid>
+
+					<description><![CDATA[<p>via Use registered_post_type Hook to Modify Post Type Registration &#8211; WP Smith.</p>
+<p>The post <a href="/modify-a-custom-post-type-registration-with-the-registered_post_type-hook/">Modify a Custom Post Type Registration with the registered_post_type Hook</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<pre class="wp-block-code"><code lang="php" class="language-php line-numbers">add_action( 'registered_post_type', 'gs_books_label_rename', 10, 2 );
+
+/**
+* Modify registered post type menu label
+*
+* @param string $post_type Registered post type name.
+* @param array $args Array of post type parameters.
+*/
+
+function gs_books_label_rename( $post_type, $args {
+  if ( 'gs_books' === $post_type ) {
+    global $wp_post_types;
+    $args-&gt;labels-&gt;menu_name = __( 'Books', 'gs_books' );
+    $wp_post_types[ $post_type ] = $args;    
+  }
+}</code></pre>
+
+
+
+<p>via <a href="http://wpsmith.net/2013/wp/use-registered_post_type-hook-to-modify-post-type-registration/">Use registered_post_type Hook to Modify Post Type Registration &#8211; WP Smith</a>.</p>
+<p>The post <a href="/modify-a-custom-post-type-registration-with-the-registered_post_type-hook/">Modify a Custom Post Type Registration with the registered_post_type Hook</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Boosting Registration forms</title>
+		<link>/boosting-registration-forms/</link>
+		
+		<dc:creator><![CDATA[Aurovrata V.]]></dc:creator>
+		<pubDate>Thu, 26 Feb 2015 12:26:05 +0000</pubDate>
+				<category><![CDATA[Input forms]]></category>
+		<category><![CDATA[registration]]></category>
+		<guid isPermaLink="false">http://localhost/syllogic/wp/?p=303</guid>
+
+					<description><![CDATA[<p>In a recent project we had to make a custom registration form with a various dynamic categories loaded on the form from which a new user can select using a radio button. Simpler Registration Form Plus We discovered the wonderful plugin which is the Swiss-army plugin for registration forms.&#160; Why do I call it the [&#8230;]</p>
+<p>The post <a href="/boosting-registration-forms/">Boosting Registration forms</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<p>In a recent project we had to make a custom registration form with a various dynamic categories loaded on the form from which a new user can select using a radio button.</p>
+
+
+
+<h3 class="wp-block-heading">Simpler Registration Form Plus</h3>
+
+
+
+<p>We discovered the <a title="Wordpress Simpler Registration Form Plus" href="https://wordpress.org/plugins/simplr-registration-form/" target="_blank" rel="noopener">wonderful plugin</a> which is the Swiss-army plugin for registration forms.&nbsp; Why do I call it the Swiss-army of registration forms?&nbsp; Simply because the author seems to have thought of all the possibilities.&nbsp; To start with, the form automatically creates the additional user meta fields inside your WordPress installation for any elements you create in the registration form, hence ensuring that your logged-in users have all the extra registered fields integrated into their profile.</p>
+
+
+
+<p>The other beautiful aspect is that it is allows for users to view and edit their profiles using a separate <code>[profile_page]</code> shortcode provided by the plugin and you can independently identify which of the fields should be visible in the profile page.</p>
+
+
+
+<h4 class="wp-block-heading">Video tutorial</h4>
+
+
+
+<p>The plugin comes with an embeded video tutorial which comes quite handy initially to figure out how to display the custom registration form using the shortcode provided.</p>
+
+
+
+<h4 class="wp-block-heading">Callback function for more customisation</h4>
+
+
+
+<p>Recently the fully loaded commercial version of the plugin was released to the WordPress community (blessings on the author for his next life-time for this good karma <img src="https://s.w.org/images/core/emoji/15.0.3/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /> and it comes with an additional functionality that allows for a custom field to be added to the the registration form (select type = Callback) which call a user defined function to determine the shade and content of that field.&nbsp; Brilliant I hear you say?&nbsp; Sure it is.</p>
+
+
+
+<p>How to get it to work is a little more complex to figure out since the documentation is thin if not non-existent&#8230;hence this post actually.</p>
+
+
+
+<p>When you add a new field, selete the &#8216;Callback&#8217; type and in the option field, enter the name of your function, for example&#8230; <code>echo_registration_categories</code> the plugin will call your function with 1 argument, the value of the field saved in the database&#8230; this is in order to ensure the field is pre-populated when loaded on the profile page for example.&nbsp; Here is an example,</p>
+
+
+
+<pre class="wp-block-code"><code lang="php" class="language-php line-numbers">//display registration categories in sign up form
+function echo_registration_categories($args){
+&nbsp;&nbsp; //let's get the categories for this conference
+&nbsp;&nbsp; $categories = array();
+&nbsp;&nbsp; $categories[name] = get_option("conf_registration_categories_name");
+&nbsp;&nbsp; $categories[currency]= get_option("conf_registration_categories_currency");
+&nbsp;&nbsp; $categories[early_bird_fees] = get_option("conf_registration_categories_early_bird");
+&nbsp;&nbsp; $categories[full_fees] = get_option("conf_registration_categories_full");
+&nbsp;&nbsp; &nbsp;
+&nbsp;&nbsp; $today = strtotime(date('d M Y'));
+&nbsp;&nbsp; $earlyDate = strtotime(get_option("early_bird_date"));
+&nbsp;&nbsp; $isEarly = ($today&lt;=$earlyDate);
+&nbsp; // if($text)
+&nbsp;&nbsp; $output ='&lt;div id="css-user_category" class="option-field radio "&gt;';
+&nbsp;&nbsp; $output .='&nbsp; &lt;label for="user_category"&gt;Registration category&lt;span class="required"&gt;*&lt;/span&gt;&lt;/label&gt;';
+&nbsp;&nbsp; $output .='&nbsp;&nbsp; &nbsp;&nbsp; &lt;ul&gt;';
+&nbsp;&nbsp; $userCategory =$args;
+&nbsp;&nbsp; if ( empty($args) &amp;&amp; is_user_logged_in() ) {
+&nbsp;&nbsp; &nbsp;&nbsp; $user_ID = get_current_user_id();
+&nbsp;&nbsp; &nbsp;&nbsp; $userCategory = get_user_meta($user_ID, 'user_category', true);
+&nbsp;&nbsp; }
+&nbsp;&nbsp; for($idx=0; $idx &lt; sizeof($categories[name]); $idx++){
+&nbsp;&nbsp; &nbsp;&nbsp; $checked = '';
+&nbsp;&nbsp; &nbsp;&nbsp; $text = $categories[name][$idx];
+&nbsp;&nbsp; &nbsp;&nbsp; if($text == $userCategory) $checked = 'checked';
+&nbsp;&nbsp; &nbsp;&nbsp; $cur = $categories[currency][$idx];
+&nbsp;&nbsp; &nbsp;&nbsp; $cost = $categories[full_fees][$idx];
+&nbsp;&nbsp; &nbsp;&nbsp; if(&nbsp; $isEarly ) $cost = $categories[early_bird_fees][$idx];
+&nbsp;&nbsp; &nbsp;&nbsp; $output .='&lt;li&gt;&lt;input name="user_category" '.$checked.'&nbsp; value="'.$text.'" type="radio"&gt;'.$text.' &lt;span class="category-cost"&gt;'.$cost.' '.$cur.'&lt;/span&gt;&lt;/li&gt;';
+&nbsp;&nbsp; }
+&nbsp;&nbsp; $output .='&nbsp;&nbsp; &nbsp;&nbsp; &lt;/ul&gt;&lt;/div&gt;';
+&nbsp;&nbsp; echo $output;
+}
+</code></pre>
+
+
+
+<p>As you can see, the above outputs a list of radio <code>input</code> elements for a conference registration category.&nbsp; The user value is passed as the argument <code>$args</code> when the field has a value saved in the database.&nbsp; I have also added a check for getting the currently logged-in user&#8217;s value in case we want to call this function separately outside the context of the plugin&#8230;.and that piece of code could be left out.</p>
+<p>The post <a href="/boosting-registration-forms/">Boosting Registration forms</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Dynamic Menus</title>
+		<link>/dynamic-menus/</link>
+		
+		<dc:creator><![CDATA[Aurovrata V.]]></dc:creator>
+		<pubDate>Fri, 26 Sep 2014 05:21:55 +0000</pubDate>
+				<category><![CDATA[Menus]]></category>
+		<category><![CDATA[Theme Reviews]]></category>
+		<category><![CDATA[menu]]></category>
+		<category><![CDATA[walker]]></category>
+		<guid isPermaLink="false">http://localhost/syllogic/wp/?p=188</guid>
+
+					<description><![CDATA[<p>There are many good tutorials to build custom menus for logged in/logged out users, see also our own post on the ajax login menu. &#160;There are more complex approaches in order to customise the individual menu items using a the wordpress Walker class. &#160;An excellent review of a custom walker can be found on the [&#8230;]</p>
+<p>The post <a href="/dynamic-menus/">Dynamic Menus</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<p>There are many good tutorials to build custom menus for logged in/logged out users, see also our own post on the <a href="http://localhost/syllogic/wp/2014/05/wordpress-log-in-log-out-menus/">ajax login menu</a>. &nbsp;There are more complex approaches in order to <a href="http://www.kriesi.at/archives/improve-your-wordpress-navigation-menu-output" target="_blank" rel="noopener">customise the individual menu items</a> using a the <a href="http://codex.wordpress.org/Class_Reference/Walker" target="_blank" rel="noopener">wordpress Walker class</a>. &nbsp;An excellent <a href="http://wordpress.stackexchange.com/questions/14037/menu-items-description-custom-walker-for-wp-nav-menu/14039#14039" target="_blank" rel="noopener">review of a custom walker</a> can be found on the <a href="http://wordpress.stackexchange.com/" target="_blank" rel="noopener">WordPress StackExchange</a>.</p>
+
+
+
+<p>However, I was looking to actually add menu items dynamically depending on the state of the site. &nbsp;In this case, we have a client, a research centre at a university who asked us to redevelop their site as&nbsp;a portal of all their conference sites. &nbsp;We created a WordPress MU portal which we customised to enable them to create new conference sites based on a template site that is pre-configured, enabling registration forms, abstract submission forms, payment gateways to be created for each new conference at the press of a button in the Dashboard.</p>
+
+
+
+<p>One of the challenges was to dynamically add new conference sites to the main site menu as when they are created. &nbsp;Furthermore, the conference menu has a Past sub-menu in which old conferences need to be listed.</p>
+
+
+
+<p>I decided to use the Walker extension solution by adding a little customisation.  I created a new class, <code>AddExtraMenuItems_Walker</code>, which extends the WordPress core  <a href="https://core.trac.wordpress.org/browser/tags/4.0/src//wp-includes/nav-menu-template.php#L0" target="_blank" rel="noopener">Walker_Nav_Menu class</a>.</p>
+
+
+
+<details class="wp-block-details is-layout-flow wp-block-details-is-layout-flow"><summary>Full code</summary>
+<pre class="wp-block-code"><code lang="php" class="language-php line-numbers">/**
+ * Walker Navigation Menu class to insert dynamic content into menus
+ * use the constructor at creation to pass the dynamic menu content
+ */
+class AddExtraMenuItems_Walker extends Walker_Nav_Menu{
+ public $insertMenus = array();
+ protected $nextMenu = '';
+ /**
+ * Constructor takes an array
+ *
+ *@param array $menu_insert an array of key=>value pairs with
+ *each key being the parent menu underwhich to insert the extra menu items,
+ *and the value being an array containing menu items as array values of the following form,
+ *array( 'url' => permalink for the menu item (default ='#'),
+ * 'title' => menu title (default = '&lt;i> Missing Title&lt;/i>'),
+ * 'id' => css id value for the &lt;li> term (default = ''),
+ * 'class' => ',' delimited string of css classes for the &lt;li> term (default='') ), each
+ *menu will be wrapped in &lt;a> tags that will open in a new window. 
+ */
+ function __construct($menu_insert = array()) {
+   $this->insertMenus = $menu_insert;
+ } 
+ 
+ function start_el( &amp;$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+   $menu_item = apply_filters( 'the_title', $item->title, $item->ID );
+   if(array_key_exists($menu_item,$this->insertMenus)){
+     //check if to be listed or inserted as sub-menu
+     $menuTree = $this->insertMenus[$menu_item];
+     $subMenu = ! empty($menuTree['sub-menu']) ? true:false;
+     /*
+     *if this is a sub-mneu insert, ;let's make sure our current
+     *menu-item has the required class to identify it as such
+     */
+     if($subMenu &amp;&amp; ! empty($menuTree['class'])) $item->classes[]=$menuTree['class'];
+       //call parent function
+       parent::start_el($output, $item, $depth, $args);
+       //now if we have a sub-menu tree we need to insert it here
+       if($subMenu){
+          $classes = ! empty($menuTree['ul-class']) ? ' class="'.$menuTree['class'].'"' : ' class="sub-menu"';
+          $output .= '&lt;ul'.$class.'>';
+          foreach($menuTree['sub-menu'] as $menu_item){
+            $classes = ! empty($menu_item['class']) ? '" class="'.$menu_item['class'].'"' : '';
+            $id = ! empty($menu_item['id']) ? ' id="'.$menu_item['id'].'"' : '';
+            $url =! empty($menu_item['url']) ? $menu_item['url'] : '#';
+             $title=! empty($menu_item['title']) ? $menu_item['title'] : '&lt;i>Missing Title&lt;/i>';
+             $output .= '&lt;li'.$id.$classes.'>&lt;a href="'.$url.'" target="_blank">'.$title.'&lt;/a>&lt;/li>';
+          }
+          $output .= '&lt;/ul>'; //let's close our sub-menu
+       }else $this->nextMenu = $menuTree; //else we pass the menu items to be inserted as list items in the start call
+   }else parent::start_el($output, $item, $depth, $arg);
+ }
+ 
+ function start_lvl( &amp;$output, $depth = 0, $args = array()) {
+   parent::start_lvl($output, $depth, $args);
+   if($this->nextMenu){
+     foreach($this->nextMenu as $menu_item){
+       $classes = ! empty($menu_item['class']) ? '" class="'.$menu_item['class'].'"' : '';
+       $id = ! empty($menu_item['id']) ? ' id="'.$menu_item['id'].'"' : '';
+       $url =! empty($menu_item['url']) ? $menu_item['url'] : '#';
+       $title=! empty($menu_item['title']) ? $menu_item['title'] : '&lt;i>Missing Title&lt;/i>';
+       $output .= '&lt;li'.$id.$classes.'>&lt;a href="'.$url.'" target="_blank">'.$title.'&lt;/a>&lt;/li>';
+     }
+   $this->nextMenu=''; //reset
+   }
+ }
+ 
+}</code></pre>
+</details>
+
+
+
+<p>So the Walker class is simply called in the wordpress function to display a menu structure,</p>
+
+
+
+<pre class="wp-block-code"><code lang="php" class="language-php">wp_nav_menu( array('walker'=&gt; new AddExtraMenuItems_Walker($extra_menu), 'theme_location' =&gt; 'primary-menu', 'container' =&gt; '', 'fallback_cb' =&gt; '', 'menu_class' =&gt; 'my-menu-class', 'menu_id' =&gt; 'top-menu', 'echo' =&gt; false ) );</code></pre>
+
+
+
+<p>Remains to define the $extra_menu array arguments that are passed to the walker in order to insert it into the right menu. Here is an example. It assumes that there is a primary menu created in the Dashboard with the top level menu item &#8216;Conferences&#8217; and a sub-item below this called &#8216;Past&#8217;,</p>
+
+
+
+<pre class="wp-block-code"><code lang="php" class="language-php line-numbers">$extra_menu = array(
+ 'Conferences'=&gt;array(array('title'=&gt;'ISOl 2015',
+                               'url' =&gt; 'http://syllogic.asia/2015/',
+                               'id' =&gt; 'menu_item_isol_2',
+                               'class'=&gt; 'menu-item menu-item-type-custom menu-item-object-custom'),
+                         array('title'=&gt;'ISOl Chicago',
+                               'url' =&gt; 'http://syllogic.asia/2015/',
+                               'id' =&gt; 'menu_item_isol_3',
+                               'class'=&gt; 'menu-item menu-item-type-custom menu-item-object-custom')),
+ 'Past'=&gt;array('ul-class'=&gt;'sub-menu',
+                  'class'=&gt;'menu-item-has-children left-sub-menu',
+                  'sub-menu'=&gt;array(array('title'=&gt;'ISOl 2015',
+                                             'url' =&gt; 'http://syllogic.asia/2015/',
+                                             'id' =&gt; 'menu_item_isol_2',
+                                             'class'=&gt; 'menu-item menu-item-type-custom menu-item-object-custom'),
+                                       array('title'=&gt;'ISOl Chicago',
+                                             'url' =&gt; 'http://syllogic.asia/2015/',
+                                             'id' =&gt; 'menu_item_isol_3',
+                                             'class'=&gt; 'menu-item menu-item-type-custom menu-item-object-custom'))));</code></pre>
+
+
+
+<p>There is 2 type of menu being inserted here, the first one under &#8216;Conferences&#8217; menu item, are 2 extra sub-item which are simply listed within the existing sub-menu list of &#8216;Conferences&#8217;.<br>
+The second set of menu is an entire sub-menu structure being replaced instead of an existing menu-item. In other words, &#8216;Past&#8217; is a sub-item of top menu item &#8216;Conferences&#8217;. As such &#8216;Past&#8217; does not have any children. This 2nd set of dynamic menu are placed below the &#8216;Past&#8217;, making it into a sub-menu.</p>
+
+
+
+<p>Menu structures are dined as an array with,</p>
+
+
+
+<pre class="wp-block-code"><code lang="php" class="language-php">array('title'=&gt;<em>the text of the menu item</em>,
+      'url' =&gt; <em>the permalink for the menu</em>,
+      'id' =&gt; <em>a css id for the &lt;li&gt; element</em>,
+      'class'=&gt; <em>css classes for the &lt;li&gt; element</em>)</code></pre>
+
+
+
+<p>To add an entire sub-menu to a given item, you need to specify some extra arguments, namely the classes that changes an item into a sub-menu (on hover the sub-menu will appear) if you are using pure CSS for your menus. This is done using the following structure,</p>
+
+
+
+<pre class="wp-block-code"><code lang="php" class="language-php">array('ul-class'=&gt;<em>the css class for the sub-menu </em><ul><em> element</em>,
+      'class'=&gt;<em>the css class for the menu item that will change to a sub-menu structure</em>,
+      'sub-menu'=&gt;array( <em> sub-menu items as arrays, as defined above</em> )</ul></code></pre>
+
+
+
+<p>That&#8217;s it.  Feel free to comment, query, clarify below&#8230;</p>
+<p>The post <a href="/dynamic-menus/">Dynamic Menus</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Managing a development and live site</title>
+		<link>/managing-a-development-and-live-site/</link>
+		
+		<dc:creator><![CDATA[Aurovrata V.]]></dc:creator>
+		<pubDate>Mon, 18 Aug 2014 07:33:41 +0000</pubDate>
+				<category><![CDATA[Content Management]]></category>
+		<category><![CDATA[Development]]></category>
+		<guid isPermaLink="false">http://localhost/syllogic/wp/?p=178</guid>
+
+					<description><![CDATA[<p>How to manage a development site in parallel to a live site and both being accessible online.</p>
+<p>The post <a href="/managing-a-development-and-live-site/">Managing a development and live site</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<p>As is often the case when developing a new site for a client you have to work with a beta site to show-case the work to its stakeholders&nbsp; and in parallel deploy updates to a live site.&nbsp; In such a scenario one ideally wants the live site to be searched and indexed by search engines, and the beta site to remain hidden from public view.</p>
+
+
+
+<p>So how does one reconcile these requirements is a question I have have been scrutinising and I share here the information so far gathered so that others may solve this problem too.</p>
+
+
+
+<h3 class="wp-block-heading">Stopping search engines from indexing the beta site</h3>
+
+
+
+<figure class="wp-block-image aligncenter"><a href="http://localhost/syllogic/wp/wp-content/uploads/sites/2/2014/08/search-engines.png"><img decoding="async" src="http://localhost/syllogic/wp/wp-content/uploads/sites/2/2014/08/search-engines-300x111.png" alt="Search engines indexing setting in WordPress Dashboard" class="wp-image-181"/></a></figure>
+
+
+
+<p>WordPress enables a single check-box setting from being enabled to dissuade search engines from indexing the pages of the a site.&nbsp; You will find the setting in the admin Dashboard menu <a href="http://codex.wordpress.org/Settings_Reading_Screen#Reading_Settings" target="_blank" rel="noopener">Settings-&gt;Reading</a>.&nbsp; However, you should be aware that it is up to the search engines to comply with the request.<br>
+</p>
+
+
+
+<p>One should also be aware that this works only for sites that are installed in the root folder of your site and not for sites that live in a separate folder.&nbsp; In this case several other options are available, such as placing a <a href="https://www.inmotionhosting.com/support/website/restricting-bots/how-to-stop-search-engines-from-crawling-your-website" target="_blank" rel="noopener"><code>robots.txt</code></a> in your installation folder.</p>
+
+
+
+<h3 class="wp-block-heading">Locking down the beta site</h3>
+
+
+
+<p>The basic idea here is to enable views of the beta site to users with an account on the beta site.&nbsp;&nbsp; I make use of the <a href="http://codex.wordpress.org/Plugin_API/Action_Reference/template_redirect" target="_blank" rel="noopener">template_redirect hook</a> in the <code>functions.php</code> file to redirect any request from the front page to a nice looking static html landing page&#8230;</p>
+
+
+
+<pre class="wp-block-code"><code lang="php" class="language-php">add_action('template_redirect','beta_site_redirect');
+function beta_site_redirect() {
+&nbsp;&nbsp;&nbsp; if (!is_user_logged_in() &amp;&amp; !is_admin()) {
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//&amp;&amp; !'redirect.html'==get_current_template()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //echo get_current_template();
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;wp_redirect('/redirect.html');
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;exit();
+&nbsp;&nbsp;&nbsp; }
+}</code></pre>
+
+
+
+<p>The function checks if the request comes form a logged in user as well as where the request is coming from.&nbsp; This ensures that we can still access the admin Dashboard and sign in as usual.&nbsp; Once signed in we can then proceed to look at the front pages.</p>
+
+
+
+<p>In order to make the experience a little more seamless, we redirect the visitor to a static html which informs them that they currently on the beta site and are being automatically redirected to the live site using the following html header:</p>
+
+
+
+<pre class="wp-block-code"><code lang="markup" class="language-markup">&lt;head&gt;
+&lt;title&gt; The CSR Journal&lt;/title&gt;
+&lt;meta http-equiv="refresh" content="2;url=http://my-live-site.com/"&gt;
+&lt;/head&gt;</code></pre>
+
+
+
+<p>The first number in the <code>content</code> attribute, <code>content="2;..."</code> is the time in seconds before the page is redirected to the url address given after the semi-colon.</p>
+
+
+
+<p><strong>IMPORTANT NOTE</strong>: make sure <span style="text-decoration: underline;">your static html is in the root directory of your</span> WordPress installation and not in your theme folder!</p>
+
+
+
+<h3 class="wp-block-heading">Redirect your beta site SEO</h3>
+
+
+
+<p>if you find yourself in the situation where your beta site has a better page rank than your live site, then you can r<a href="http://wpshout.com/better-alternatives-discourage-search-engines-wordpress/" target="_blank" rel="noopener">edirect them to your live site</a> once you have finished the development cycle&#8230;.</p>
+<p>The post <a href="/managing-a-development-and-live-site/">Managing a development and live site</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Managing Dashboard Menus, Sub-menus and Labels</title>
+		<link>/managing-dashboard-menus-sybmenus-and-labels/</link>
+		
+		<dc:creator><![CDATA[Aurovrata V.]]></dc:creator>
+		<pubDate>Wed, 14 May 2014 16:35:22 +0000</pubDate>
+				<category><![CDATA[Admin Dashboard]]></category>
+		<category><![CDATA[Admin Menus]]></category>
+		<guid isPermaLink="false">http://localhost/syllogic/wp/?p=107</guid>
+
+					<description><![CDATA[<p>A recent project saw adopt the Vertex Elegant Theme which comes with a pre-built set of custom posts to create diverse content.&#160; The theme has 3 built-in custom posts: The requirement from the client is to use the theme for an online magazine.&#160; They have a group of editors and authors working on the current [&#8230;]</p>
+<p>The post <a href="/managing-dashboard-menus-sybmenus-and-labels/">Managing Dashboard Menus, Sub-menus and Labels</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<p>A recent project saw adopt the <a href="http://elegantthemes.com/preview/Vertex/" target="_blank" rel="noopener">Vertex Elegant Theme</a> which comes with a pre-built set of custom posts to create diverse content.&nbsp; The theme has 3 built-in custom posts:</p>
+
+
+
+<ul class="wp-block-list">
+<li>Team Member</li>
+
+
+
+<li>Project</li>
+
+
+
+<li>Testimonials</li>
+</ul>
+
+
+
+<p>The requirement from the client is to use the theme for an online magazine.&nbsp; They have a group of editors and authors working on the current issue, with various sections to the magazine.</p>
+
+
+
+<p>So the challenge was 2-fold:</p>
+
+
+
+<ol class="wp-block-list">
+<li>Integrate the theme with as little modification as possible in order to keep the cost down</li>
+
+
+
+<li>build a back-end dashboard which brings clarity to the complex work of putting together an issue with several articles, several sections and various authors contributing to it.</li>
+</ol>
+
+
+
+<p>So working around the idea of each article being a post, each being in a given section of the magazine (a post category) and at the same time being able to connect to past issues with keywords (or post tags), we wanted to dissociate the current issue from past issues so as to confuse the editors and authors when editing posts.</p>
+
+
+
+<p>We also wanted to reuse a common set of keywords to connect old articles new ones.</p>
+
+
+
+<p>We achieved this by by reusing the main Posts that comes with the default installation of WordPress as the Past Issues of the magazine.</p>
+
+
+
+<p>We then changed the Project custom post of the Vertex theme to manage the current issue.</p>
+
+
+
+<p>And since we were using the registered users to display the editorial team details, we decided that we did not need the Team Member custom post that was automatically installed with the Vertex theme.</p>
+
+
+
+<p>All in all we need to do the following custom coding:</p>
+
+
+
+<ul class="wp-block-list">
+<li>rename default Posts to Past Issues,</li>
+
+
+
+<li>change the Category labels to Sections</li>
+
+
+
+<li>rename the custom post Project to Current Issue</li>
+
+
+
+<li>share the default Tags taxonomy between the Past Issues and the Current Issue</li>
+
+
+
+<li>rename the Tags label to Keywords</li>
+
+
+
+<li>and finally add a Keywords sub-menu to the Current Issue Menu.</li>
+</ul>
+
+
+
+<p>Here is how we went about it&#8230;</p>
+
+
+
+<h3 class="wp-block-heading">The WordPress challenge&#8230;.</h3>
+
+
+
+<p>The challenge above is relatively straightforward when one knows what to change, the real challenge is to actually to find <em>what to change</em>.</p>
+
+
+
+<p>This is what this post is all about as I try to drop little white stones on my exploration of the WordPress jungle so-to-speak.</p>
+
+
+
+<h4 class="wp-block-heading">Changing menus</h4>
+
+
+
+<p>My <a href="https://wordpress.stackexchange.com/questions/9211/changing-admin-menu-labels" target="_blank" rel="noopener">first clue</a> came from the answer provided to someone&#8217;s question along similar lines about changing menus in the dashboard.&nbsp; However, it wasn&#8217;t sufficient to give me an overview of the logic behind the answer.&nbsp; So I went about digging further, but the only things I could find where wordpress codex functions on <a href="http://codex.wordpress.org/Administration_Menus" target="_blank" rel="noopener">adding/removing menus</a> and nothing on changing the name.</p>
+
+
+
+<h4 class="wp-block-heading">Modifying the functions.php</h4>
+
+
+
+<pre class="wp-block-code"><code lang="php" class="language-php line-numbers">add_action( 'admin_menu', 'sy_change_admin_menu' );
+function sy_change_admin_menu() {
+    global $menu;
+    global $submenu;
+    //let-s remove the team-member post_type menu
+    remove_menu_page( 'edit.php?post_type=team-member' );
+    //let's add the tags sub-menu to the post_type projects
+    register_taxonomy_for_object_type( 'post_tag', 'project' );
+    add_submenu_page( 'edit.php?post_type=project', 'Keywords', 'Keywords', 'manage_categories', 'edit-tags.php?taxonomy=post_tag', '' );
+    //project post_type renamed to Current Issue
+    $menu[26][0] = 'Current Issue';
+       $submenu['edit.php?post_type=project'][5][0] = 'All Articles';
+    $submenu['edit.php?post_type=project'][15][0] = 'Sections'; // Change name for categories
+    //post post_type renamed to Past Issues
+    $menu[5][0] = 'Past Issues';
+       $submenu['edit.php'][5][0] = 'All Articles';
+    $submenu['edit.php'][15][0] = 'Sections'; // Change name for categories
+    $submenu['edit.php'][16][0] = 'Keywords'; // Change name for tags
+    echo '';
+}</code></pre>
+
+
+
+<p>The codex has a section the admin menus hooks which is what the above answer is using, but I was intrigued about the reference to the the <code>global $menu</code> and <code>$submenu</code> objects.&nbsp; So I devised a small function to explore the structure of these objects as an empirical guide to modifying the dashboard menu.</p>
+<p>The post <a href="/managing-dashboard-menus-sybmenus-and-labels/">Managing Dashboard Menus, Sub-menus and Labels</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>WordPress log in / log out menus</title>
+		<link>/wordpress-log-in-log-out-menus/</link>
+					<comments>/wordpress-log-in-log-out-menus/#comments</comments>
+		
+		<dc:creator><![CDATA[Aurovrata V.]]></dc:creator>
+		<pubDate>Sat, 10 May 2014 14:46:01 +0000</pubDate>
+				<category><![CDATA[Menus]]></category>
+		<category><![CDATA[News & Updates]]></category>
+		<category><![CDATA[ajax]]></category>
+		<category><![CDATA[login]]></category>
+		<guid isPermaLink="false">http://localhost/syllogic/wp/?p=90</guid>
+
+					<description><![CDATA[<p>One of the downsides of WordPress menus is the inability to have a set of menus for logged-in users that may differ from the primary menu. Many sites tackle this in various ways, but a conventional approach is to have a separate menus to handle&#160; the logged-in and logged-out states of the visitor. A menu [&#8230;]</p>
+<p>The post <a href="/wordpress-log-in-log-out-menus/">WordPress log in / log out menus</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<p>One of the downsides of WordPress menus is the inability to have a set of menus for logged-in users that may differ from the primary menu.</p>
+
+
+
+<p>Many sites tackle this in various ways, but a conventional approach is to have a separate menus to handle&nbsp; the logged-in and logged-out states of the visitor.</p>
+
+
+
+<h3 class="wp-block-heading">A menu for logged-in users and one for logged-out</h3>
+
+
+
+<figure class="wp-block-image"><a href="http://localhost/syllogic/wp/wp-content/uploads/sites/2/2014/05/primary-menu.jpg"><img decoding="async" src="http://localhost/syllogic/wp/wp-content/uploads/sites/2/2014/05/primary-menu-1024x217.jpg" alt="primary menu" class="wp-image-95" title="The usual menu from a wordpress theme"/></a></figure>
+
+
+
+<p>Here is a screen shot of the secondary menu for the logged-out visitor (ie public view).</p>
+
+
+
+<figure class="wp-block-image"><a href="http://localhost/syllogic/wp/wp-content/uploads/sites/2/2014/05/logout-menu.jpg"><img decoding="async" src="http://localhost/syllogic/wp/wp-content/uploads/sites/2/2014/05/logout-menu-1024x178.jpg" alt="logout-menu" class="wp-image-94" title="The quick-out-menu refers to the menu registration below"/></a></figure>
+
+
+
+<p>As you can see the menu appears above the main menu and consist of a registration and login link.&nbsp; This menu needs to change when the user is actually logged in&#8230;</p>
+
+
+
+<figure class="wp-block-image"><a href="http://localhost/syllogic/wp/wp-content/uploads/sites/2/2014/05/log-in-menu.jpg"><img decoding="async" src="http://localhost/syllogic/wp/wp-content/uploads/sites/2/2014/05/log-in-menu-1024x181.jpg" alt="log in menu" class="wp-image-93"/></a></figure>
+
+
+
+<p>In the above case, the site is conference registration site and the menu changes to a Submission and logout menu.</p>
+
+
+
+<h3 class="wp-block-heading">Integration with the WordPress Menu Manager</h3>
+
+
+
+<p>Now here comes the beautiful part of this custom menu&#8230;.</p>
+
+
+
+<figure class="wp-block-image"><a href="http://localhost/syllogic/wp/wp-content/uploads/sites/2/2014/05/wp-menu-manager-logout.jpg"><img decoding="async" src="http://localhost/syllogic/wp/wp-content/uploads/sites/2/2014/05/wp-menu-manager-logout-1024x501.jpg" alt="wp menu manager - logout" class="wp-image-96" title="WP Menu Manager interface"/></a></figure>
+
+
+
+<p>As you can see from the above screenshot of the site Dashboard, the menu manager allows the webmaster to configure the logged-out menu by adding other pages, sub-menus, links, post, categories and what not.&nbsp; However, the only thing missing is the Login menu link.&nbsp; This is done dynamically with a function by simply adding a login menu item at the end of the menu structure.</p>
+
+
+
+<figure class="wp-block-image"><a href="http://localhost/syllogic/wp/wp-content/uploads/sites/2/2014/05/wp-menu-manager-login.jpg"><img decoding="async" src="http://localhost/syllogic/wp/wp-content/uploads/sites/2/2014/05/wp-menu-manager-login-1024x539.jpg" alt="wp menu manager-login" class="wp-image-97" title="WP Menu Manager"/></a></figure>
+
+
+
+<p>Same thing for the logged-in menu structure, no login menu item.</p>
+
+
+
+<h3 class="wp-block-heading">So what&#8217;s the big deal?</h3>
+
+
+
+<p>Why did we do this?&nbsp; Well for starters, adding logout/login urls has to be done manually using the custom Links items, which means that if the the site domain name changes (such going from a demo to a live site) one needs to remember to change it.&nbsp; However, we also wanted to add an Ajax-enabled login functionality as described in this neat <a title="Natko Hasik tutorial on WP ajax login" href="http://natko.com/wordpress-ajax-login-without-a-plugin-the-right-way/" target="_blank" rel="noopener">little tutorial</a> by Natko Hasik.&nbsp; And the result is this:</p>
+
+
+
+<figure class="wp-block-image"><a href="http://localhost/syllogic/wp/wp-content/uploads/sites/2/2014/05/ajax-login.jpg"><img decoding="async" src="http://localhost/syllogic/wp/wp-content/uploads/sites/2/2014/05/ajax-login.jpg" alt="ajax-login" class="wp-image-98" title="WP Ajax-enabled login"/></a></figure>
+
+
+
+<p>Neat no?</p>
+
+
+
+<p>So how does it work?&nbsp; Well here is the magic&#8230;.</p>
+
+
+
+<details class="wp-block-details is-style-default is-layout-flow wp-block-details-is-layout-flow"><summary>The functions.php file first</summary>
+<p>Here is the code to register the two menus that we will be using in the headers of our site…</p>
+
+
+
+<pre class="wp-block-code"><code lang="php" class="language-php line-numbers">function sy_conf_register_menu() {
+  register_nav_menu('quick-in-menu',__( 'Quick Loged-in Menu' ));
+  register_nav_menu('quick-out-menu',__( 'Quick Loged-out Menu' ));
+}
+add_action( 'init', 'sy_conf_register_menu' ); // register additional menu</code></pre>
+
+
+
+<p>Next is the function which will add the necessary login and logout menu links dynamically each time the menus are being called by the header…</p>
+
+
+
+<pre class="wp-block-code"><code lang="php" class="language-php line-numbers">function sy_quick_nav_items( $items, $args ) 
+{ //$items, $menu,
+    if( 'quick-in-menu' == $args-&gt;theme_location )
+        $items.= '&lt;li&gt;&lt;a href="'.wp_logout_url(get_permalink()).'" title="Logout"&gt;Logout&lt;/a&gt;&lt;/li&gt;';
+     if( 'quick-out-menu' == $args-&gt;theme_location ) {
+           $logInitem = '&lt;a id="show_login" href=""&gt;Login&lt;/a&gt;';
+        $logInitem.= '&lt;form id="login" action="login" method="post"&gt;';
+        $logInitem.= '    &lt;p&gt;&lt;/p&gt;';
+        $logInitem.= '    &lt;div id="loginFields"&gt;&lt;p&gt;&lt;label for="username"&gt;Username&lt;/label&gt;&lt;input id="username" type="text" name="username"&gt;&lt;/p&gt;';
+        $logInitem.= '    &lt;p&gt;&lt;label for="password"&gt;Password&lt;/label&gt;&lt;input id="password" type="password" name="password"&gt;&lt;/p&gt;';
+        $logInitem.= '    &lt;p id="lostPass"&gt;&lt;a href="&lt;?php echo wp_lostpassword_url(); ?&gt;"&gt;Lost your password?&lt;/a&gt;&lt;/p&gt;';
+        $logInitem.= '    &lt;p id="loginButton"&gt;&lt;a href="javascript:void(0)"&gt;Cancel&lt;/a&gt;&lt;input type="submit" value="Login" name="submit"&gt;&lt;/p&gt;&lt;/div&gt;';
+        $logInitem.= wp_nonce_field( 'ajax-login-nonce', 'security' );
+        $logInitem.= '&lt;/form&gt;';
+        $items.= $logInitem;
+    }
+    return $items;
+}
+add_filter( 'wp_nav_menu_items','sy_quick_nav_items', 10, 2 );</code></pre>
+
+
+
+<p>Finally the Ajax initialisation …</p>
+
+
+
+<pre class="wp-block-code"><code lang="php" class="language-php line-numbers">function ajax_login_init(){
+    wp_register_script('ajax-login-script', get_stylesheet_directory_uri() . '/js/ajax-login-script.js', array('jquery') ); 
+    wp_enqueue_script('ajax-login-script');
+    wp_localize_script( 'ajax-login-script', 'ajax_login_object', array( 
+        'ajaxurl' =&gt; admin_url( 'admin-ajax.php' ),
+        'redirecturl' =&gt; home_url(),
+        'loadingmessage' =&gt; __('Logging in, please wait...')
+    ));
+    // Enable the user with no privileges to run ajax_login() in AJAX
+    add_action( 'wp_ajax_nopriv_ajaxlogin', 'ajax_login' );
+}
+// Execute the action only if the user isn't logged in
+if (!is_user_logged_in()) {
+    add_action('init', 'ajax_login_init');
+}</code></pre>
+
+
+
+<p>…and call handlers…</p>
+
+
+
+<pre class="wp-block-code"><code lang="php" class="language-php line-numbers">function ajax_login(){
+    // First check the nonce, if it fails the function will break
+    check_ajax_referer( 'ajax-login-nonce', 'security' );
+    // Nonce is checked, get the POST data and sign user on
+    $info = array();
+    $info['user_login'] = $_POST['username'];
+    $info['user_password'] = $_POST['password'];
+    $info['remember'] = true;
+    $user_signon = wp_signon( $info, false );
+    if ( is_wp_error($user_signon) ){
+        echo json_encode(array('loggedin'=&gt;false, 'message'=&gt;__('Wrong username or password.')));
+    } else {
+        echo json_encode(array('loggedin'=&gt;true, 'message'=&gt;__('Login successful, redirecting...')));
+    }
+    die();
+}</code></pre>
+</details>
+
+
+
+<details class="wp-block-details is-layout-flow wp-block-details-is-layout-flow"><summary>Ajax Javascript file ajax-login-script.js</summary>
+<p>This is the javascript file that will be loaded, I place it in the js/ folder of my child-theme root folder…save the code into a new file called ajax-login-script.js</p>
+
+
+
+<pre class="wp-block-code"><code lang="javascript" class="language-javascript line-numbers">jQuery(document).ready(function($) {
+    // Show the login dialog box on click
+    $('a#show_login').on('click', function(e){
+        $('body').prepend('&lt;div&gt;&lt;/div&gt;');
+        $('form#login').fadeIn(500);
+        $('div.login_overlay, form#login a.close').on('click', function(){
+            $('div.login_overlay').remove();
+            $('form#login').hide();
+        });
+        e.preventDefault();
+    });
+    // Perform AJAX login on form submit
+    $('form#login').on('submit', function(e){
+        $('form#login div#loginFields').fadeOut(500);
+        $('form#login p.status').show().text(ajax_login_object.loadingmessage);
+        $.ajax({
+            type: 'POST',
+            dataType: 'json',
+            url: ajax_login_object.ajaxurl,
+            data: { 
+                'action': 'ajaxlogin', //calls wp_ajax_nopriv_ajaxlogin
+                'username': $('form#login #username').val(), 
+                'password': $('form#login #password').val(), 
+                'security': $('form#login #security').val() },
+            success: function(data){
+                $('form#login p.status').text(data.message);
+                if (data.loggedin == true){
+                    document.location.href = ajax_login_object.redirecturl;
+                }
+            }
+        });
+        e.preventDefault();
+    });
+});</code></pre>
+</details>
+
+
+
+<details class="wp-block-details is-layout-flow wp-block-details-is-layout-flow"><summary>CSS beautification&#8230;.</summary>
+<p>the css needed to make it all look good…</p>
+
+
+
+<pre class="wp-block-code"><code lang="css" class="language-css line-numbers">form#login {
+    background-color: #FFFFFF;
+    border-top: 3px solid #7B0099;
+    display: none;
+    padding: 5px;
+    position: fixed;
+    z-index: 999;
+}
+#login div#loginFields &gt; p {
+    line-height: 0.5em;
+    padding-bottom: 5px;
+    text-align: right;
+}
+#login div#loginFields &gt; p#lostPass {
+    text-align: center;
+}
+#login div#loginFields input {
+    border: 1px solid #D3D3D3;
+    padding: 1px 2px;
+    width: 100px;
+}
+#login div#loginFields label {
+    margin-right: 5px;
+}
+
+form#login p.status{
+    display: none;
+    line-height: 0.5em;
+    padding-bottom: 5px;
+    text-align: center;
+}
+form#login div#loginFields a.close {
+    background: none repeat scroll 0 0 #F0F0F0;
+    border: 1px solid #D3D3D3;
+    color: #00266A;
+    font-size: 11px;
+    margin-right: 4px;
+    padding: 1px 25px;
+}
+#login div#loginFields input.submit_button {
+    color: #00266A;
+    padding: 0 2px;
+    width: 86px;
+}
+.login_overlay{
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    opacity: 0.9;
+    position: fixed;
+    z-index: 998;
+}</code></pre>
+</details>
+
+
+
+<details class="wp-block-details is-layout-flow wp-block-details-is-layout-flow"><summary>Integration into the header&#8230;</summary>
+<p>This is the tricky part, because the header will differ from one theme to the next and you will need to see where best to fit in your additional menus…</p>
+
+
+
+<pre class="wp-block-code"><code lang="markup" class="language-markup line-numbers">&lt;body&gt;
+    &lt;header&gt;
+         &lt;div id="top-navigation"&gt;
+                &lt;nav id="quick-nav"&gt;
+                &lt;?php
+                    $menuClass = 'nav';
+            if ( is_user_logged_in() ) {
+                //get the logged-out menu 
+                $quickNav = wp_nav_menu( array( 'theme_location' =&gt; 'quick-in-menu', 'container' =&gt; '', 'fallback_cb' =&gt; '', 'menu_class' =&gt; $menuClass, 'menu_id' =&gt; 'quick-menu', 'echo' =&gt; false ) );
+                if ( '' == $quickNav ) : //in case the menus have not been setup
+                ?&gt;
+                    &lt;ul id="quick-menu"&gt;
+                        &lt;li&gt;&lt;a href="&lt;?php echo wp_logout_url(get_permalink()); ?&gt;" title="Logout"&gt;Logout&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;?php
+                else :
+                    echo ( $quickNav );
+                endif;
+            } else {
+                //get the logged-in menu
+                $quickNav = wp_nav_menu( array( 'theme_location' =&gt; 'quick-out-menu', 'container' =&gt; '', 'fallback_cb' =&gt; '', 'menu_class' =&gt; $menuClass, 'menu_id' =&gt; 'quick-menu', 'echo' =&gt; false ) );
+                if ( '' == $quickNav ) ://in case the menus have not been setup
+            ?&gt;
+                    &lt;ul id="quick-menu"&gt;
+                        &lt;li&gt;&lt;a href="&lt;?php echo wp_login_url(get_permalink()); ?&gt;" title="Login"&gt;Login&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+            &lt;?php
+                else :
+                    echo ( $quickNav );
+                endif;
+            }
+            ?&gt;
+                &lt;/nav&gt;
+                &lt;nav id="top-menu"&gt;
+                &lt;?php
+                    $menuClass = 'nav';
+                            $primaryNav = wp_nav_menu( array( 'theme_location' =&gt; 'primary-menu', 'container' =&gt; '', 'fallback_cb' =&gt; '', 'menu_class' =&gt; $menuClass, 'menu_id' =&gt; 'top-menu', 'echo' =&gt; false ) );
+                                 ?&gt;
+                                &lt;!-- ...your primary menu html code....--&gt;
+                &lt;/nav&gt;
+         &lt;/div&gt;
+    &lt;/header&gt;</code></pre>
+</details>
+<p>The post <a href="/wordpress-log-in-log-out-menus/">WordPress log in / log out menus</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/wordpress-log-in-log-out-menus/feed/</wfw:commentRss>
+			<slash:comments>3</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

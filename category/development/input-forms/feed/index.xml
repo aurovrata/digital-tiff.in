@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Input forms Archives - Tiffin Consulting</title>
+	<atom:link href="/category/development/input-forms/feed/" rel="self" type="application/rss+xml" />
+	<link>/category/development/input-forms/</link>
+	<description>digital business transformation</description>
+	<lastBuildDate>Fri, 02 Feb 2024 12:22:27 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.7.1</generator>
+
+<image>
+	<url>/wp-content/uploads/2024/02/cropped-tiffin-icon-1-150x150.png</url>
+	<title>Input forms Archives - Tiffin Consulting</title>
+	<link>/category/development/input-forms/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Boosting Registration forms</title>
+		<link>/boosting-registration-forms/</link>
+		
+		<dc:creator><![CDATA[Aurovrata V.]]></dc:creator>
+		<pubDate>Thu, 26 Feb 2015 12:26:05 +0000</pubDate>
+				<category><![CDATA[Input forms]]></category>
+		<category><![CDATA[registration]]></category>
+		<guid isPermaLink="false">http://localhost/syllogic/wp/?p=303</guid>
+
+					<description><![CDATA[<p>In a recent project we had to make a custom registration form with a various dynamic categories loaded on the form from which a new user can select using a radio button. Simpler Registration Form Plus We discovered the wonderful plugin which is the Swiss-army plugin for registration forms.&#160; Why do I call it the [&#8230;]</p>
+<p>The post <a href="/boosting-registration-forms/">Boosting Registration forms</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<p>In a recent project we had to make a custom registration form with a various dynamic categories loaded on the form from which a new user can select using a radio button.</p>
+
+
+
+<h3 class="wp-block-heading">Simpler Registration Form Plus</h3>
+
+
+
+<p>We discovered the <a title="Wordpress Simpler Registration Form Plus" href="https://wordpress.org/plugins/simplr-registration-form/" target="_blank" rel="noopener">wonderful plugin</a> which is the Swiss-army plugin for registration forms.&nbsp; Why do I call it the Swiss-army of registration forms?&nbsp; Simply because the author seems to have thought of all the possibilities.&nbsp; To start with, the form automatically creates the additional user meta fields inside your WordPress installation for any elements you create in the registration form, hence ensuring that your logged-in users have all the extra registered fields integrated into their profile.</p>
+
+
+
+<p>The other beautiful aspect is that it is allows for users to view and edit their profiles using a separate <code>[profile_page]</code> shortcode provided by the plugin and you can independently identify which of the fields should be visible in the profile page.</p>
+
+
+
+<h4 class="wp-block-heading">Video tutorial</h4>
+
+
+
+<p>The plugin comes with an embeded video tutorial which comes quite handy initially to figure out how to display the custom registration form using the shortcode provided.</p>
+
+
+
+<h4 class="wp-block-heading">Callback function for more customisation</h4>
+
+
+
+<p>Recently the fully loaded commercial version of the plugin was released to the WordPress community (blessings on the author for his next life-time for this good karma <img src="https://s.w.org/images/core/emoji/15.0.3/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /> and it comes with an additional functionality that allows for a custom field to be added to the the registration form (select type = Callback) which call a user defined function to determine the shade and content of that field.&nbsp; Brilliant I hear you say?&nbsp; Sure it is.</p>
+
+
+
+<p>How to get it to work is a little more complex to figure out since the documentation is thin if not non-existent&#8230;hence this post actually.</p>
+
+
+
+<p>When you add a new field, selete the &#8216;Callback&#8217; type and in the option field, enter the name of your function, for example&#8230; <code>echo_registration_categories</code> the plugin will call your function with 1 argument, the value of the field saved in the database&#8230; this is in order to ensure the field is pre-populated when loaded on the profile page for example.&nbsp; Here is an example,</p>
+
+
+
+<pre class="wp-block-code"><code lang="php" class="language-php line-numbers">//display registration categories in sign up form
+function echo_registration_categories($args){
+&nbsp;&nbsp; //let's get the categories for this conference
+&nbsp;&nbsp; $categories = array();
+&nbsp;&nbsp; $categories[name] = get_option("conf_registration_categories_name");
+&nbsp;&nbsp; $categories[currency]= get_option("conf_registration_categories_currency");
+&nbsp;&nbsp; $categories[early_bird_fees] = get_option("conf_registration_categories_early_bird");
+&nbsp;&nbsp; $categories[full_fees] = get_option("conf_registration_categories_full");
+&nbsp;&nbsp; &nbsp;
+&nbsp;&nbsp; $today = strtotime(date('d M Y'));
+&nbsp;&nbsp; $earlyDate = strtotime(get_option("early_bird_date"));
+&nbsp;&nbsp; $isEarly = ($today&lt;=$earlyDate);
+&nbsp; // if($text)
+&nbsp;&nbsp; $output ='&lt;div id="css-user_category" class="option-field radio "&gt;';
+&nbsp;&nbsp; $output .='&nbsp; &lt;label for="user_category"&gt;Registration category&lt;span class="required"&gt;*&lt;/span&gt;&lt;/label&gt;';
+&nbsp;&nbsp; $output .='&nbsp;&nbsp; &nbsp;&nbsp; &lt;ul&gt;';
+&nbsp;&nbsp; $userCategory =$args;
+&nbsp;&nbsp; if ( empty($args) &amp;&amp; is_user_logged_in() ) {
+&nbsp;&nbsp; &nbsp;&nbsp; $user_ID = get_current_user_id();
+&nbsp;&nbsp; &nbsp;&nbsp; $userCategory = get_user_meta($user_ID, 'user_category', true);
+&nbsp;&nbsp; }
+&nbsp;&nbsp; for($idx=0; $idx &lt; sizeof($categories[name]); $idx++){
+&nbsp;&nbsp; &nbsp;&nbsp; $checked = '';
+&nbsp;&nbsp; &nbsp;&nbsp; $text = $categories[name][$idx];
+&nbsp;&nbsp; &nbsp;&nbsp; if($text == $userCategory) $checked = 'checked';
+&nbsp;&nbsp; &nbsp;&nbsp; $cur = $categories[currency][$idx];
+&nbsp;&nbsp; &nbsp;&nbsp; $cost = $categories[full_fees][$idx];
+&nbsp;&nbsp; &nbsp;&nbsp; if(&nbsp; $isEarly ) $cost = $categories[early_bird_fees][$idx];
+&nbsp;&nbsp; &nbsp;&nbsp; $output .='&lt;li&gt;&lt;input name="user_category" '.$checked.'&nbsp; value="'.$text.'" type="radio"&gt;'.$text.' &lt;span class="category-cost"&gt;'.$cost.' '.$cur.'&lt;/span&gt;&lt;/li&gt;';
+&nbsp;&nbsp; }
+&nbsp;&nbsp; $output .='&nbsp;&nbsp; &nbsp;&nbsp; &lt;/ul&gt;&lt;/div&gt;';
+&nbsp;&nbsp; echo $output;
+}
+</code></pre>
+
+
+
+<p>As you can see, the above outputs a list of radio <code>input</code> elements for a conference registration category.&nbsp; The user value is passed as the argument <code>$args</code> when the field has a value saved in the database.&nbsp; I have also added a check for getting the currently logged-in user&#8217;s value in case we want to call this function separately outside the context of the plugin&#8230;.and that piece of code could be left out.</p>
+<p>The post <a href="/boosting-registration-forms/">Boosting Registration forms</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

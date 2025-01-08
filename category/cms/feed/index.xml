@@ -1,0 +1,752 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Content Management Archives - Tiffin Consulting</title>
+	<atom:link href="/category/cms/feed/" rel="self" type="application/rss+xml" />
+	<link>/category/cms/</link>
+	<description>digital business transformation</description>
+	<lastBuildDate>Sat, 10 Feb 2024 08:50:23 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.7.1</generator>
+
+<image>
+	<url>/wp-content/uploads/2024/02/cropped-tiffin-icon-1-150x150.png</url>
+	<title>Content Management Archives - Tiffin Consulting</title>
+	<link>/category/cms/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Totally Offline Local WordPress</title>
+		<link>/totally-offline-local-wordpress/</link>
+		
+		<dc:creator><![CDATA[Aurovrata V.]]></dc:creator>
+		<pubDate>Sun, 04 Oct 2015 06:15:04 +0000</pubDate>
+				<category><![CDATA[Plugin Reviews]]></category>
+		<guid isPermaLink="false">http://localhost/syllogic/wp/?p=314</guid>
+
+					<description><![CDATA[<p>I have been looking for this for a long time and finally found an interesting plugin, Airplane Mode for WordPress.  This plugin allows you to install WordPress on your local desktop/laptop and stop it from trying to load fonts, icons, gravatars, or javascript libraries of any sort. Without this you will notice that a local [&#8230;]</p>
+<p>The post <a href="/totally-offline-local-wordpress/">Totally Offline Local WordPress</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p>I have been looking for this for a long time and finally found an interesting plugin, <a href="http://tidyrepo.com/airplane-mode/" target="_blank" rel="noopener">Airplane Mode for WordPress</a>.  This plugin allows you to install WordPress on your local desktop/laptop and stop it from trying to load fonts, icons, gravatars, or javascript libraries of any sort.</p>
+<p>Without this you will notice that a local installation devoid of an internet connection will have page loading processes delayed by the browser attempting to load external resources.    This is a real waste of time when trying to develop a site and one is prone to reload a page several times a minute in order to test changes in the code.</p>
+<p>The post <a href="/totally-offline-local-wordpress/">Totally Offline Local WordPress</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>How to Disable Comments on WordPress Media Attachments</title>
+		<link>/how-to-disable-comments-on-wordpress-media-attachments/</link>
+		
+		<dc:creator><![CDATA[Aurovrata V.]]></dc:creator>
+		<pubDate>Thu, 22 Jan 2015 13:34:21 +0000</pubDate>
+				<category><![CDATA[Content Management]]></category>
+		<category><![CDATA[fight spam]]></category>
+		<guid isPermaLink="false">http://localhost/syllogic/wp/?p=295</guid>
+
+					<description><![CDATA[<p>A lovely little piece of code to disable comments on Media Attachment pages which is a source of irritating SPAM&#8230; Just paste the following in your functions.php file. How to Disable Comments on WordPress Media Attachments.</p>
+<p>The post <a href="/how-to-disable-comments-on-wordpress-media-attachments/">How to Disable Comments on WordPress Media Attachments</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<p>A lovely little piece of code to disable comments on Media Attachment pages which is a source of irritating SPAM&#8230;</p>
+
+
+
+<p>Just paste the following in your <code><mark style="background-color:rgba(0, 0, 0, 0)" class="has-inline-color has-contrast-2-color">functions.php</mark></code> file.</p>
+
+
+
+<pre class="wp-block-code"><code lang="php" class="language-php line-numbers">function filter_media_comment_status( $open, $post_id ) {
+	$post = get_post( $post_id );
+	if( $post-&gt;post_type == 'attachment' ) {
+		return false;
+	}
+	return $open;
+}
+add_filter( 'comments_open', 'filter_media_comment_status', 10 , 2 );
+</code></pre>
+
+
+
+<p><a href="http://www.wpbeginner.com/wp-tutorials/how-to-disable-comments-on-wordpress-media-attachments/">How to Disable Comments on WordPress Media Attachments</a>.</p>
+<p>The post <a href="/how-to-disable-comments-on-wordpress-media-attachments/">How to Disable Comments on WordPress Media Attachments</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Manage user profile and credentials</title>
+		<link>/manage-user-profile-and-credentials/</link>
+		
+		<dc:creator><![CDATA[Aurovrata V.]]></dc:creator>
+		<pubDate>Fri, 07 Nov 2014 10:37:40 +0000</pubDate>
+				<category><![CDATA[Plugin Reviews]]></category>
+		<guid isPermaLink="false">http://localhost/syllogic/wp/?p=274</guid>
+
+					<description><![CDATA[<p>We recently required to force our newly registered users on a project to change their password on their first login.&#160; This is handled by default in the WordPress core with the default password nag meta field, However, upon the first login the user is redirected to the wordpress default profile.php page which is not very [&#8230;]</p>
+<p>The post <a href="/manage-user-profile-and-credentials/">Manage user profile and credentials</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<p>We recently required to force our newly registered users on a project to change their password on their first login.&nbsp; This is handled by default in the WordPress core with the default password nag meta field,</p>
+
+
+
+<pre class="wp-block-code"><code class="">update_user_option( $user_id, 'default_password_nag', true, true );</code></pre>
+
+
+
+<p>However, upon the first login the user is redirected to the wordpress default <code>profile.php</code> page which is not very intuitive, does not allow for customisation and more importantly is outside the scope of the template theme.</p>
+
+
+
+<h3 class="wp-block-heading">Template My Login to the rescue.</h3>
+
+
+
+<p>This is where I found a lovely little plugin, <a href="https://wordpress.org/plugins/theme-my-login/" target="_blank" rel="noopener">Template My Login (TML)</a>, which creates a set of pages with a simple shortcode in each of them. It creates a page for Login, Logout, Profile, Register and so on, allowing for each page to be automatically themed but also customised with a template.</p>
+
+
+
+<h3 class="wp-block-heading">Putting it all together.</h3>
+
+
+
+<p>Automatic registration of new users with auto-generated passwords can make a call to update the default password nag meta field,</p>
+
+
+
+<pre class="wp-block-code"><code lang="php" class="language-php">update_user_option( $user_id, 'default_password_nag', true, true );</code></pre>
+
+
+
+<p>This can be called after a registration form, or within your code when you create a new user.<br>
+When a user logs-in for the first time they will be automatically redirected to their profile page.&nbsp; Upon resetting their password, WordPress will automatically reset the <code>default_password_nag</code> meta field to null.</p>
+
+
+
+<p>We can further modify the TML plugin default <code>profile_form.php</code> template to show a small message indicating that the user has been redirected to change their password if this is their first login,</p>
+
+
+
+<pre class="wp-block-code"><code lang="php" class="language-php line-numbers">&lt;?php
+/*
+If you would like to edit this file, copy it to your current theme's directory and edit it there.
+Theme My Login will always look in your theme's directory first, before using this default template.
+*/
+$nagPassword = null;
+if ( is_user_logged_in( ) ) {
+&nbsp;&nbsp; //$user_ID = get_current_user_id();
+&nbsp;&nbsp; $nagPassword = get_user_option('default_password_nag');
+}
+?&gt;
+&lt;div class="login profile" id="theme-my-login&lt;?php $template-&gt;the_instance(); ?&gt;"&gt;
+&lt;?php if($nagPassword) { ?&gt;
+&nbsp;&nbsp; &nbsp;&lt;p class="message"&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;If this is your first log-in, you have been re-directed to your profile setting page in order to reset your password.
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&amp;nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;Please choose a new password below
+&nbsp;&nbsp; &nbsp;&lt;/p&gt;
+&lt;?php } ?&gt;
+&nbsp;&nbsp; &nbsp;&lt;?php $template-&gt;the_action_template_message( 'profile' ); ?&gt;
+&nbsp;&nbsp; &nbsp;&lt;?php $template-&gt;the_errors(); ?&gt;
+&nbsp;&nbsp; &nbsp;&lt;form id="your-profile" ....</code></pre>
+
+
+
+<p>The TML templates sit in the plugin folder, <code>plugins/theme-my-login/templates </code>just copy the relevant template to your theme folder and TML will first look there for the template file.&nbsp; Easy as pie!</p>
+<p>The post <a href="/manage-user-profile-and-credentials/">Manage user profile and credentials</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>What is a good website?</title>
+		<link>/wp-banner0/</link>
+		
+		<dc:creator><![CDATA[Aurovrata V.]]></dc:creator>
+		<pubDate>Fri, 17 Oct 2014 10:15:02 +0000</pubDate>
+				<category><![CDATA[Content Management]]></category>
+		<category><![CDATA[News & Updates]]></category>
+		<category><![CDATA[featured]]></category>
+		<guid isPermaLink="false">http://localhost/syllogic/wp/?p=248</guid>
+
+					<description><![CDATA[<p>A good website is one that goes beyond the need to serve information, but rather plays an integral role in the enterprise's development and growth. </p>
+<p>The post <a href="/wp-banner0/">What is a good website?</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<p>This is a question that has many anwers, for it very much depends on the definition of the question.  So I will start by defining the question itself.  <em>What is a good website?  </em>One&#8217;s expectations of a good website is really determined by one&#8217;s appreciation of what a <a href="https://en.wikipedia.org/wiki/Distributed_computing" target="_blank" rel="noopener">distributed networked software</a> can do to help one&#8217;s enterprise.  I believe that the vast majority of business owners have a very limited idea of this concept.  At its most basic <em>avatar</em>, a website is a virtual window to an enterprise, investing on the content and beautification of the website improves its quality, but nonetheless doesn&#8217;t change  its function as a basic window.</p>
+
+
+
+<h3 class="wp-block-heading">Communicating</h3>
+
+
+
+<p>Websites can be much more than windows.&nbsp; Their next level <em>avatar</em> is in essence about communication, how well does it communicate the&nbsp; message of the enterprise, its products, its services, its vision and <a href="https://en.wiktionary.org/wiki/modus_operandi" target="_blank" rel="noopener"><em>modus operandi</em></a>.&nbsp; A good website should be able to do this with clarity and simplicity.&nbsp; The home page being a crucial component of a successful online communication strategy.&nbsp; The menu and navigational aid are important building blocks and the content of pages need to be simple, fluid and abundantly illustrated with images so as to reduce the need to read extensive passages.</p>
+
+
+
+<p>Images should be of good quality, of generous dimensions, its no use to put small images where details cannot be seen, it frustrates the reader and generally leaves visitors with a negative impression.</p>
+
+
+
+<p>The home page is simple and clear: most visitors to a new site have a very short attention span and if they don&#8217;t understand what this site is about and how to quickly find key aspects of the site, they will simply browse on.&nbsp; A large slider often does a good job at solving this, but short and thoughtful headings, titles and menus make the whole experience much more inviting.</p>
+
+
+
+<figure class="wp-block-image alignleft is-resized wp-duotone-unset-1"><a href="http://localhost/syllogic/wp/wp-content/uploads/sites/2/2014/10/descarga.jpg"><img decoding="async" src="http://localhost/syllogic/wp/wp-content/uploads/sites/2/2014/10/descarga-300x199.jpg" alt="what is a good website - village kids using a computer" class="wp-image-255" style="width:324px;height:auto"/></a><figcaption class="wp-element-caption">A good website should a workflow simple enough for a child to navigate</figcaption></figure>
+
+
+
+<h3 class="wp-block-heading">Work flow Process</h3>
+
+
+
+<p>If a company website is used to sell products or services, then the question of how easy is it to process a sale needs to be addressed, right from the identification of the client (logging into the site) to the culmination of the actual payment.&nbsp; The process flow needs to be carefully planned and tested to ensure rapidity but also clarity of each step.&nbsp; Ease of access to the account-related information such as a client&#8217;s details, their past interaction with the site, their pending processes and such information that allows a client/visitor to the site to minimise time lost in trying to find and accomplish what they are trying to achieve on the site.</p>
+
+
+
+<h3 class="wp-block-heading">An integrated enterprise tool</h3>
+
+
+
+<p>More and more websites are being used by business owners and employees as a tool to centralise their work and data/information.  However, a good website needs to have a clear vision in order to accomplish this.  A vision is clarified when one has an understanding of how technology can be harnessed for the service of the enterprise.  In a number of scenarios with our customers, we regularly enlighten them with functionality that help resolve some pain points.  Take <a href="./#case">for example an architect studio</a> who recently approached us to built their website.</p>
+
+
+
+<details class="wp-block-details is-layout-flow wp-block-details-is-layout-flow"><summary>A case study&#8230;</summary>
+<p>An architecture studio&#8217;s initial perspective was for a communication site, but after further discussion we discovered that 90% of their work is inter-communication between the various stakeholders of a project.  Form the initial discussion with their client, design phase, finalisation, construction and handover of the project, it is apparent that many emails, and documents are written, exchanged, collaboratively worked on and the various processes documented as part of the internal work flow process. This means that a lot of documents and and messages are stored in various places, computers, and exchanged with a number of actors. </p>
+
+
+
+<p>Our proposal was to integrate a phased-approach design of their website so as to gradually transform their work flow as a website-centric process, thereby ensuring that all documents, updates and messages are retained within a central archive. The proposed website had 3 major levels of access with account credentials: internal stakeholders, clients and the public. The retained proposal manages the flow of information from internal to client to public. The major advantage being able to control the flow of information and ease of review of past documentation. The cherry on the cake? The ability to have ready-to-publish up-to-date information on their latest project to display on their public website.</p>
+</details>
+
+
+
+<h3 class="wp-block-heading">So what is a good website?</h3>
+
+
+
+<p>To answer my initial question, a good website is one that at its most basic need is elegant, simple, and clear in showcasing the enterprise and its <em>raison d&#8217;etre</em>.</p>
+
+
+
+<p>A good website is also a good communicating tool, an intuitive menu structure, and less written words more images that have been carefully picked to speak your 1000 words that you have omitted.</p>
+
+
+
+<p>A good website is one that transcends the need to serve information, but rather plays an integral role in the enterprise&#8217;s development and growth.&nbsp; The vast majority of SME websites are static, rarely updated and often out of sync with the evolution of the business.&nbsp; Integrating the website into daily work process flow of the enterprise ensures regular updates and dynamic content.</p>
+
+
+
+<p>A good website is about networking, integrating with social platforms, reaching out to its stakeholders, but this is a process that can only be achieved if the above 3 aspects are taken care of, and is usually achieved after months and possibly years of continuous updates and improvements.</p>
+
+
+
+<figure class="wp-block-image alignleft is-resized wp-duotone-unset-2"><a href="http://localhost/syllogic/wp/wp-content/uploads/sites/2/2014/10/good_web_site_should_be_child_play.jpg"><img decoding="async" src="http://localhost/syllogic/wp/wp-content/uploads/sites/2/2014/10/good_web_site_should_be_child_play-1024x682.jpg" alt="Kindergarten children learning how to use computers." class="wp-image-257" style="width:368px;height:auto"/></a><figcaption class="wp-element-caption"> a good website is labour of love</figcaption></figure>
+
+
+
+<p>Finally, a good website is labour of love, it needs to be fed with new content, updated, reviewed, polished, interacted with while being mindful of feedback from visitors who take the time to write some.</p>
+
+
+
+<h3 class="wp-block-heading">At the service of the Enterprise</h3>
+
+
+
+<p>This is what we do best, the application of an awakened mind at the service of the Indian small and medium enterprise.&nbsp; We consult, we educate, but most importantly we apply intelligence with the aspiration of the reawakening of this great nation.</p>
+
+
+
+<p>If you are in need of a website for your enterprise/project/business/organisation, <a href="http://localhost/syllogic/contact-us/" target="_blank" rel="noopener">get in touch</a>, let us at least give you a free proposal and if you share <a href="http://localhost/syllogic/about-syllogic/" target="_blank" rel="noopener">our vision</a>, we will consider working with your budget.</p>
+<p>The post <a href="/wp-banner0/">What is a good website?</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Dynamic Menus</title>
+		<link>/dynamic-menus/</link>
+		
+		<dc:creator><![CDATA[Aurovrata V.]]></dc:creator>
+		<pubDate>Fri, 26 Sep 2014 05:21:55 +0000</pubDate>
+				<category><![CDATA[Menus]]></category>
+		<category><![CDATA[Theme Reviews]]></category>
+		<category><![CDATA[menu]]></category>
+		<category><![CDATA[walker]]></category>
+		<guid isPermaLink="false">http://localhost/syllogic/wp/?p=188</guid>
+
+					<description><![CDATA[<p>There are many good tutorials to build custom menus for logged in/logged out users, see also our own post on the ajax login menu. &#160;There are more complex approaches in order to customise the individual menu items using a the wordpress Walker class. &#160;An excellent review of a custom walker can be found on the [&#8230;]</p>
+<p>The post <a href="/dynamic-menus/">Dynamic Menus</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<p>There are many good tutorials to build custom menus for logged in/logged out users, see also our own post on the <a href="http://localhost/syllogic/wp/2014/05/wordpress-log-in-log-out-menus/">ajax login menu</a>. &nbsp;There are more complex approaches in order to <a href="http://www.kriesi.at/archives/improve-your-wordpress-navigation-menu-output" target="_blank" rel="noopener">customise the individual menu items</a> using a the <a href="http://codex.wordpress.org/Class_Reference/Walker" target="_blank" rel="noopener">wordpress Walker class</a>. &nbsp;An excellent <a href="http://wordpress.stackexchange.com/questions/14037/menu-items-description-custom-walker-for-wp-nav-menu/14039#14039" target="_blank" rel="noopener">review of a custom walker</a> can be found on the <a href="http://wordpress.stackexchange.com/" target="_blank" rel="noopener">WordPress StackExchange</a>.</p>
+
+
+
+<p>However, I was looking to actually add menu items dynamically depending on the state of the site. &nbsp;In this case, we have a client, a research centre at a university who asked us to redevelop their site as&nbsp;a portal of all their conference sites. &nbsp;We created a WordPress MU portal which we customised to enable them to create new conference sites based on a template site that is pre-configured, enabling registration forms, abstract submission forms, payment gateways to be created for each new conference at the press of a button in the Dashboard.</p>
+
+
+
+<p>One of the challenges was to dynamically add new conference sites to the main site menu as when they are created. &nbsp;Furthermore, the conference menu has a Past sub-menu in which old conferences need to be listed.</p>
+
+
+
+<p>I decided to use the Walker extension solution by adding a little customisation.  I created a new class, <code>AddExtraMenuItems_Walker</code>, which extends the WordPress core  <a href="https://core.trac.wordpress.org/browser/tags/4.0/src//wp-includes/nav-menu-template.php#L0" target="_blank" rel="noopener">Walker_Nav_Menu class</a>.</p>
+
+
+
+<details class="wp-block-details is-layout-flow wp-block-details-is-layout-flow"><summary>Full code</summary>
+<pre class="wp-block-code"><code lang="php" class="language-php line-numbers">/**
+ * Walker Navigation Menu class to insert dynamic content into menus
+ * use the constructor at creation to pass the dynamic menu content
+ */
+class AddExtraMenuItems_Walker extends Walker_Nav_Menu{
+ public $insertMenus = array();
+ protected $nextMenu = '';
+ /**
+ * Constructor takes an array
+ *
+ *@param array $menu_insert an array of key=>value pairs with
+ *each key being the parent menu underwhich to insert the extra menu items,
+ *and the value being an array containing menu items as array values of the following form,
+ *array( 'url' => permalink for the menu item (default ='#'),
+ * 'title' => menu title (default = '&lt;i> Missing Title&lt;/i>'),
+ * 'id' => css id value for the &lt;li> term (default = ''),
+ * 'class' => ',' delimited string of css classes for the &lt;li> term (default='') ), each
+ *menu will be wrapped in &lt;a> tags that will open in a new window. 
+ */
+ function __construct($menu_insert = array()) {
+   $this->insertMenus = $menu_insert;
+ } 
+ 
+ function start_el( &amp;$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+   $menu_item = apply_filters( 'the_title', $item->title, $item->ID );
+   if(array_key_exists($menu_item,$this->insertMenus)){
+     //check if to be listed or inserted as sub-menu
+     $menuTree = $this->insertMenus[$menu_item];
+     $subMenu = ! empty($menuTree['sub-menu']) ? true:false;
+     /*
+     *if this is a sub-mneu insert, ;let's make sure our current
+     *menu-item has the required class to identify it as such
+     */
+     if($subMenu &amp;&amp; ! empty($menuTree['class'])) $item->classes[]=$menuTree['class'];
+       //call parent function
+       parent::start_el($output, $item, $depth, $args);
+       //now if we have a sub-menu tree we need to insert it here
+       if($subMenu){
+          $classes = ! empty($menuTree['ul-class']) ? ' class="'.$menuTree['class'].'"' : ' class="sub-menu"';
+          $output .= '&lt;ul'.$class.'>';
+          foreach($menuTree['sub-menu'] as $menu_item){
+            $classes = ! empty($menu_item['class']) ? '" class="'.$menu_item['class'].'"' : '';
+            $id = ! empty($menu_item['id']) ? ' id="'.$menu_item['id'].'"' : '';
+            $url =! empty($menu_item['url']) ? $menu_item['url'] : '#';
+             $title=! empty($menu_item['title']) ? $menu_item['title'] : '&lt;i>Missing Title&lt;/i>';
+             $output .= '&lt;li'.$id.$classes.'>&lt;a href="'.$url.'" target="_blank">'.$title.'&lt;/a>&lt;/li>';
+          }
+          $output .= '&lt;/ul>'; //let's close our sub-menu
+       }else $this->nextMenu = $menuTree; //else we pass the menu items to be inserted as list items in the start call
+   }else parent::start_el($output, $item, $depth, $arg);
+ }
+ 
+ function start_lvl( &amp;$output, $depth = 0, $args = array()) {
+   parent::start_lvl($output, $depth, $args);
+   if($this->nextMenu){
+     foreach($this->nextMenu as $menu_item){
+       $classes = ! empty($menu_item['class']) ? '" class="'.$menu_item['class'].'"' : '';
+       $id = ! empty($menu_item['id']) ? ' id="'.$menu_item['id'].'"' : '';
+       $url =! empty($menu_item['url']) ? $menu_item['url'] : '#';
+       $title=! empty($menu_item['title']) ? $menu_item['title'] : '&lt;i>Missing Title&lt;/i>';
+       $output .= '&lt;li'.$id.$classes.'>&lt;a href="'.$url.'" target="_blank">'.$title.'&lt;/a>&lt;/li>';
+     }
+   $this->nextMenu=''; //reset
+   }
+ }
+ 
+}</code></pre>
+</details>
+
+
+
+<p>So the Walker class is simply called in the wordpress function to display a menu structure,</p>
+
+
+
+<pre class="wp-block-code"><code lang="php" class="language-php">wp_nav_menu( array('walker'=&gt; new AddExtraMenuItems_Walker($extra_menu), 'theme_location' =&gt; 'primary-menu', 'container' =&gt; '', 'fallback_cb' =&gt; '', 'menu_class' =&gt; 'my-menu-class', 'menu_id' =&gt; 'top-menu', 'echo' =&gt; false ) );</code></pre>
+
+
+
+<p>Remains to define the $extra_menu array arguments that are passed to the walker in order to insert it into the right menu. Here is an example. It assumes that there is a primary menu created in the Dashboard with the top level menu item &#8216;Conferences&#8217; and a sub-item below this called &#8216;Past&#8217;,</p>
+
+
+
+<pre class="wp-block-code"><code lang="php" class="language-php line-numbers">$extra_menu = array(
+ 'Conferences'=&gt;array(array('title'=&gt;'ISOl 2015',
+                               'url' =&gt; 'http://syllogic.asia/2015/',
+                               'id' =&gt; 'menu_item_isol_2',
+                               'class'=&gt; 'menu-item menu-item-type-custom menu-item-object-custom'),
+                         array('title'=&gt;'ISOl Chicago',
+                               'url' =&gt; 'http://syllogic.asia/2015/',
+                               'id' =&gt; 'menu_item_isol_3',
+                               'class'=&gt; 'menu-item menu-item-type-custom menu-item-object-custom')),
+ 'Past'=&gt;array('ul-class'=&gt;'sub-menu',
+                  'class'=&gt;'menu-item-has-children left-sub-menu',
+                  'sub-menu'=&gt;array(array('title'=&gt;'ISOl 2015',
+                                             'url' =&gt; 'http://syllogic.asia/2015/',
+                                             'id' =&gt; 'menu_item_isol_2',
+                                             'class'=&gt; 'menu-item menu-item-type-custom menu-item-object-custom'),
+                                       array('title'=&gt;'ISOl Chicago',
+                                             'url' =&gt; 'http://syllogic.asia/2015/',
+                                             'id' =&gt; 'menu_item_isol_3',
+                                             'class'=&gt; 'menu-item menu-item-type-custom menu-item-object-custom'))));</code></pre>
+
+
+
+<p>There is 2 type of menu being inserted here, the first one under &#8216;Conferences&#8217; menu item, are 2 extra sub-item which are simply listed within the existing sub-menu list of &#8216;Conferences&#8217;.<br>
+The second set of menu is an entire sub-menu structure being replaced instead of an existing menu-item. In other words, &#8216;Past&#8217; is a sub-item of top menu item &#8216;Conferences&#8217;. As such &#8216;Past&#8217; does not have any children. This 2nd set of dynamic menu are placed below the &#8216;Past&#8217;, making it into a sub-menu.</p>
+
+
+
+<p>Menu structures are dined as an array with,</p>
+
+
+
+<pre class="wp-block-code"><code lang="php" class="language-php">array('title'=&gt;<em>the text of the menu item</em>,
+      'url' =&gt; <em>the permalink for the menu</em>,
+      'id' =&gt; <em>a css id for the &lt;li&gt; element</em>,
+      'class'=&gt; <em>css classes for the &lt;li&gt; element</em>)</code></pre>
+
+
+
+<p>To add an entire sub-menu to a given item, you need to specify some extra arguments, namely the classes that changes an item into a sub-menu (on hover the sub-menu will appear) if you are using pure CSS for your menus. This is done using the following structure,</p>
+
+
+
+<pre class="wp-block-code"><code lang="php" class="language-php">array('ul-class'=&gt;<em>the css class for the sub-menu </em><ul><em> element</em>,
+      'class'=&gt;<em>the css class for the menu item that will change to a sub-menu structure</em>,
+      'sub-menu'=&gt;array( <em> sub-menu items as arrays, as defined above</em> )</ul></code></pre>
+
+
+
+<p>That&#8217;s it.  Feel free to comment, query, clarify below&#8230;</p>
+<p>The post <a href="/dynamic-menus/">Dynamic Menus</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Managing a development and live site</title>
+		<link>/managing-a-development-and-live-site/</link>
+		
+		<dc:creator><![CDATA[Aurovrata V.]]></dc:creator>
+		<pubDate>Mon, 18 Aug 2014 07:33:41 +0000</pubDate>
+				<category><![CDATA[Content Management]]></category>
+		<category><![CDATA[Development]]></category>
+		<guid isPermaLink="false">http://localhost/syllogic/wp/?p=178</guid>
+
+					<description><![CDATA[<p>How to manage a development site in parallel to a live site and both being accessible online.</p>
+<p>The post <a href="/managing-a-development-and-live-site/">Managing a development and live site</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<p>As is often the case when developing a new site for a client you have to work with a beta site to show-case the work to its stakeholders&nbsp; and in parallel deploy updates to a live site.&nbsp; In such a scenario one ideally wants the live site to be searched and indexed by search engines, and the beta site to remain hidden from public view.</p>
+
+
+
+<p>So how does one reconcile these requirements is a question I have have been scrutinising and I share here the information so far gathered so that others may solve this problem too.</p>
+
+
+
+<h3 class="wp-block-heading">Stopping search engines from indexing the beta site</h3>
+
+
+
+<figure class="wp-block-image aligncenter"><a href="http://localhost/syllogic/wp/wp-content/uploads/sites/2/2014/08/search-engines.png"><img decoding="async" src="http://localhost/syllogic/wp/wp-content/uploads/sites/2/2014/08/search-engines-300x111.png" alt="Search engines indexing setting in WordPress Dashboard" class="wp-image-181"/></a></figure>
+
+
+
+<p>WordPress enables a single check-box setting from being enabled to dissuade search engines from indexing the pages of the a site.&nbsp; You will find the setting in the admin Dashboard menu <a href="http://codex.wordpress.org/Settings_Reading_Screen#Reading_Settings" target="_blank" rel="noopener">Settings-&gt;Reading</a>.&nbsp; However, you should be aware that it is up to the search engines to comply with the request.<br>
+</p>
+
+
+
+<p>One should also be aware that this works only for sites that are installed in the root folder of your site and not for sites that live in a separate folder.&nbsp; In this case several other options are available, such as placing a <a href="https://www.inmotionhosting.com/support/website/restricting-bots/how-to-stop-search-engines-from-crawling-your-website" target="_blank" rel="noopener"><code>robots.txt</code></a> in your installation folder.</p>
+
+
+
+<h3 class="wp-block-heading">Locking down the beta site</h3>
+
+
+
+<p>The basic idea here is to enable views of the beta site to users with an account on the beta site.&nbsp;&nbsp; I make use of the <a href="http://codex.wordpress.org/Plugin_API/Action_Reference/template_redirect" target="_blank" rel="noopener">template_redirect hook</a> in the <code>functions.php</code> file to redirect any request from the front page to a nice looking static html landing page&#8230;</p>
+
+
+
+<pre class="wp-block-code"><code lang="php" class="language-php">add_action('template_redirect','beta_site_redirect');
+function beta_site_redirect() {
+&nbsp;&nbsp;&nbsp; if (!is_user_logged_in() &amp;&amp; !is_admin()) {
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//&amp;&amp; !'redirect.html'==get_current_template()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //echo get_current_template();
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;wp_redirect('/redirect.html');
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;exit();
+&nbsp;&nbsp;&nbsp; }
+}</code></pre>
+
+
+
+<p>The function checks if the request comes form a logged in user as well as where the request is coming from.&nbsp; This ensures that we can still access the admin Dashboard and sign in as usual.&nbsp; Once signed in we can then proceed to look at the front pages.</p>
+
+
+
+<p>In order to make the experience a little more seamless, we redirect the visitor to a static html which informs them that they currently on the beta site and are being automatically redirected to the live site using the following html header:</p>
+
+
+
+<pre class="wp-block-code"><code lang="markup" class="language-markup">&lt;head&gt;
+&lt;title&gt; The CSR Journal&lt;/title&gt;
+&lt;meta http-equiv="refresh" content="2;url=http://my-live-site.com/"&gt;
+&lt;/head&gt;</code></pre>
+
+
+
+<p>The first number in the <code>content</code> attribute, <code>content="2;..."</code> is the time in seconds before the page is redirected to the url address given after the semi-colon.</p>
+
+
+
+<p><strong>IMPORTANT NOTE</strong>: make sure <span style="text-decoration: underline;">your static html is in the root directory of your</span> WordPress installation and not in your theme folder!</p>
+
+
+
+<h3 class="wp-block-heading">Redirect your beta site SEO</h3>
+
+
+
+<p>if you find yourself in the situation where your beta site has a better page rank than your live site, then you can r<a href="http://wpshout.com/better-alternatives-discourage-search-engines-wordpress/" target="_blank" rel="noopener">edirect them to your live site</a> once you have finished the development cycle&#8230;.</p>
+<p>The post <a href="/managing-a-development-and-live-site/">Managing a development and live site</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Invoicing with WordPress</title>
+		<link>/invoicing-with-wordpress/</link>
+		
+		<dc:creator><![CDATA[Aurovrata V.]]></dc:creator>
+		<pubDate>Thu, 15 May 2014 13:35:12 +0000</pubDate>
+				<category><![CDATA[Theme Reviews]]></category>
+		<category><![CDATA[invoicing]]></category>
+		<guid isPermaLink="false">http://localhost/syllogic/wp/?p=113</guid>
+
+					<description><![CDATA[<p>We have been looking out for a neat Invoicing plugin for quite some time and found various reviews about the different plugin available out there. We were looking for something rather straightforward, manage clients, manage invoices, manage payments.&#160; We initially set out to test the WP-Invoice plugin, however, we soon run into difficultities with some [&#8230;]</p>
+<p>The post <a href="/invoicing-with-wordpress/">Invoicing with WordPress</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<p>We have been looking out for a neat Invoicing plugin for quite some time and found various reviews about the different plugin available out there.</p>
+
+
+
+<p>We were looking for something rather straightforward, manage clients, manage invoices, manage payments.&nbsp; We initially set out to test the <a href="https://wordpress.org/plugins/wp-invoice/" target="_blank" rel="noopener">WP-Invoice plugin</a>, however, we soon run into difficultities with some strange error which we found was quite recurrent among various users on the <a href="http://wordpress.org/support/topic/intial-setup-saved-cannot-make-changes-after?replies=6" target="_blank" rel="noopener">support forum</a>.&nbsp; In a parallel we also found <a href="http://shakenandstirredweb.com/theme/shaken-invoice-lite" target="_blank" rel="noopener">Shaken&#8217;s Invoice Lite theme</a>, a GPL distributed free theme which converts a site into an Invoice management tool.&nbsp; A pro version of the theme also exists which allows you to do more customisation and functionality.</p>
+
+
+
+<p>The theme does exactly what we need, however, being an Indian based company we needed a little bit functionality, namely the ability to configure Domestic and International clients.&nbsp; We need to be able to configure the Currencies, Tax and payment gateway for each set type of client.&nbsp; We have released our modifications under the same GPL license, and you can download the modified Shaken theme from our <a href="https://github.com/syllogic-consultants/shaken-invoice-lite" target="_blank" rel="noopener">GitHub repository</a> below.</p>
+<p>The post <a href="/invoicing-with-wordpress/">Invoicing with WordPress</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Integrating WP Project Management plugin with Gmail Tasks</title>
+		<link>/integrating-wp-project-management-plugin-with-gmail-tasks/</link>
+					<comments>/integrating-wp-project-management-plugin-with-gmail-tasks/#comments</comments>
+		
+		<dc:creator><![CDATA[Aurovrata V.]]></dc:creator>
+		<pubDate>Sat, 03 May 2014 15:22:10 +0000</pubDate>
+				<category><![CDATA[Content Management]]></category>
+		<category><![CDATA[Project Management]]></category>
+		<guid isPermaLink="false">http://localhost/syllogic/wp/?p=43</guid>
+
+					<description><![CDATA[<p>One of our favourite Project Management plugins for WordPress is the excellent WP Project Management by Tareq Hasan.&#160; The free version of the plugin gives the user a reasonable start and there are some neat commercial addons as well as a pro version of the plugin which offer more functionality. However, as a small developer [&#8230;]</p>
+<p>The post <a href="/integrating-wp-project-management-plugin-with-gmail-tasks/">Integrating WP Project Management plugin with Gmail Tasks</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<p>One of our favourite Project Management plugins for WordPress is the excellent <a href="http://wordpress.org/plugins/wedevs-project-manager/" target="_blank" rel="noopener">WP Project Management</a> by Tareq Hasan.&nbsp; The free version of the plugin gives the user a reasonable start and there are some neat commercial addons as well as a pro version of the plugin which offer more functionality.</p>
+
+
+
+<p>However, as a small developer team we have also been looking at improving its functionality within our working environment, and if, like us, you have a Google hosted email service for your domain, and rely on Google Drive for sharing documents then you will find our little integration with the <a href="https://www.gmail.com/mail/help/tasks/" target="_blank" rel="noopener">Google Tasks</a> quite handy.</p>
+
+
+
+<p>Our Google Apps Script integrates into your Drive account, scanning your Gmail to look out for mails sent by the WP Project plugin when a new task or comment has been assigned to you.&nbsp; The mail is scanned for the link to your worpress dashboard where you can view the details of the task or the comment.&nbsp; The link is embeded (as a goo.ly shortened URL) into your Task title, allowing you to quickly see your latest tasks and loading them up in your browser with a single click.</p>
+
+
+
+<p>Here is what you need to do to get it to work&#8230;</p>
+
+
+
+<details class="wp-block-details is-layout-flow wp-block-details-is-layout-flow"><summary>Get the Google Script</summary>
+<figure class="wp-block-image alignleft size-full is-resized"><a href="https://docs.google.com/spreadsheets/d/177tYW11jktlD9EaL3Cbea-4VRpUH_ush5BzTUNF3Jyk/edit?usp=sharing"><img fetchpriority="high" decoding="async" width="360" height="329" src="/wp-content/uploads/2024/02/google-docs-trans.png" alt="" class="wp-image-371" style="width:105px;height:auto" srcset="/wp-content/uploads/2024/02/google-docs-trans.png 360w, /wp-content/uploads/2024/02/google-docs-trans-300x274.png 300w" sizes="(max-width: 360px) 100vw, 360px" /></a></figure>
+
+
+
+<p>Copy the following spreadsheet (Open the linked Google Spreadsheet, and go to the menu File->Make Copy in Google Drive). Once you have copy, you can save it (menu File->Move to Folder) under a specific folder in your Google Drive (Some place safe where it unlikely to get deleted by mistake). You can also rename it if you want.</p>
+</details>
+
+
+
+<details class="wp-block-details is-layout-flow wp-block-details-is-layout-flow"><summary>Open the Script Editor</summary>
+<p>Open the new copy and select the menu Tools->Script Editor, “Copy of Gmail Task Integration” and note the following lines at the top of the Code.gs script file:</p>
+
+
+
+<pre class="wp-block-code"><code lang="typescript" class="language-typescript">TASKLIST = “Projects”;
+TASKPROJECT = “Others”;
+LABEL_PENDING = “Projects/Tasks”;
+LABEL_DONE = “Projects/Tasks/Done”;</code></pre>
+
+
+
+<p>The first line is the name to the task list under which your Google tasks links will be filed.</p>
+
+
+
+<p>The send line is the Project name in case it it not defined in the email (this is rarely the case…).</p>
+
+
+
+<p>The third line is the gmail label under which the email will archived when they reach your inbox, and finally the fourth line is the gmail label to which the script will move the mails that have been converted into tasks.</p>
+
+
+
+<p>Feel free to change any of the above.</p>
+</details>
+
+
+
+<details class="wp-block-details is-layout-flow wp-block-details-is-layout-flow"><summary>Accept Google API terms</summary>
+<p>There is a lot of freebies given by Google to use their services, but usually restrained with some quotas.&nbsp; You need to accept these for the services uses in this script, namely the Tasks service and the URL Shortener service.</p>
+
+
+
+<p>In the Script Editor that you opened in the previous step, select the menu Resources -&gt; Advance Google Services Switch and verify that the Tasks &amp; URL Shortener serivces are ‘ON’ in the table that opens.</p>
+
+
+
+<p>At the bottom of the table open the link “Google Developer Console”, (you may be required to accept the terms of use of Google Apps Script in general if this is the first time you use it).  Then find the Tasks API in the list make sure it is ‘ON’, if it ‘OFF’, click on the ‘OFF’ button to enable it, agree to all the terms. Repeat this for the URL Shortener API.</p>
+
+
+
+<div class="wp-block-group has-base-color has-contrast-background-color has-text-color has-background has-link-color wp-elements-a697cc9a72dd346736c2fe3f2f05bcd9 has-global-padding is-layout-constrained wp-container-core-group-is-layout-1 wp-block-group-is-layout-constrained" style="border-radius:5px;padding-top:var(--wp--preset--spacing--10);padding-right:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--10);padding-left:var(--wp--preset--spacing--20)">
+<p>Note: you will now required to register a project with Google and setup a credit ard payment to access the APIs.  Google still gives free access to a limited API calls each  month, but requires you to setup a payment facility.</p>
+</div>
+</details>
+
+
+
+<details class="wp-block-details is-layout-flow wp-block-details-is-layout-flow"><summary>Create a new version</summary>
+<p>Back to Script Editor screen, slect Menu File->Manage Versions and save a new version called “Mail Task Filter”</p>
+</details>
+
+
+
+<details class="wp-block-details is-layout-flow wp-block-details-is-layout-flow"><summary>Set Triggers for the script</summary>
+<p>Set up the triggers which will fire the script at regular intervals to check for new mails. In the Script Editor menu select Resources->Current Triggers</p>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" width="829" height="325" src="/wp-content/uploads/2024/02/Screen-Shot-2014-05-03-at-12.49.56-PM.png" alt="" class="wp-image-372" srcset="/wp-content/uploads/2024/02/Screen-Shot-2014-05-03-at-12.49.56-PM.png 829w, /wp-content/uploads/2024/02/Screen-Shot-2014-05-03-at-12.49.56-PM-300x118.png 300w" sizes="(max-width: 829px) 100vw, 829px" /></figure>
+
+
+
+<p>We set it up to run thrice-a-day, early morning in case we’ve been working late into the night and want our office colleagues to see our new tasks when they get into office.</p>
+
+
+
+<p>Once at lunch time for morning session work, and finally one at the end of the day.&nbsp; Again, it’s quite self-explanatory so feel free to adjust it as per your needs.</p>
+</details>
+
+
+
+<details class="wp-block-details is-layout-flow wp-block-details-is-layout-flow"><summary>Create Gmail filters &amp; labels</summary>
+<p>Create filter &amp; labels in your Gmail account.  If you have changed the Script constants above in the script file Code.gs in the section “Open the Script Editor”, then make sure you use those values.</p>
+
+
+
+<p>Create a labels:</p>
+
+
+
+<ul class="wp-block-list">
+<li>“Projects”</li>
+
+
+
+<li>“Tasks” nested under Projects</li>
+
+
+
+<li>“Done” nested under Tasks</li>
+</ul>
+
+
+
+<p>Create a new filter:</p>
+
+
+
+<pre class="wp-block-code"><code class="">from: &lt;the email address from which your wordpress servers notifies you of new tasks and comments>
+
+Subject: [&lt;title of your wordpress site>]
+
+Check box: Skip Inbox (archive it)
+
+Check box: Apply label “Projects/Tasks”</code></pre>
+
+
+
+<p>save the new filter.</p>
+</details>
+
+
+
+<details class="wp-block-details is-layout-flow wp-block-details-is-layout-flow"><summary>Test it!</summary>
+<p>Send yourself a task from the WP Project Manager plugin… In the Script Editor, Run the project, if you have any errors, leave a comment below.</p>
+</details>
+
+
+
+<details class="wp-block-details is-layout-flow wp-block-details-is-layout-flow"><summary>Further reading</summary>
+<p><div id="page" class="hfeed site"><div id="main" class="site-main"><div id="primary" class="content-area"><div id="content" class="site-content" role="main"><article id="post-43" class="post-43 post type-post status-publish format-standard has-post-thumbnail hentry category-cms category-project"><div class="entry-content"><div class="creativ-shortcode creativ-shortcode-accordion"><div class="creativ-shortcode creativ-shortcode-toggle creativ-shortcode-toggle-active"><div class="creativ-shortcode creativ-shortcode-toggle-content"><ul><li>This work was initially inspired from an <a href="http://pipetree.com/qmacro/blog/2011/10/automated-email-to-task-mechanism-with-google-apps-script/" target="_blank" rel="noopener">online tutorial</a> on DJ Adam’s blog.</li><li><del>I initially wanted to create parent task for each Projects, and  each time a new task or comment is filed under that Project, a child  tasks would be created using the indent functionality of <a href="https://developers.google.com/google-apps/tasks/v1/reference/tasks" target="_blank" rel="noopener">Google Tasks</a>,  but unfortunately I didn’t manage to get it to work, the Google Script  API is still in beta mode.  If you have an idea how to do this, maybe  you can respond to my question on <a href="https://stackoverflow.com/questions/23431545/how-to-create-a-child-task-in-google-apps-script-tasks-api" target="_blank" rel="noopener">Stack Overflow</a>.</del> I have actually managed to figure this one out and the code has been updated in the above links.</li><li>Google Tasks allows tasks to be created from an email, and the email  then appears as an attachment and link in the newly created tasks.   This was a neat functionality that I tried to reproduce without any  success until I realised that the API only exposes the <em>read only</em>  part of this functionality.  So this may change in the future and that  would a nice update to this script.  You will find commented out blocks  of code in the script where I attempted this.  As a <a href="https://stackoverflow.com/questions/16932217/link-email-to-google-task/23433219#23433219" target="_blank" rel="noopener">work around</a> I inserted the shortened url to the task in the Worpress dashboard within the title of the tasks.</li><li>I found a bug in the Google Script API.  Email messages are  encapsulated by the GmailMessage class.  A method getBody() allows to  retrieve the html version of the mail body.  However, the method  corrupts URL embedded within the body text by replacing ‘&amp;’ signs  with ‘&amp;amp;’.  I filed the <a href="https://code.google.com/p/google-apps-script-issues/issues/detail?id=3975&amp;thanks=3975&amp;ts=1399095234" target="_blank" rel="noopener">bug in the issue tracker,</a> feel free to vote for it.</li></ul></div></div></div></div></article></div></div></div></div></p>
+</details>
+<p>The post <a href="/integrating-wp-project-management-plugin-with-gmail-tasks/">Integrating WP Project Management plugin with Gmail Tasks</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/integrating-wp-project-management-plugin-with-gmail-tasks/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

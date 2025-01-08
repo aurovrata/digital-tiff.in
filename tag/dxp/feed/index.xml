@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>DXP Archives - Tiffin Consulting</title>
+	<atom:link href="/tag/dxp/feed/" rel="self" type="application/rss+xml" />
+	<link>/tag/dxp/</link>
+	<description>digital business transformation</description>
+	<lastBuildDate>Tue, 07 Jan 2025 13:18:58 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.7.1</generator>
+
+<image>
+	<url>/wp-content/uploads/2024/02/cropped-tiffin-icon-1-150x150.png</url>
+	<title>DXP Archives - Tiffin Consulting</title>
+	<link>/tag/dxp/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>What makes up a DXP</title>
+		<link>/what-makes-up-a-dxp/</link>
+					<comments>/what-makes-up-a-dxp/#respond</comments>
+		
+		<dc:creator><![CDATA[Aurovrata V.]]></dc:creator>
+		<pubDate>Tue, 07 Jan 2025 13:15:04 +0000</pubDate>
+				<category><![CDATA[Digital Business]]></category>
+		<category><![CDATA[DXP]]></category>
+		<guid isPermaLink="false">/?p=592</guid>
+
+					<description><![CDATA[<p>Following on from the post on the introduction to a DXP platform, this is a post which is part of a series on DXP platforms. Components of a DXP platform The 2022 Gartner report on DXP platforms lists the following components as making up a DXP platform, A Content management tool Ability to organise and [&#8230;]</p>
+<p>The post <a href="/what-makes-up-a-dxp/">What makes up a DXP</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<p>Following on from the post on the <a href="http://an-introduction-to-digital-experience-platforms/">introduction to a DXP platform</a>, this is a post which is part of  a series on DXP platforms.</p>
+
+
+
+<h2 class="wp-block-heading">Components of a DXP platform</h2>
+
+
+
+<p>The 2022 Gartner report on DXP platforms lists the following components as making up a DXP platform,</p>
+
+
+
+<h3 class="wp-block-heading">A Content management tool</h3>
+
+
+
+<p>Ability to organise and classify content using taxonomies, meta-fields, through an administrative interface such as the WordPress dashboard tool.</p>
+
+
+
+<h3 class="wp-block-heading">Manage account services </h3>
+
+
+
+<p>Ability to create user accounts, track their content, and assign roles with access capabilities constraining what they can see and do on the administrative interface.</p>
+
+
+
+<h3 class="wp-block-heading">Personalisation and context awareness</h3>
+
+
+
+<p>Ability to track user behaviour and content preference to provide dynamic content tailored to that user.  This requires a <a href="https://en.wikipedia.org/wiki/Customer_data_platform">Customer Data Platform</a> to track user data on the site and integrate with the page content in real-time to display relevant content.  Context awareness is the ability to display content based on the context of the page and 1st and 2nd party data available about the visitor.</p>
+
+
+
+<h3 class="wp-block-heading">Analytics and optimisation.</h3>
+
+
+
+<p>Tools that enable website visitor data and behaviour to be analysed and transformed into information that can be used to further optimise the content, navigation, conversion goals and performance of the website.  Google Analytics is an example of an analytical tool but it lacks the ability to interact with it though an API and retrieve the salient information that results from that analysis.</p>
+
+
+
+<h3 class="wp-block-heading">Customer journey mapping</h3>
+
+
+
+<p>Customers might interact with a service on a website, app, chatbot, social platform, customer portal, in-store kiosk, digital stadium billboard, and wearable all in the same day. They’ll want each of those experiences to reflect any interactions they’ve had with the service at any given moment and across any device.  This interaction could take place across multiple services/websites that belong to the same entity/group.  A DXP needs to be able to follow and map this journey seamlessly.  The DXP platform may use the Customer Data Manager or make use of a Customer Relation Management  service to achieve this.</p>
+
+
+
+<h3 class="wp-block-heading">Customer data management</h3>
+
+
+
+<p>A customer’s data will require management and access by employees and may be updated offline too from email/phone interactions with an helpline for example.</p>
+
+
+
+<h3 class="wp-block-heading">Presentation, delivery and orchestration</h3>
+
+
+
+<p>The ability to for front-end templating in order to present a cohesive picture across a variety of devices, pulling and combining content from various sources.  The presentation is the ability to present a cohesive look and feel to the user across a variety of devices.  This variety of devices,  which represents the delivery</p>
+
+
+
+<h3 class="wp-block-heading">Search, navigation and insight</h3>
+
+
+
+<p>Ability for all business stakeholders (front-end users/customers, as well as business employees) to search for relevant data, navigate to pages (front-end and backend) in timely and intuitive ways, and presenting data to gain clear insights</p>
+
+
+
+<h3 class="wp-block-heading">Collaboration and knowledge sharing</h3>
+
+
+
+<p>Ability for collaborative content creation, editing, process flows and administration of the digital eco-system in order to ensure timely information flow to stakeholders.</p>
+
+
+
+<h3 class="wp-block-heading">Artificial intelligence</h3>
+
+
+
+<p>Machine learning based AI is used primarily for analysing customer data and fine-tuning personalisation engines.&nbsp; <a href="https://en.wikipedia.org/wiki/Semantic_Web">Semantic</a> content in order to ease ML content consumption.</p>
+
+
+
+<h3 class="wp-block-heading">Cloud capabilities</h3>
+
+
+
+<p>Distributed hosting and content networks as well as cloud-based services</p>
+
+
+
+<h3 class="wp-block-heading">Architecture and platform design</h3>
+
+
+
+<p>Ability to integrate and scale with multiple databases/servers/services in order to mitigate downtime, enhance security, and maintain service performance.</p>
+
+
+
+<h3 class="wp-block-heading">Integration, interoperability and extensibility</h3>
+
+
+
+<p>Ability to integrate with various services for the different functionality, such as a CDP or a DAM, while remaining service-agnostic in order to ease transition/evolutions to different platforms.&nbsp; Ability to further extend functionality with plugins and custom development.</p>
+
+
+
+<h3 class="wp-block-heading">Multi-experience support</h3>
+
+
+
+<p>Ability to deliver a digital experience across multiple devices in different context.</p>
+
+
+
+<h3 class="wp-block-heading">Security and access control </h3>
+
+
+
+<p>Ability to provide secure and controlled access to content to a variety of users, from anonymous visitors, customers, business employees with varying access needs, content creators, editors,&nbsp; and administrators.</p>
+
+
+
+<h2 class="wp-block-heading">A deep dive into the world of DXP platforms</h2>
+
+
+
+<p>In the following posts on this series, I will review the existing DXP platform providers, as well as review a DXP solution conceived for the hospitality industry, looking at how DXP platforms can revolutionise the digital experience of hotel guests.</p>
+<p>The post <a href="/what-makes-up-a-dxp/">What makes up a DXP</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/what-makes-up-a-dxp/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>An introduction to Digital eXperience Platforms</title>
+		<link>/an-introduction-to-digital-experience-platforms/</link>
+					<comments>/an-introduction-to-digital-experience-platforms/#respond</comments>
+		
+		<dc:creator><![CDATA[Aurovrata V.]]></dc:creator>
+		<pubDate>Tue, 07 Jan 2025 12:00:29 +0000</pubDate>
+				<category><![CDATA[Digital Business]]></category>
+		<category><![CDATA[DXP]]></category>
+		<guid isPermaLink="false">/?p=586</guid>
+
+					<description><![CDATA[<p>This is a series of articles on DXP platforms, and how they are in essence a digital transformation for businesses online. What is a DXP platform? A Digital eXperience Platofrm is the next evolution of websites and web-based applications such as mobile apps and more generally the Internet of Things (IoT). Gartner, the leading technology [&#8230;]</p>
+<p>The post <a href="/an-introduction-to-digital-experience-platforms/">An introduction to Digital eXperience Platforms</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<p>This is a series of articles on DXP platforms, and how they are in essence a digital transformation for businesses online.</p>
+
+
+
+<h2 class="wp-block-heading">What is a DXP platform?</h2>
+
+
+
+<p>A Digital eXperience Platofrm is the next evolution of websites and web-based applications  such as mobile apps  and more generally the Internet of Things (IoT).</p>
+
+
+
+<p><a href="https://en.wikipedia.org/wiki/Gartner">Gartner</a>, the leading technology research and consulting firm, has been tracking the evolution of online technologies for businesses and maintain a yearly  <a href="https://en.wikipedia.org/wiki/Magic_Quadrant">Magic Quadrant</a>  report that maps the evolving trend in DXP solutions.  Gartner describes a DXP platform as:</p>
+
+
+
+<blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow">
+<p>A set of <strong>integrated</strong> technologies to enable the <strong>composition</strong>, <strong>management</strong>, <strong>delivery</strong> and <strong>optimization of contextualized</strong> digital experiences across <strong>multi-experience customer journeys</strong>.</p>
+</blockquote>
+
+
+
+<p>That&#8217;s quite a mouth full, so what is this all about?</p>
+
+
+
+<p>Hare are the salient keywords to understand:</p>
+
+
+
+<ul class="wp-block-list">
+<li><strong>integrated technologies</strong> &#8211; decoupled web services that interact using APIs, exchanging and processing data into a coherent whole. </li>
+
+
+
+<li><strong>composition</strong> of experiences &#8211; in addition to web-pages, composition can also include digital media, and these can be tailored for various target audiences.</li>
+
+
+
+<li><strong>management</strong> of experiences &#8211; along with web-pages, the ability to manage a plethora of digital assets including media using taxonomies.  This is also the ability to manage the life cycle of this content from ideation, to composition, to review and editing, and publication. This is done in a coherent and collaborative process involving multiple stakeholders from ideation to publication.</li>
+
+
+
+<li><strong>delivery</strong> of experiences &#8211; the digital content can be consumed across a variety of devices, including IoT (Internet of Things) connected objects.  In addition, a single end-user of this content interacting with the platform across multiple devices and locations is ensured a seamless and continuous experience.</li>
+
+
+
+<li><strong>optimization of contextualized</strong> experiences &#8211; this is ensuring that the digital content consumed by a user is optimized (personalised) for that user based on data available for that user.  This can include their access location, devices and possible other personal data shared by the user previously.</li>
+
+
+
+<li><strong>multi-experience customer journeys</strong> &#8211; each user can have multiple digital experiences depending on their previous journeys on the platform as well as other contextualized data points.</li>
+</ul>
+
+
+
+<h2 class="wp-block-heading">Word-of-mouth transformation</h2>
+
+
+
+<p>The DXP Gartner report further notes,</p>
+
+
+
+<blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow">
+<p>This digital transformation is best served by customer-obsessed strategies which recognise the new business <em>age of the&nbsp; customer</em> where customers look for seamless digital experience across multiple platforms and will not hesitate to discard a brand over another if unsatisfied with the overall experience, the product or service being only a part of that experience.&nbsp; This transformation values inbound (word-of-mouth, referrals, reviews) marketing over outbound marketing.</p>
+</blockquote>
+
+
+
+<p>In other words, users will automatically promote your product/service if they are satisfied with the digital experience your platform provides.</p>
+
+
+
+<h2 class="wp-block-heading">Optimising and Personalising Content</h2>
+
+
+
+<p>Optimising content and personalising to the audience is a key component of a DXP platform, and there are various strategies to achieve it.</p>
+
+
+
+<p>Media optimisation becomes important when users access content across different devices.  How many times have you accessed a web page whose images were simply too large or their cropped version irrelevant as the cropped part of the image no longer focuses on the object.  This is especially true with cheap e-commerce sites that have been designed for a desktop experience, but are simply unusable on a mobile screen.  </p>
+
+
+
+<p>DXP platforms increasingly rely on AI image recognition to suggest the optimal image cropping for various devices.  These services can even dynamically crop a video frame by frame to ensure the object of attention stays in-frame on a portrait mobile screen rendition, and ensuring an optimal experience for all users.</p>
+
+
+
+<p>Personalisation is more tricky to achieve, as any given web-page cannot be dynamically personalised for every single users as this would create tremendous loads on a server.  The majority of web pages are cached in order to speed up their delivery.  Similarly a <em>personalised</em> web page con only realistically have a handful of versions which can cater to user segments.  Here is an article I wrote which goes into more details on the strategies used for <a href="/mitigating-performance-impact-from-personalisation/">optimising performance on page variants</a>.  </p>
+
+
+
+<h2 class="wp-block-heading">So what makes up a DXP platform?</h2>
+
+
+
+<p>In the next post in this series, I explore <a href="/what-makes-up-a-dxp/">what components actually make up a DXP platform</a>.</p>
+<p>The post <a href="/an-introduction-to-digital-experience-platforms/">An introduction to Digital eXperience Platforms</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/an-introduction-to-digital-experience-platforms/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

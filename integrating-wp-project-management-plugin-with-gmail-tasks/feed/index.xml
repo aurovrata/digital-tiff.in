@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Integrating WP Project Management plugin with Gmail Tasks	</title>
+	<atom:link href="/integrating-wp-project-management-plugin-with-gmail-tasks/feed/" rel="self" type="application/rss+xml" />
+	<link>/integrating-wp-project-management-plugin-with-gmail-tasks/</link>
+	<description>digital business transformation</description>
+	<lastBuildDate>Sat, 10 Feb 2024 08:42:23 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.7.1</generator>
+	<item>
+		<title>
+		By: Aurovrata V.		</title>
+		<link>/integrating-wp-project-management-plugin-with-gmail-tasks/#comment-3</link>
+
+		<dc:creator><![CDATA[Aurovrata V.]]></dc:creator>
+		<pubDate>Tue, 17 Jun 2014 15:02:00 +0000</pubDate>
+		<guid isPermaLink="false">http://localhost/syllogic/wp/?p=43#comment-3</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/integrating-wp-project-management-plugin-with-gmail-tasks/#comment-2&quot;&gt;Tareq&lt;/a&gt;.
+
+Hi Tareq, thanks for the comment.  Sync back and forth would be a neat addition, however given the beta-state of the Google Task API I wonder if this is feasable that current juncture.  We may to wait till google improves on their code.  For starters I faced certain limitations with this work.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/integrating-wp-project-management-plugin-with-gmail-tasks/#comment-2">Tareq</a>.</p>
+<p>Hi Tareq, thanks for the comment.  Sync back and forth would be a neat addition, however given the beta-state of the Google Task API I wonder if this is feasable that current juncture.  We may to wait till google improves on their code.  For starters I faced certain limitations with this work.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Tareq		</title>
+		<link>/integrating-wp-project-management-plugin-with-gmail-tasks/#comment-2</link>
+
+		<dc:creator><![CDATA[Tareq]]></dc:creator>
+		<pubDate>Tue, 13 May 2014 11:34:20 +0000</pubDate>
+		<guid isPermaLink="false">http://localhost/syllogic/wp/?p=43#comment-2</guid>
+
+					<description><![CDATA[I have this one on my task list. Although haven&#039;t tried any digging of any sorts on google tasks, but should be there some API to sync those tasks back and forth. I&#039;ll dig in more.
+
+Thanks.]]></description>
+			<content:encoded><![CDATA[<p>I have this one on my task list. Although haven&#8217;t tried any digging of any sorts on google tasks, but should be there some API to sync those tasks back and forth. I&#8217;ll dig in more.</p>
+<p>Thanks.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>
