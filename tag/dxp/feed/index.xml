@@ -12,7 +12,7 @@
 	<atom:link href="/tag/dxp/feed/" rel="self" type="application/rss+xml" />
 	<link>/tag/dxp/</link>
 	<description>digital business transformation</description>
-	<lastBuildDate>Tue, 07 Jan 2025 13:18:58 +0000</lastBuildDate>
+	<lastBuildDate>Wed, 08 Jan 2025 12:47:37 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -42,7 +42,7 @@
 <p>The post <a href="/what-makes-up-a-dxp/">What makes up a DXP</a> appeared first on <a href="/">Tiffin Consulting</a>.</p>
 ]]></description>
 										<content:encoded><![CDATA[
-<p>Following on from the post on the <a href="http://an-introduction-to-digital-experience-platforms/">introduction to a DXP platform</a>, this is a post which is part of  a series on DXP platforms.</p>
+<p>Following on from the post on the <a href="/an-introduction-to-digital-experience-platforms/">introduction to a DXP platform</a>, this is a post which is part of a series on DXP platforms.</p>
 
 
 
@@ -74,7 +74,7 @@
 
 
 
-<p>Ability to track user behaviour and content preference to provide dynamic content tailored to that user.  This requires a <a href="https://en.wikipedia.org/wiki/Customer_data_platform">Customer Data Platform</a> to track user data on the site and integrate with the page content in real-time to display relevant content.  Context awareness is the ability to display content based on the context of the page and 1st and 2nd party data available about the visitor.</p>
+<p>Ability to track user behaviour and content preference to provide dynamic content tailored to that user.&nbsp; This requires a <a href="https://en.wikipedia.org/wiki/Customer_data_platform">Customer Data Platform</a> to track user data on the site and integrate with the page content in real-time to display relevant content.&nbsp; Context awareness is the ability to display content based on the context of the page and 1st and 2nd party data available about the visitor.</p>
 
 
 
@@ -90,7 +90,7 @@
 
 
 
-<p>Customers might interact with a service on a website, app, chatbot, social platform, customer portal, in-store kiosk, digital stadium billboard, and wearable all in the same day. They’ll want each of those experiences to reflect any interactions they’ve had with the service at any given moment and across any device.  This interaction could take place across multiple services/websites that belong to the same entity/group.  A DXP needs to be able to follow and map this journey seamlessly.  The DXP platform may use the Customer Data Manager or make use of a Customer Relation Management  service to achieve this.</p>
+<p>Customers might interact with a service on a website, app, chatbot, social platform, customer portal, in-store kiosk, digital stadium billboard, and wearable all in the same day. They’ll want each of those experiences to reflect any interactions they’ve had with the service at any given moment and across any device.&nbsp; This interaction could take place across multiple services/websites that belong to the same entity/group.&nbsp; A DXP needs to be able to follow and map this journey seamlessly.  The DXP platform may use the Customer Data Manager or make use of a Customer Relation Management  service to achieve this.</p>
 
 
 
@@ -106,7 +106,7 @@
 
 
 
-<p>The ability to for front-end templating in order to present a cohesive picture across a variety of devices, pulling and combining content from various sources.  The presentation is the ability to present a cohesive look and feel to the user across a variety of devices.  This variety of devices,  which represents the delivery</p>
+<p>The ability to for front-end templating in order to present a cohesive picture across a variety of devices, pulling and combining content from various sources.&nbsp; The presentation is the ability to present a cohesive look and feel to the user across a variety of devices.&nbsp; This variety of devices,&nbsp; which represents the delivery</p>
 
 
 
