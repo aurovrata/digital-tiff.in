@@ -382,13 +382,6 @@
 		</image:image>
 	</url>
 	<url>
-		<loc>/unleashing-wp-twenty14-rhs/</loc>
-		<lastmod>2025-02-16T02:44:14+00:00</lastmod>
-		<image:image>
-			<image:loc>http://localhost/syllogic/wp/wp-content/uploads/sites/2/2014/10/TwentyFourteen_transformation.jpg</image:loc>
-		</image:image>
-	</url>
-	<url>
 		<loc>/dynamic-menus/</loc>
 		<lastmod>2025-02-16T02:44:14+00:00</lastmod>
 		<image:image>
@@ -433,6 +426,16 @@
 		</image:image>
 		<image:image>
 			<image:loc>/wp-content/uploads/2014/10/TwentyFourteen_transformation.jpg</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>/unleashing-wp-twenty14-rhs/</loc>
+		<lastmod>2025-02-16T03:55:58+00:00</lastmod>
+		<image:image>
+			<image:loc>/wp-content/uploads/2014/10/TwentyFourteen_transformation.jpg</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>http://localhost/syllogic/wp/wp-content/uploads/sites/2/2014/10/TwentyFourteen_transformation.jpg</image:loc>
 		</image:image>
 	</url>
 </urlset>
