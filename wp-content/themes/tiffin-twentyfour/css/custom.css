@@ -36,7 +36,10 @@
 	width: auto;
 	margin-top: 55px;
 }
-
+details.wp-block-details > summary {
+	font-weight: bold;
+	font-size: 110%;
+}
 /*footer*/
 .footer-site-title .wp-block-site-tagline {
 	margin-top: -16px;
