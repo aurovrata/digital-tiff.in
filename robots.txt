@@ -1,0 +1,8 @@
+# START YOAST BLOCK
+# ---------------------------
+User-agent: *
+Disallow:
+
+Sitemap: http://localhost:10008/sitemap_index.xml
+# ---------------------------
+# END YOAST BLOCK

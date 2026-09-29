@@ -1,0 +1,188 @@
+/* @font-face {
+    font-family: 'Noto Sans JP';
+    src: url('/wp-content/themes/tiffin-2024-v2/assets/fonts/noto-sans-jp/noto-sans-jp-200-normal.woff2'), url('/wp-content/themes/tiffin-2024-v2/assets/fonts/noto-sans-jp/noto-sans-jp-300-normal.woff2'), url('/wp-content/themes/tiffin-2024-v2/assets/fonts/noto-sans-jp/noto-sans-jp-500-normal.woff2');
+    font-weight: 200, 300, 500;
+    font-style: normal;
+}
+.has-noto-sans-jp-font-family {
+	font-family: 'Noto Sans JP' !important;
+} */
+
+/*header logo & title*/
+.logo-block-group {
+	position: relative;
+}
+.wp-block-polylang-language-switcher * {
+	background-color: var(--wp--preset--color--base-2);
+	/* color: var(--wp--preset--color--base); */
+	font-size: 1.1rem;
+	border: 0;
+	padding: 3px 5px;
+}
+/* .logo-block-group .wp-block-site-tagline {
+	margin-top: -5px;
+	font-size: 118%;
+} */
+
+.logo-block-group .wp-block-site-title {
+	margin-top: 10px;
+}
+
+.logo-block-group .wp-block-site-logo {
+	position: absolute;
+	left: -77px;
+	top: -15px;
+}
+
+.logo-block-group .wp-block-site-logo img.custom-logo {
+	width: 65px;
+}
+.tiffin-header-nav ul.has-background {
+	padding: 0;
+}
+/* japanese header navigation*/
+[lang="ja"] .home header {
+	z-index: 100;
+	position: relative;
+}
+[lang="ja"] .home header  .wp-block-group {
+	background: transparent;
+}
+[lang="ja"] .home header > .wp-block-group {
+	background: #3d3d3d42;
+}
+[lang="ja"] .home main {
+	margin-top: -130px !important;
+}
+[lang="ja"] .home .tiffin-logo {
+	fill: white;
+}
+[lang="ja"] .home header .wp-block-site-title a,
+[lang="ja"] .home header .wp-block-site-tagline,
+[lang="ja"] .home header nav {
+	color: white;
+}
+/* japanese home video */
+.scroll-video-wrap { position: relative;}
+.scroll-video-wrap video { 
+	position: absolute; 
+	top: 0; 
+	left: 0; 
+	width: 100%; 
+	height: 100%; 
+	object-fit: cover; 
+	opacity: 0; 
+	transition: opacity 1s ease; 
+	pointer-events: none;
+	margin: 0 !important;
+	max-width: none;
+	max-height: none;
+	transition: opacity 3s;
+	-webkit-transition: opacity 3s;
+}
+.scroll-video-wrap video.is-visible {
+	opacity: 1;
+}
+.scroll-video-wrap > .wp-block-cover__inner-container{
+	position: static;
+	z-index: 1;
+}
+.slide-mobile-video video {
+	aspect-ratio: 4/3 !important;
+	object-fit: cover;
+	display: block;
+	object-position: 18% 46%;
+}
+.step-container .wp-block-group{
+	background-color: transparent;
+}
+.step-number {
+	font-size: 42px;
+	color: #b39b74;
+	margin-bottom: 15px;
+	font-family: serif;
+}
+/*page template*/
+.wp-block-group.tiffin-page-title {
+	position: relative;
+}
+.wp-block-group.tiffin-page-title .alignleft.wp-block-post-featured-image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin-left: calc( ( 100% - 1080px ) / 8 );
+	width: auto;
+	margin-top: 55px;
+}
+details.wp-block-details > summary {
+	font-weight: bold;
+	font-size: 110%;
+}
+.home.page details.wp-block-details {
+	font-size: clamp(0.929rem, 0.929rem + ((1vw - 0.2rem) * 0.785), 1.4rem);
+}
+/*footer*/
+.footer-site-title .wp-block-site-tagline {
+	margin-top: -16px;
+}
+
+@media (max-width:1860px) {
+	.wp-block-group.tiffin-page-title .alignleft.wp-block-post-featured-image {
+		margin-left: 2em;
+	}
+}
+
+@media (max-width:1680px) {
+	.wp-block-group.tiffin-page-title .alignleft.wp-block-post-featured-image {
+		display:none;
+	}
+}
+
+@media (max-width:1080px) {
+	.logo-block-group .wp-block-site-logo {
+		left: -60px;
+	}
+	.logo-block-group .wp-block-site-logo img.custom-logo {
+		width: 55px;
+	}	
+}
+@media (max-width:480px) {
+	.wp-block-group.tiffin-header-group {
+		padding: 20px 10px;
+	}
+	.logo-block-group.is-layout-flex {
+		gap: 0;
+	}
+	.logo-block-group .wp-block-site-logo {
+		position: relative;
+		left: 0;
+		top: 0;
+	}
+	[lang="ja"] .home main {
+		margin-top: 0px !important;
+	}
+	[lang="ja"] .home header > .wp-block-group {
+		background: transparent;
+	}
+	[lang="ja"] .home .tiffin-logo {
+		fill: inherit;
+	}
+	[lang="ja"] .home header .wp-block-site-title a,
+	[lang="ja"] .home header .wp-block-site-tagline,
+	[lang="ja"] .home header nav {
+		color: inherit;
+	}
+}
+@media (max-width:600px){
+	.home .tiffin-header-image{
+		display: none;
+	}
+}
+@media (max-width: 400px) {
+	.logo-block-group .wp-block-site-title {
+		font-size: 1.8rem;
+	}
+	.logo-block-group .wp-block-site-tagline {
+		font-size: 108%;
+	}
+}
