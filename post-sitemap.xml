@@ -1,24 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="/main-sitemap.xsl"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
-		<loc>/use-registered_post_type-hook-to-modify-post-type-registration-wp-smith/</loc>
+		<loc>/personalising-visitors-journeys-on-your-website/</loc>
 		<lastmod>2025-02-16T04:10:27+00:00</lastmod>
 		<image:image>
-			<image:loc>/wp-content/uploads/2014/09/keep-coding-and-keep-walking-e1707555016848.jpg</image:loc>
+			<image:loc>/wp-content/uploads/2024/02/1280px-Bespoke_Tailor_is_taking_measurement.jpg</image:loc>
 		</image:image>
 	</url>
 	<url>
-		<loc>/what-makes-up-a-dxp/</loc>
+		<loc>/content-creation-tools-for-lead-generation-business/</loc>
 		<lastmod>2025-02-16T04:10:27+00:00</lastmod>
 		<image:image>
-			<image:loc>/wp-content/uploads/2025/01/systemarchitecture.jpg</image:loc>
-		</image:image>
-	</url>
-	<url>
-		<loc>/an-introduction-to-digital-experience-platforms/</loc>
-		<lastmod>2025-02-16T04:10:27+00:00</lastmod>
-		<image:image>
-			<image:loc>/wp-content/uploads/2025/01/dxp.jpg</image:loc>
+			<image:loc>/wp-content/uploads/2024/02/collaboration.jpeg</image:loc>
 		</image:image>
 	</url>
 	<url>
@@ -32,17 +25,24 @@
 		</image:image>
 	</url>
 	<url>
-		<loc>/content-creation-tools-for-lead-generation-business/</loc>
+		<loc>/an-introduction-to-digital-experience-platforms/</loc>
 		<lastmod>2025-02-16T04:10:27+00:00</lastmod>
 		<image:image>
-			<image:loc>/wp-content/uploads/2024/02/collaboration.jpeg</image:loc>
+			<image:loc>/wp-content/uploads/2025/01/dxp.jpg</image:loc>
 		</image:image>
 	</url>
 	<url>
-		<loc>/personalising-visitors-journeys-on-your-website/</loc>
+		<loc>/what-makes-up-a-dxp/</loc>
 		<lastmod>2025-02-16T04:10:27+00:00</lastmod>
 		<image:image>
-			<image:loc>/wp-content/uploads/2024/02/1280px-Bespoke_Tailor_is_taking_measurement.jpg</image:loc>
+			<image:loc>/wp-content/uploads/2025/01/systemarchitecture.jpg</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>/use-registered_post_type-hook-to-modify-post-type-registration-wp-smith/</loc>
+		<lastmod>2025-02-16T04:10:27+00:00</lastmod>
+		<image:image>
+			<image:loc>/wp-content/uploads/2014/09/keep-coding-and-keep-walking-e1707555016848.jpg</image:loc>
 		</image:image>
 	</url>
 	<url>
@@ -53,17 +53,17 @@
 		</image:image>
 	</url>
 	<url>
-		<loc>/suppress-error-notices-using-wordpresss-wp_debug/</loc>
+		<loc>/modify-a-custom-post-type-registration-with-the-registered_post_type-hook/</loc>
 		<lastmod>2025-02-16T04:10:28+00:00</lastmod>
 		<image:image>
 			<image:loc>/wp-content/uploads/2015/07/Wordpress-Code-is-Poetry.png</image:loc>
 		</image:image>
 	</url>
 	<url>
-		<loc>/suppress-error-notices-using-wordpresss-wp_debug-2/</loc>
+		<loc>/suppress-error-notices-using-wordpresss-wp_debug/</loc>
 		<lastmod>2025-02-16T04:10:28+00:00</lastmod>
 		<image:image>
-			<image:loc>/wp-content/uploads/2014/09/keep-coding-and-keep-walking-e1707555016848.jpg</image:loc>
+			<image:loc>/wp-content/uploads/2015/07/Wordpress-Code-is-Poetry.png</image:loc>
 		</image:image>
 	</url>
 	<url>
@@ -74,21 +74,21 @@
 		</image:image>
 	</url>
 	<url>
+		<loc>/suppress-error-notices-using-wordpresss-wp_debug-2/</loc>
+		<lastmod>2025-02-16T04:10:28+00:00</lastmod>
+		<image:image>
+			<image:loc>/wp-content/uploads/2014/09/keep-coding-and-keep-walking-e1707555016848.jpg</image:loc>
+		</image:image>
+	</url>
+	<url>
 		<loc>/online-lecture-on-introduction-to-bi/</loc>
 		<lastmod>2025-02-16T04:10:28+00:00</lastmod>
 	</url>
 	<url>
-		<loc>/modify-a-custom-post-type-registration-with-the-registered_post_type-hook/</loc>
+		<loc>/tracking-and-analysing-marketing-campaigns/</loc>
 		<lastmod>2025-02-16T04:10:28+00:00</lastmod>
 		<image:image>
-			<image:loc>/wp-content/uploads/2015/07/Wordpress-Code-is-Poetry.png</image:loc>
-		</image:image>
-	</url>
-	<url>
-		<loc>/how-to-generate-leads-on-your-business-website/</loc>
-		<lastmod>2025-02-16T04:10:28+00:00</lastmod>
-		<image:image>
-			<image:loc>/wp-content/uploads/2024/02/Website-Lead-Generation-Tips.jpg</image:loc>
+			<image:loc>/wp-content/uploads/2024/02/Human_billboards_Stockholm_2008-07-16_cropped.jpg</image:loc>
 		</image:image>
 	</url>
 	<url>
@@ -99,31 +99,17 @@
 		</image:image>
 	</url>
 	<url>
-		<loc>/tracking-and-analysing-marketing-campaigns/</loc>
+		<loc>/how-to-generate-leads-on-your-business-website/</loc>
 		<lastmod>2025-02-16T04:10:28+00:00</lastmod>
 		<image:image>
-			<image:loc>/wp-content/uploads/2024/02/Human_billboards_Stockholm_2008-07-16_cropped.jpg</image:loc>
-		</image:image>
-	</url>
-	<url>
-		<loc>/boosting-registration-forms/</loc>
-		<lastmod>2025-02-16T04:10:29+00:00</lastmod>
-		<image:image>
-			<image:loc>/wp-content/uploads/2015/02/reg.jpg</image:loc>
-		</image:image>
-	</url>
-	<url>
-		<loc>/how-to-disable-comments-on-wordpress-media-attachments/</loc>
-		<lastmod>2025-02-16T04:10:29+00:00</lastmod>
-		<image:image>
-			<image:loc>/wp-content/uploads/2015/01/email-marketing-ways-to-keep-spam-count-low.jpg</image:loc>
+			<image:loc>/wp-content/uploads/2024/02/Website-Lead-Generation-Tips.jpg</image:loc>
 		</image:image>
 	</url>
 	<url>
 		<loc>/infinite-scroll-in-wp-posts/</loc>
 		<lastmod>2025-02-16T04:10:29+00:00</lastmod>
 		<image:image>
-			<image:loc>http://localhost/syllogic/wp/wp-content/uploads/sites/2/2014/11/Screen-Shot-2014-12-17-at-3.47.45-PM-300x191.png</image:loc>
+			<image:loc>/syllogic/wp/wp-content/uploads/sites/2/2014/11/Screen-Shot-2014-12-17-at-3.47.45-PM-300x191.png</image:loc>
 		</image:image>
 	</url>
 	<url>
@@ -134,26 +120,164 @@
 		</image:image>
 	</url>
 	<url>
+		<loc>/how-to-disable-comments-on-wordpress-media-attachments/</loc>
+		<lastmod>2025-02-16T04:10:29+00:00</lastmod>
+		<image:image>
+			<image:loc>/wp-content/uploads/2015/01/email-marketing-ways-to-keep-spam-count-low.jpg</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>/boosting-registration-forms/</loc>
+		<lastmod>2025-02-16T04:10:29+00:00</lastmod>
+		<image:image>
+			<image:loc>/wp-content/uploads/2015/02/reg.jpg</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>/google-trends-comparisons/</loc>
+		<lastmod>2025-02-16T04:10:44+00:00</lastmod>
+		<image:image>
+			<image:loc>/wp-content/uploads/2014/09/women-with-llamas-crop1.jpg</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>/syllogic/bi/wp-content/uploads/sites/4/2014/09/image001.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>/syllogic/bi/wp-content/uploads/sites/4/2014/09/image011.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>/syllogic/bi/wp-content/uploads/sites/4/2014/09/image021.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>/syllogic/bi/wp-content/uploads/sites/4/2014/09/image031.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>/syllogic/bi/wp-content/uploads/sites/4/2014/09/image041.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>/syllogic/bi/wp-content/uploads/sites/4/2014/09/image051.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>/syllogic/bi/wp-content/uploads/sites/4/2014/09/image061.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>/syllogic/bi/wp-content/uploads/sites/4/2014/09/image071.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>/syllogic/bi/wp-content/uploads/sites/4/2014/09/image081.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>/syllogic/bi/wp-content/uploads/sites/4/2014/09/image091.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>/syllogic/bi/wp-content/uploads/sites/4/2014/09/image101.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>/syllogic/bi/wp-content/uploads/sites/4/2014/09/image111.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>/syllogic/bi/wp-content/uploads/sites/4/2014/09/image121.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>/syllogic/bi/wp-content/uploads/sites/4/2014/09/image131.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>/syllogic/bi/wp-content/uploads/sites/4/2014/09/image141.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>/syllogic/bi/wp-content/uploads/sites/4/2014/09/image151.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>/syllogic/bi/wp-content/uploads/sites/4/2014/09/image161.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>/syllogic/bi/wp-content/uploads/sites/4/2014/09/image171.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>/syllogic/bi/wp-content/uploads/sites/4/2014/09/image181.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>/syllogic/bi/wp-content/uploads/sites/4/2014/09/image191.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>/syllogic/bi/wp-content/uploads/sites/4/2014/09/image201.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>/syllogic/bi/wp-content/uploads/sites/4/2014/09/image211.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>/syllogic/bi/wp-content/uploads/sites/4/2014/09/image221.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>/syllogic/bi/wp-content/uploads/sites/4/2014/09/image231.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>/syllogic/bi/wp-content/uploads/sites/4/2014/09/image191.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>/syllogic/bi/wp-content/uploads/sites/4/2014/09/image241.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>/syllogic/bi/wp-content/uploads/sites/4/2014/09/image251.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>/syllogic/bi/wp-content/uploads/sites/4/2014/09/image261.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>/syllogic/bi/wp-content/uploads/sites/4/2014/09/image271.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>/syllogic/bi/wp-content/uploads/sites/4/2014/09/image281.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>/syllogic/bi/wp-content/uploads/sites/4/2014/09/image131.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>/syllogic/bi/wp-content/uploads/sites/4/2014/09/image141.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>/syllogic/bi/wp-content/uploads/sites/4/2014/09/image291.png</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>/syllogic/bi/wp-content/uploads/sites/4/2014/09/image301.png</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>/bi-banner3/</loc>
+		<lastmod>2025-02-16T04:10:44+00:00</lastmod>
+		<image:image>
+			<image:loc>/wp-content/uploads/2014/09/monkey-google-trend.jpg</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>/managing-a-development-and-live-site/</loc>
+		<lastmod>2025-02-16T04:10:44+00:00</lastmod>
+		<image:image>
+			<image:loc>/wp-content/uploads/2024/02/under_construction-e1707554299235.jpg</image:loc>
+		</image:image>
+		<image:image>
+			<image:loc>/syllogic/wp/wp-content/uploads/sites/2/2014/08/search-engines-300x111.png</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>/dynamic-menus/</loc>
+		<lastmod>2025-02-16T04:10:44+00:00</lastmod>
+		<image:image>
+			<image:loc>/wp-content/uploads/2014/09/keep-coding-and-keep-walking-e1707555016848.jpg</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>/quick-dirty-forms-payment-registration-contact/</loc>
+		<lastmod>2025-02-16T04:10:44+00:00</lastmod>
+	</url>
+	<url>
 		<loc>/unleashing-wp-twenty14-rhs/</loc>
 		<lastmod>2025-02-16T04:10:44+00:00</lastmod>
 		<image:image>
 			<image:loc>/wp-content/uploads/2014/10/TwentyFourteen_transformation.jpg</image:loc>
 		</image:image>
 		<image:image>
-			<image:loc>http://localhost/syllogic/wp/wp-content/uploads/sites/2/2014/10/TwentyFourteen_transformation.jpg</image:loc>
-		</image:image>
-	</url>
-	<url>
-		<loc>/wp-banner0/</loc>
-		<lastmod>2025-02-16T04:10:44+00:00</lastmod>
-		<image:image>
-			<image:loc>/wp-content/uploads/2014/10/good-website.jpg</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>http://localhost/syllogic/wp/wp-content/uploads/sites/2/2014/10/descarga-300x199.jpg</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>http://localhost/syllogic/wp/wp-content/uploads/sites/2/2014/10/good_web_site_should_be_child_play-1024x682.jpg</image:loc>
+			<image:loc>/syllogic/wp/wp-content/uploads/sites/2/2014/10/TwentyFourteen_transformation.jpg</image:loc>
 		</image:image>
 	</url>
 	<url>
@@ -176,140 +300,16 @@
 		</image:image>
 	</url>
 	<url>
-		<loc>/quick-dirty-forms-payment-registration-contact/</loc>
-		<lastmod>2025-02-16T04:10:44+00:00</lastmod>
-	</url>
-	<url>
-		<loc>/dynamic-menus/</loc>
+		<loc>/wp-banner0/</loc>
 		<lastmod>2025-02-16T04:10:44+00:00</lastmod>
 		<image:image>
-			<image:loc>/wp-content/uploads/2014/09/keep-coding-and-keep-walking-e1707555016848.jpg</image:loc>
-		</image:image>
-	</url>
-	<url>
-		<loc>/google-trends-comparisons/</loc>
-		<lastmod>2025-02-16T04:10:44+00:00</lastmod>
-		<image:image>
-			<image:loc>/wp-content/uploads/2014/09/women-with-llamas-crop1.jpg</image:loc>
+			<image:loc>/wp-content/uploads/2014/10/good-website.jpg</image:loc>
 		</image:image>
 		<image:image>
-			<image:loc>http://localhost/syllogic/bi/wp-content/uploads/sites/4/2014/09/image001.png</image:loc>
+			<image:loc>/syllogic/wp/wp-content/uploads/sites/2/2014/10/descarga-300x199.jpg</image:loc>
 		</image:image>
 		<image:image>
-			<image:loc>http://localhost/syllogic/bi/wp-content/uploads/sites/4/2014/09/image011.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>http://localhost/syllogic/bi/wp-content/uploads/sites/4/2014/09/image021.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>http://localhost/syllogic/bi/wp-content/uploads/sites/4/2014/09/image031.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>http://localhost/syllogic/bi/wp-content/uploads/sites/4/2014/09/image041.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>http://localhost/syllogic/bi/wp-content/uploads/sites/4/2014/09/image051.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>http://localhost/syllogic/bi/wp-content/uploads/sites/4/2014/09/image061.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>http://localhost/syllogic/bi/wp-content/uploads/sites/4/2014/09/image071.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>http://localhost/syllogic/bi/wp-content/uploads/sites/4/2014/09/image081.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>http://localhost/syllogic/bi/wp-content/uploads/sites/4/2014/09/image091.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>http://localhost/syllogic/bi/wp-content/uploads/sites/4/2014/09/image101.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>http://localhost/syllogic/bi/wp-content/uploads/sites/4/2014/09/image111.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>http://localhost/syllogic/bi/wp-content/uploads/sites/4/2014/09/image121.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>http://localhost/syllogic/bi/wp-content/uploads/sites/4/2014/09/image131.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>http://localhost/syllogic/bi/wp-content/uploads/sites/4/2014/09/image141.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>http://localhost/syllogic/bi/wp-content/uploads/sites/4/2014/09/image151.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>http://localhost/syllogic/bi/wp-content/uploads/sites/4/2014/09/image161.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>http://localhost/syllogic/bi/wp-content/uploads/sites/4/2014/09/image171.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>http://localhost/syllogic/bi/wp-content/uploads/sites/4/2014/09/image181.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>http://localhost/syllogic/bi/wp-content/uploads/sites/4/2014/09/image191.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>http://localhost/syllogic/bi/wp-content/uploads/sites/4/2014/09/image201.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>http://localhost/syllogic/bi/wp-content/uploads/sites/4/2014/09/image211.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>http://localhost/syllogic/bi/wp-content/uploads/sites/4/2014/09/image221.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>http://localhost/syllogic/bi/wp-content/uploads/sites/4/2014/09/image231.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>http://localhost/syllogic/bi/wp-content/uploads/sites/4/2014/09/image191.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>http://localhost/syllogic/bi/wp-content/uploads/sites/4/2014/09/image241.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>http://localhost/syllogic/bi/wp-content/uploads/sites/4/2014/09/image251.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>http://localhost/syllogic/bi/wp-content/uploads/sites/4/2014/09/image261.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>http://localhost/syllogic/bi/wp-content/uploads/sites/4/2014/09/image271.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>http://localhost/syllogic/bi/wp-content/uploads/sites/4/2014/09/image281.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>http://localhost/syllogic/bi/wp-content/uploads/sites/4/2014/09/image131.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>http://localhost/syllogic/bi/wp-content/uploads/sites/4/2014/09/image141.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>http://localhost/syllogic/bi/wp-content/uploads/sites/4/2014/09/image291.png</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>http://localhost/syllogic/bi/wp-content/uploads/sites/4/2014/09/image301.png</image:loc>
-		</image:image>
-	</url>
-	<url>
-		<loc>/bi-banner3/</loc>
-		<lastmod>2025-02-16T04:10:44+00:00</lastmod>
-		<image:image>
-			<image:loc>/wp-content/uploads/2014/09/monkey-google-trend.jpg</image:loc>
-		</image:image>
-	</url>
-	<url>
-		<loc>/managing-a-development-and-live-site/</loc>
-		<lastmod>2025-02-16T04:10:44+00:00</lastmod>
-		<image:image>
-			<image:loc>/wp-content/uploads/2024/02/under_construction-e1707554299235.jpg</image:loc>
-		</image:image>
-		<image:image>
-			<image:loc>http://localhost/syllogic/wp/wp-content/uploads/sites/2/2014/08/search-engines-300x111.png</image:loc>
+			<image:loc>/syllogic/wp/wp-content/uploads/sites/2/2014/10/good_web_site_should_be_child_play-1024x682.jpg</image:loc>
 		</image:image>
 	</url>
 	<url>
@@ -317,48 +317,6 @@
 		<lastmod>2025-02-16T04:10:45+00:00</lastmod>
 		<image:image>
 			<image:loc>/wp-content/uploads/2014/06/egypt_crowd.jpg</image:loc>
-		</image:image>
-	</url>
-	<url>
-		<loc>/managing-dashboard-menus-sybmenus-and-labels/</loc>
-		<lastmod>2025-02-16T04:10:45+00:00</lastmod>
-		<image:image>
-			<image:loc>/wp-content/uploads/2014/05/Screen-Shot-2014-05-14-at-9.34.37-PM-970x576-1.png</image:loc>
-		</image:image>
-	</url>
-	<url>
-		<loc>/invoicing-with-wordpress/</loc>
-		<lastmod>2025-02-16T04:10:45+00:00</lastmod>
-		<image:image>
-			<image:loc>/wp-content/uploads/2014/05/shaken-invoice2.png</image:loc>
-		</image:image>
-	</url>
-	<url>
-		<loc>/how-likely-how-quickly-bi-general-question-part-5/</loc>
-		<lastmod>2025-02-16T04:10:45+00:00</lastmod>
-		<image:image>
-			<image:loc>/wp-content/uploads/2014/06/howlikely.jpg</image:loc>
-		</image:image>
-	</url>
-	<url>
-		<loc>/how-many-bi-general-question-part-4/</loc>
-		<lastmod>2025-02-16T04:10:45+00:00</lastmod>
-		<image:image>
-			<image:loc>/wp-content/uploads/2014/06/january-calendar-month-year-preview.jpg</image:loc>
-		</image:image>
-	</url>
-	<url>
-		<loc>/bi-banner1/</loc>
-		<lastmod>2025-02-16T04:10:45+00:00</lastmod>
-		<image:image>
-			<image:loc>/wp-content/uploads/2014/06/what-is-bi-with-drawing.jpg</image:loc>
-		</image:image>
-	</url>
-	<url>
-		<loc>/fixing-custom-post-breadcrumbs/</loc>
-		<lastmod>2025-02-16T04:10:45+00:00</lastmod>
-		<image:image>
-			<image:loc>/wp-content/uploads/2015/07/Wordpress-Code-is-Poetry.png</image:loc>
 		</image:image>
 	</url>
 	<url>
@@ -376,13 +334,6 @@
 		</image:image>
 	</url>
 	<url>
-		<loc>/do-we-share-molecules-with-magellan/</loc>
-		<lastmod>2025-02-16T04:10:45+00:00</lastmod>
-		<image:image>
-			<image:loc>/wp-content/uploads/2014/07/Ferdinand_Magellan.jpg</image:loc>
-		</image:image>
-	</url>
-	<url>
 		<loc>/going-multi-lingual-with-polylang/</loc>
 		<lastmod>2025-02-16T04:10:45+00:00</lastmod>
 		<image:image>
@@ -390,10 +341,52 @@
 		</image:image>
 	</url>
 	<url>
-		<loc>/wp-banner3/</loc>
-		<lastmod>2025-02-16T04:10:59+00:00</lastmod>
+		<loc>/fixing-custom-post-breadcrumbs/</loc>
+		<lastmod>2025-02-16T04:10:45+00:00</lastmod>
 		<image:image>
-			<image:loc>/wp-content/uploads/2014/04/Responsive-Web-Design.jpg</image:loc>
+			<image:loc>/wp-content/uploads/2015/07/Wordpress-Code-is-Poetry.png</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>/invoicing-with-wordpress/</loc>
+		<lastmod>2025-02-16T04:10:45+00:00</lastmod>
+		<image:image>
+			<image:loc>/wp-content/uploads/2014/05/shaken-invoice2.png</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>/managing-dashboard-menus-sybmenus-and-labels/</loc>
+		<lastmod>2025-02-16T04:10:45+00:00</lastmod>
+		<image:image>
+			<image:loc>/wp-content/uploads/2014/05/Screen-Shot-2014-05-14-at-9.34.37-PM-970x576-1.png</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>/do-we-share-molecules-with-magellan/</loc>
+		<lastmod>2025-02-16T04:10:45+00:00</lastmod>
+		<image:image>
+			<image:loc>/wp-content/uploads/2014/07/Ferdinand_Magellan.jpg</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>/bi-banner1/</loc>
+		<lastmod>2025-02-16T04:10:45+00:00</lastmod>
+		<image:image>
+			<image:loc>/wp-content/uploads/2014/06/what-is-bi-with-drawing.jpg</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>/how-likely-how-quickly-bi-general-question-part-5/</loc>
+		<lastmod>2025-02-16T04:10:45+00:00</lastmod>
+		<image:image>
+			<image:loc>/wp-content/uploads/2014/06/howlikely.jpg</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>/how-many-bi-general-question-part-4/</loc>
+		<lastmod>2025-02-16T04:10:45+00:00</lastmod>
+		<image:image>
+			<image:loc>/wp-content/uploads/2014/06/january-calendar-month-year-preview.jpg</image:loc>
 		</image:image>
 	</url>
 	<url>
@@ -403,23 +396,27 @@
 			<image:loc>/wp-content/uploads/2014/05/WP-Login-Menu.jpg</image:loc>
 		</image:image>
 		<image:image>
-			<image:loc>http://localhost/syllogic/wp/wp-content/uploads/sites/2/2014/05/primary-menu-1024x217.jpg</image:loc>
+			<image:loc>/syllogic/wp/wp-content/uploads/sites/2/2014/05/primary-menu-1024x217.jpg</image:loc>
 		</image:image>
 		<image:image>
-			<image:loc>http://localhost/syllogic/wp/wp-content/uploads/sites/2/2014/05/logout-menu-1024x178.jpg</image:loc>
+			<image:loc>/syllogic/wp/wp-content/uploads/sites/2/2014/05/logout-menu-1024x178.jpg</image:loc>
 		</image:image>
 		<image:image>
-			<image:loc>http://localhost/syllogic/wp/wp-content/uploads/sites/2/2014/05/log-in-menu-1024x181.jpg</image:loc>
+			<image:loc>/syllogic/wp/wp-content/uploads/sites/2/2014/05/log-in-menu-1024x181.jpg</image:loc>
 		</image:image>
 		<image:image>
-			<image:loc>http://localhost/syllogic/wp/wp-content/uploads/sites/2/2014/05/wp-menu-manager-logout-1024x501.jpg</image:loc>
+			<image:loc>/syllogic/wp/wp-content/uploads/sites/2/2014/05/wp-menu-manager-logout-1024x501.jpg</image:loc>
 		</image:image>
 		<image:image>
-			<image:loc>http://localhost/syllogic/wp/wp-content/uploads/sites/2/2014/05/wp-menu-manager-login-1024x539.jpg</image:loc>
+			<image:loc>/syllogic/wp/wp-content/uploads/sites/2/2014/05/wp-menu-manager-login-1024x539.jpg</image:loc>
 		</image:image>
 		<image:image>
-			<image:loc>http://localhost/syllogic/wp/wp-content/uploads/sites/2/2014/05/ajax-login.jpg</image:loc>
+			<image:loc>/syllogic/wp/wp-content/uploads/sites/2/2014/05/ajax-login.jpg</image:loc>
 		</image:image>
+	</url>
+	<url>
+		<loc>/wp-banner1/</loc>
+		<lastmod>2025-02-16T04:10:59+00:00</lastmod>
 	</url>
 	<url>
 		<loc>/integrating-wp-project-management-plugin-with-gmail-tasks/</loc>
@@ -435,8 +432,11 @@
 		</image:image>
 	</url>
 	<url>
-		<loc>/wp-banner1/</loc>
+		<loc>/wp-banner3/</loc>
 		<lastmod>2025-02-16T04:10:59+00:00</lastmod>
+		<image:image>
+			<image:loc>/wp-content/uploads/2014/04/Responsive-Web-Design.jpg</image:loc>
+		</image:image>
 	</url>
 </urlset>
 <!-- XML Sitemap generated by Yoast SEO -->
