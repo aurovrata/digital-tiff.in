@@ -102,6 +102,15 @@
 	margin-bottom: 15px;
 	font-family: serif;
 }
+.yt-icon-link::after {
+	display: inline-block;
+	width: 25px;
+	height: 22px;
+	margin: 0 3px -2px 2px;
+	content: "";
+	background: url("/wp-content/themes/tiffin-2024-v2/assets/images/yt.png") no-repeat 0 100%;
+	background-size: 100%;
+}
 /*page template*/
 .wp-block-group.tiffin-page-title {
 	position: relative;
