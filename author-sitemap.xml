@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="/main-sitemap.xsl"?>
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="https://digital-tiff.in/main-sitemap.xsl"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
-		<loc>/author/aurovrata/</loc>
+		<loc>https://digital-tiff.in/author/aurovrata/</loc>
 		<lastmod>2026-09-29T09:39:33+00:00</lastmod>
 	</url>
 	<url>
-		<loc>/author/vrata/</loc>
+		<loc>https://digital-tiff.in/author/vrata/</loc>
 		<lastmod>2026-08-19T13:12:08+00:00</lastmod>
 	</url>
 </urlset>

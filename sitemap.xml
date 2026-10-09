@@ -1,23 +1,23 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="/main-sitemap.xsl"?>
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="https://digital-tiff.in/main-sitemap.xsl"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<sitemap>
-		<loc>/post-sitemap.xml</loc>
+		<loc>https://digital-tiff.in/post-sitemap.xml</loc>
 		<lastmod>2026-10-08T06:02:18+00:00</lastmod>
 	</sitemap>
 	<sitemap>
-		<loc>/page-sitemap.xml</loc>
-		<lastmod>2026-10-07T15:35:51+00:00</lastmod>
+		<loc>https://digital-tiff.in/page-sitemap.xml</loc>
+		<lastmod>2026-10-09T07:23:13+00:00</lastmod>
 	</sitemap>
 	<sitemap>
-		<loc>/category-sitemap.xml</loc>
+		<loc>https://digital-tiff.in/category-sitemap.xml</loc>
 		<lastmod>2026-10-08T06:02:18+00:00</lastmod>
 	</sitemap>
 	<sitemap>
-		<loc>/post_tag-sitemap.xml</loc>
+		<loc>https://digital-tiff.in/post_tag-sitemap.xml</loc>
 		<lastmod>2026-10-08T06:02:18+00:00</lastmod>
 	</sitemap>
 	<sitemap>
-		<loc>/author-sitemap.xml</loc>
+		<loc>https://digital-tiff.in/author-sitemap.xml</loc>
 		<lastmod>2026-09-29T09:39:33+00:00</lastmod>
 	</sitemap>
 </sitemapindex>

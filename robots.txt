@@ -3,6 +3,9 @@
 User-agent: *
 Disallow:
 
-Sitemap: http://localhost:10008/sitemap_index.xml
+User-agent: AdsBot
+Disallow: /
+
+Sitemap: https://digital-tiff.in/sitemap_index.xml
 # ---------------------------
 # END YOAST BLOCK

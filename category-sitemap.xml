@@ -1,67 +1,67 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="/main-sitemap.xsl"?>
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="https://digital-tiff.in/main-sitemap.xsl"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
-		<loc>/category/development/admin-dashboard/</loc>
+		<loc>https://digital-tiff.in/category/development/admin-dashboard/</loc>
 		<lastmod>2025-02-16T04:10:45+00:00</lastmod>
 	</url>
 	<url>
-		<loc>/category/development/menus-admin-dashboard/</loc>
+		<loc>https://digital-tiff.in/category/development/menus-admin-dashboard/</loc>
 		<lastmod>2025-02-16T04:10:45+00:00</lastmod>
 	</url>
 	<url>
-		<loc>/category/business-intelligence/</loc>
+		<loc>https://digital-tiff.in/category/business-intelligence/</loc>
 		<lastmod>2025-02-16T04:10:45+00:00</lastmod>
 	</url>
 	<url>
-		<loc>/category/business-intelligence/case-study/</loc>
+		<loc>https://digital-tiff.in/category/business-intelligence/case-study/</loc>
 		<lastmod>2025-02-16T04:10:45+00:00</lastmod>
 	</url>
 	<url>
-		<loc>/category/cms/</loc>
+		<loc>https://digital-tiff.in/category/cms/</loc>
 		<lastmod>2025-02-16T04:10:59+00:00</lastmod>
 	</url>
 	<url>
-		<loc>/category/development/</loc>
+		<loc>https://digital-tiff.in/category/development/</loc>
 		<lastmod>2025-02-16T04:10:59+00:00</lastmod>
 	</url>
 	<url>
-		<loc>/category/digital-business/</loc>
+		<loc>https://digital-tiff.in/category/digital-business/</loc>
 		<lastmod>2025-02-16T04:10:28+00:00</lastmod>
 	</url>
 	<url>
-		<loc>/category/development/input-forms/</loc>
+		<loc>https://digital-tiff.in/category/development/input-forms/</loc>
 		<lastmod>2025-02-16T04:10:44+00:00</lastmod>
 	</url>
 	<url>
-		<loc>/category/business-intelligence/intro/</loc>
+		<loc>https://digital-tiff.in/category/business-intelligence/intro/</loc>
 		<lastmod>2025-02-16T04:10:45+00:00</lastmod>
 	</url>
 	<url>
-		<loc>/category/development/menus/</loc>
+		<loc>https://digital-tiff.in/category/development/menus/</loc>
 		<lastmod>2026-10-08T06:02:18+00:00</lastmod>
 	</url>
 	<url>
-		<loc>/category/news/</loc>
+		<loc>https://digital-tiff.in/category/news/</loc>
 		<lastmod>2025-02-16T04:10:59+00:00</lastmod>
 	</url>
 	<url>
-		<loc>/category/business-intelligence/others/</loc>
+		<loc>https://digital-tiff.in/category/business-intelligence/others/</loc>
 		<lastmod>2025-02-16T04:10:45+00:00</lastmod>
 	</url>
 	<url>
-		<loc>/category/cms/wordpress-plugins/</loc>
+		<loc>https://digital-tiff.in/category/cms/wordpress-plugins/</loc>
 		<lastmod>2025-02-16T04:10:29+00:00</lastmod>
 	</url>
 	<url>
-		<loc>/category/project/</loc>
+		<loc>https://digital-tiff.in/category/project/</loc>
 		<lastmod>2025-02-16T04:10:59+00:00</lastmod>
 	</url>
 	<url>
-		<loc>/category/development/theme/</loc>
+		<loc>https://digital-tiff.in/category/development/theme/</loc>
 		<lastmod>2025-02-16T04:10:59+00:00</lastmod>
 	</url>
 	<url>
-		<loc>/category/wordpress/</loc>
+		<loc>https://digital-tiff.in/category/wordpress/</loc>
 		<lastmod>2026-10-08T06:02:18+00:00</lastmod>
 	</url>
 </urlset>
