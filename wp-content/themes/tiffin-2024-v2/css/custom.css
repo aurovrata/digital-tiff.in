@@ -134,7 +134,13 @@ details.wp-block-details > summary {
 .footer-site-title .wp-block-site-tagline {
 	margin-top: -16px;
 }
-
+main p:lang(ja):not(.wp-block-cb-slide-v2 p),
+main h2:lang(ja),
+main h3:lang(ja) {
+	word-break: keep-all;
+	overflow-wrap: anywhere;
+	line-break: strict;
+}
 @media (max-width:1860px) {
 	.wp-block-group.tiffin-page-title .alignleft.wp-block-post-featured-image {
 		margin-left: 2em;
@@ -186,12 +192,17 @@ details.wp-block-details > summary {
 	.home .tiffin-header-image{
 		display: none;
 	}
-}
-@media (max-width: 400px) {
-	.logo-block-group .wp-block-site-title {
-		font-size: 1.8rem;
+	footer > .wp-block-group {
+		padding-left: 5px;
+		padding-right: 5px;
 	}
-	.logo-block-group .wp-block-site-tagline {
-		font-size: 108%;
+}
+@media (max-width: 350px) {
+	.wp-block-cb-slide-v2 .wp-block-cover__inner-container{
+		container-type: inline-size;
+	}
+	.wp-block-cb-slide-v2 p{
+		white-space: nowrap;
+  	font-size: clamp(10px, 6cqw, 22px) !important;
 	}
 }
